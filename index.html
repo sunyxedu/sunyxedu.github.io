@@ -434,7 +434,7 @@
       <span class="top-bar-left">hemlix@icl:~$</span>
       <div class="top-bar-right">
         <a href="https://github.com/sunyxedu" target="_blank" rel="noopener">[github]</a>
-        <a href="https://mail.google.com/mail/?view=cm&to=sunyxedu@gmail.com">[email]</a>
+        <a href="mailto:sunyxedu@gmail.com" onclick="handleEmail(event)">[email]</a>
         <a href="resume.pdf" target="_blank" rel="noopener">[resume]</a>
       </div>
     </div>
@@ -628,7 +628,7 @@
         <div class="contact-line">
           <span class="prompt-symbol">$</span>
           <span>echo $EMAIL &rarr;</span>
-          <a href="https://mail.google.com/mail/?view=cm&to=sunyxedu@gmail.com" class="contact-box">sunyxedu@gmail.com</a>
+          <a href="mailto:sunyxedu@gmail.com" onclick="handleEmail(event)" class="contact-box">sunyxedu@gmail.com</a>
         </div>
       </div>
     </section>
@@ -651,6 +651,17 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Email fallback: try mailto, if no handler opens Gmail compose after timeout
+    function handleEmail(e) {
+      e.preventDefault();
+      const gmailUrl = 'https://mail.google.com/mail/?view=cm&to=sunyxedu@gmail.com';
+      const w = window.open('', '_blank');
+      window.location.href = 'mailto:sunyxedu@gmail.com';
+      setTimeout(function() {
+        if (w) w.location.href = gmailUrl;
+      }, 500);
+    }
   </script>
 </body>
 </html>
