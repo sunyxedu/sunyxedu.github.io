@@ -105,13 +105,37 @@
       gap: 1rem;
     }
 
-    .top-bar-right a {
+    .top-bar-right a, .top-bar-right .lang-toggle {
       color: var(--comment);
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    .top-bar-right a:hover { color: var(--green); }
+    .top-bar-right a:hover, .top-bar-right .lang-toggle:hover { color: var(--green); }
+
+    .lang-toggle {
+      background: none;
+      border: 1px solid var(--border-bright);
+      font-family: inherit;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 0.05rem 0.4rem;
+      transition: all 0.2s;
+    }
+
+    .lang-toggle:hover {
+      border-color: var(--green);
+      box-shadow: 0 0 8px rgba(0, 255, 65, 0.1);
+    }
+
+    /* ── Language toggle ── */
+    .zh { display: none; }
+    html[lang="zh"] .zh { display: inline; }
+    html[lang="zh"] .en { display: none; }
+    html[lang="zh"] .zh-block { display: flex !important; }
+    html[lang="zh"] .en-block { display: none !important; }
+    .zh-block { display: none !important; }
+    .en-block { display: flex; }
 
     /* ── Hero Name (glitch style) ── */
     .hero-header {
@@ -437,6 +461,9 @@
         <a href="https://github.com/sunyxedu" target="_blank" rel="noopener">[github]</a>
         <a href="#contact">[email]</a>
         <a href="resume.pdf" target="_blank" rel="noopener">[resume]</a>
+        <button class="lang-toggle" onclick="toggleLang()" title="Switch language">
+          <span class="en">中文</span><span class="zh">EN</span>
+        </button>
       </div>
     </div>
 
@@ -450,15 +477,26 @@
     <div class="prompt">
       <div class="prompt-line">
         <span class="prompt-symbol">$</span>
-        <span class="prompt-text">I teach machines to learn, compete and win.<span class="cursor"></span></span>
+        <span class="prompt-text">
+          <span class="en">I teach machines to learn, compete and win.</span>
+          <span class="zh">自动化一切竞技性任务。</span>
+          <span class="cursor"></span>
+        </span>
       </div>
       <p class="prompt-sub">
-        <span style="color: var(--comment);">// </span>Yuxuan Sun &mdash; Computing @
+        <span style="color: var(--comment);">// </span>
+        <span class="en">Yuxuan Sun &mdash; Computing @
         <a href="https://www.imperial.ac.uk/" target="_blank" rel="noopener">Imperial College London</a>.
         Security researcher @
         <a href="https://xlab.tencent.com/en/" target="_blank" rel="noopener">Tencent Xuanwu Lab</a>.
         Intern CTF player @
-        <a href="https://ctftime.org/team/58979" target="_blank" rel="noopener">r3kapig</a>.
+        <a href="https://ctftime.org/team/58979" target="_blank" rel="noopener">r3kapig</a>.</span>
+        <span class="zh">孙宇煊 &mdash; 计算机系 @
+        <a href="https://www.imperial.ac.uk/" target="_blank" rel="noopener">帝国理工学院</a>。
+        安全研究员 @
+        <a href="https://xlab.tencent.com/en/" target="_blank" rel="noopener">腾讯玄武实验室</a>。
+        CTF 实习队员 @
+        <a href="https://ctftime.org/team/58979" target="_blank" rel="noopener">r3kapig</a>。</span>
       </p>
     </div>
 
@@ -466,20 +504,20 @@
     <section class="reveal">
       <div class="panel">
         <div class="section-header">
-          <span class="section-title">// currently</span>
-          <span class="section-label">active processes</span>
+          <span class="section-title">// <span class="en">currently</span><span class="zh">现况</span></span>
+          <span class="section-label"><span class="en">active processes</span><span class="zh">进行中</span></span>
         </div>
         <div class="section-body">
-          <ul>
+          <ul class="en-block">
             <li>
               Security Researcher @ <a href="https://xlab.tencent.com/en/" target="_blank" rel="noopener">Tencent Xuanwu Lab</a> &mdash;
-              built <a href="https://github.com/XuanwuAI/CodeRetrX" target="_blank" rel="noopener">CodeRetrX</a>, a semantic code retrieval framework.
+              built <a href="https://github.com/XuanwuAI/CodeRetrX" target="_blank" rel="noopener">CodeRetrX</a>, a comprehensive agentic code auditing MCP toolkit featuring SOTA semantic code retrieval.
               <a href="https://blackhat.com/asia-26/arsenal/schedule/index.html#coderetrx-one-click-to-start-your-journey-of-agentic-bug-hunting-50342" target="_blank" rel="noopener"><span class="badge red">Black Hat Asia 2026</span></a>
               Used it to power a vulnerability detection agent that found 20+ vulnerabilities,
               including <a href="https://github.com/advisories/GHSA-95v9-hv42-pwrj" target="_blank" rel="noopener">CVE-2025-57801</a> (High, CVSS 8.6) which I verified.
             </li>
             <li>
-              Research Assistant @ <a href="https://gossip.team/" target="_blank" rel="noopener">G.O.S.S.I.P</a>,
+              Researcher @ <a href="https://gossip.team/" target="_blank" rel="noopener">G.O.S.S.I.P</a>,
               Shanghai Jiao Tong University &mdash; designed novel multi-target direct fuzzing.
               Building <strong>RedShift</strong>, an automated vulnerability discovery tool that discovers vulnerabilities, generates PoCs, and exploits them.
             </li>
@@ -492,7 +530,31 @@
               Building <strong>GamingMaster</strong> &mdash; a single shared-weight model that masters nearly all competitive games.
               Sub-project: <strong>AlphaGen</strong>, an RL bot for
               <a href="https://generals.io" target="_blank" rel="noopener">generals.io</a>
-              using imitation learning + offline policy improvement. Collab with MIT.
+              using imitation learning → reinforcement learning pipeline. Collab with MIT students.
+            </li>
+          </ul>
+          <ul class="zh-block">
+            <li>
+              安全研究员 @ <a href="https://xlab.tencent.com/en/" target="_blank" rel="noopener">腾讯玄武实验室</a> &mdash;
+              构建了 <a href="https://github.com/XuanwuAI/CodeRetrX" target="_blank" rel="noopener">CodeRetrX</a>，一个全面的智能体代码审计 MCP 工具集，具备最强的语义代码检索能力。
+              <a href="https://blackhat.com/asia-26/arsenal/schedule/index.html#coderetrx-one-click-to-start-your-journey-of-agentic-bug-hunting-50342" target="_blank" rel="noopener"><span class="badge red">Black Hat Asia 2026</span></a>
+              基于此驱动构建的漏洞检测 Agent，发现了 20+ 个高危漏洞，包括我验证的 <a href="https://github.com/advisories/GHSA-95v9-hv42-pwrj" target="_blank" rel="noopener">CVE-2025-57801</a>（High Severity，CVSS 8.6）。
+            </li>
+            <li>
+              研究员 @ <a href="https://gossip.team/" target="_blank" rel="noopener">G.O.S.S.I.P</a>，
+              上海交通大学 &mdash; 设计了新型多目标定向模糊测试方法。
+              正在构建 <strong>RedShift</strong>，一个自动化漏洞发现工具，可自动发现漏洞、生成 PoC 并完成利用。
+            </li>
+            <li>
+              CTF 实习队员 @ <a href="https://ctftime.org/team/58979" target="_blank" rel="noopener">r3kapig</a> &mdash;
+              5th/955 @ LA CTF，8th/970 @ Srdnlen CTF。
+              参与构建 <strong>Auto-CTFer</strong>。战队 CTFtime 2025 排名 #1。
+            </li>
+            <li>
+              构建 <strong>GamingMaster</strong> &mdash; 一个共享权重的模型，旨在掌握几乎所有竞技游戏。
+              子项目：<strong>AlphaGen</strong>，基于 模仿学习 → 强化学习 的
+              <a href="https://generals.io" target="_blank" rel="noopener">generals.io</a>
+              强化学习 Bot。与 MIT 学生合作。
             </li>
           </ul>
         </div>
@@ -503,14 +565,14 @@
     <section class="reveal">
       <div class="panel">
         <div class="section-header">
-          <span class="section-title">// history</span>
+          <span class="section-title">// <span class="en">history</span><span class="zh">历史</span></span>
           <span class="section-label">git log --oneline</span>
         </div>
         <div class="section-body">
-          <ul>
+          <ul class="en-block">
             <li>
               RL-based fuzzing with contextual combinatorial multi-armed bandits @
-              <a href="https://www.imperial.ac.uk/" target="_blank" rel="noopener">Imperial College London</a> Security &amp; ML Lab.
+              <a href="https://www.imperial.ac.uk/" target="_blank" rel="noopener">Imperial College London</a> Security and Machine Learning Lab.
             </li>
             <li>
               <a href="https://eprint.iacr.org/2024/1788" target="_blank" rel="noopener">Cryptographic accumulators research</a> @ <a href="https://www.tencent.com/" target="_blank" rel="noopener">Tencent</a>
@@ -522,7 +584,25 @@
               <span class="badge gold">Imperial Best Overall Project Award</span>
             </li>
             <li>
-              Mentored Chinese NOI Gold medalists on automated offensive security @ Tencent TSpark 2025.
+              Teaching assistant & mentored Chinese NOI Gold medalists on automated offensive security @ Tencent TSpark 2025.
+            </li>
+          </ul>
+          <ul class="zh-block">
+            <li>
+              基于上下文组合多臂老虎机的强化学习模糊测试 @
+              <a href="https://www.imperial.ac.uk/" target="_blank" rel="noopener">帝国理工学院</a> Security and Machine Learning Lab。
+            </li>
+            <li>
+              <a href="https://eprint.iacr.org/2024/1788" target="_blank" rel="noopener">密码学累加器研究</a> @ <a href="https://www.tencent.com/" target="_blank" rel="noopener">腾讯</a>
+              (2023-2024) &mdash; 基于 Merkle 树的新型透明性系统。论文被 <strong>Intel Labs</strong> 引用。
+            </li>
+            <li>
+              <strong>B-Emulator</strong> &amp; <strong>B-Arm Assembler</strong> &mdash;
+              完整的 ARM 模拟器（UART/定时器/HVS）+ 基于 RL 的缓存替换策略。
+              <span class="badge gold">帝国理工最佳项目奖</span>
+            </li>
+            <li>
+              担任助教，指导中国 NOI 金牌选手学习自动化攻击性安全技术 @ 腾讯 2025 星火计划。
             </li>
           </ul>
         </div>
@@ -533,11 +613,11 @@
     <section class="reveal">
       <div class="panel">
         <div class="section-header">
-          <span class="section-title">// vulnerabilities</span>
-          <span class="section-label">high severity</span>
+          <span class="section-title">// <span class="en">vulnerabilities</span><span class="zh">漏洞</span></span>
+          <span class="section-label"><span class="en">high severity</span><span class="zh">高危</span></span>
         </div>
         <div class="section-body">
-          <ul>
+          <ul class="en-block">
             <li>
               <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-57801" target="_blank" rel="noopener">CVE-2025-57801</a>
               &mdash; Signature malleability in gnark EdDSA/ECDSA. <span class="badge red">CVSS 8.6</span>
@@ -545,6 +625,16 @@
             <li>
               <a href="https://github.com/emmansun/gmsm/security/advisories/GHSA-5xxp-2vrj-x855" target="_blank" rel="noopener">CVE-2026-32614</a>
               &mdash; SM9 encryption forgery in gmsm. <span class="badge red">CVSS 7.5</span>
+            </li>
+          </ul>
+          <ul class="zh-block">
+            <li>
+              <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-57801" target="_blank" rel="noopener">CVE-2025-57801</a>
+              &mdash; gnark EdDSA/ECDSA 签名延展性漏洞。 <span class="badge red">CVSS 8.6</span>
+            </li>
+            <li>
+              <a href="https://github.com/emmansun/gmsm/security/advisories/GHSA-5xxp-2vrj-x855" target="_blank" rel="noopener">CVE-2026-32614</a>
+              &mdash; gmsm SM9 加密伪造漏洞。 <span class="badge red">CVSS 7.5</span>
             </li>
           </ul>
         </div>
@@ -555,11 +645,11 @@
     <section class="reveal">
       <div class="panel">
         <div class="section-header">
-          <span class="section-title">// research</span>
-          <span class="section-label">focus areas</span>
+          <span class="section-title">// <span class="en">research</span><span class="zh">研究</span></span>
+          <span class="section-label"><span class="en">focus areas</span><span class="zh">研究方向</span></span>
         </div>
         <div class="section-body">
-          <div class="tags">
+          <div class="tags en-block">
             <span class="tag">AI for Security</span>
             <span class="tag">Vulnerability Discovery</span>
             <span class="tag">Fuzzing</span>
@@ -567,6 +657,15 @@
             <span class="tag">Competitive Game AI</span>
             <span class="tag">Deep Learning</span>
             <span class="tag">LLM Agents</span>
+          </div>
+          <div class="tags zh-block">
+            <span class="tag">AI驱动的安全分析</span>
+            <span class="tag">漏洞挖掘</span>
+            <span class="tag">模糊测试</span>
+            <span class="tag">静态分析</span>
+            <span class="tag">竞技游戏 AI</span>
+            <span class="tag">深度学习</span>
+            <span class="tag">LLM 智能体</span>
           </div>
         </div>
       </div>
@@ -576,15 +675,15 @@
     <section class="reveal">
       <div class="panel">
         <div class="section-header">
-          <span class="section-title">// stats</span>
-          <span class="section-label">competitive rankings</span>
+          <span class="section-title">// <span class="en">stats</span><span class="zh">数据</span></span>
+          <span class="section-label"><span class="en">competitive rankings</span><span class="zh">竞赛排名</span></span>
         </div>
         <div class="section-body">
           <div class="stats">
             <div class="stat">
               <div class="stat-label">USACO Platinum</div>
               <div class="stat-value">#32</div>
-              <div class="stat-detail">worldwide &mdash; 2023 US Open</div>
+              <div class="stat-detail"><span class="en">worldwide &mdash; 2023 US Open</span><span class="zh">全球 &mdash; 2023 US Open</span></div>
             </div>
             <div class="stat">
               <div class="stat-label">Codeforces</div>
@@ -605,15 +704,21 @@
     <section class="reveal">
       <div class="panel">
         <div class="section-header">
-          <span class="section-title">// misc</span>
+          <span class="section-title">// <span class="en">misc</span><span class="zh">杂项</span></span>
           <span class="section-label">human.cfg</span>
         </div>
         <div class="section-body">
-          <ul>
+          <ul class="en-block">
             <li>Piano &mdash; Level 10, CMA Grading Examination.</li>
             <li>Go (Weiqi) &mdash; 5-Dan.</li>
             <li>Ultimate Champion in Clash Royale. Top-20 in <a href="https://generals.io" target="_blank" rel="noopener">generals.io</a>.</li>
             <li>Badminton Enthusiast.</li>
+          </ul>
+          <ul class="zh-block">
+            <li>钢琴 &mdash; 中央音乐学院十级。</li>
+            <li>围棋 &mdash; 业余五段。</li>
+            <li>皇室战争终极冠军联赛。<a href="https://generals.io" target="_blank" rel="noopener">generals.io</a> 全球 Top-20。</li>
+            <li>羽毛球爱好者。</li>
           </ul>
         </div>
       </div>
@@ -623,7 +728,7 @@
     <section id="contact" class="reveal">
       <div class="panel">
         <div class="section-header">
-          <span class="section-title">// contact</span>
+          <span class="section-title">// <span class="en">contact</span><span class="zh">联系</span></span>
           <span class="section-label">ping</span>
         </div>
         <div class="contact-line">
@@ -653,6 +758,19 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+    // Language toggle
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      localStorage.setItem('lang', lang);
+    }
+
+    function toggleLang() {
+      setLang(document.documentElement.lang === 'en' ? 'zh' : 'en');
+    }
+
+    // Restore saved language preference
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang) setLang(savedLang);
   </script>
 </body>
 </html>
