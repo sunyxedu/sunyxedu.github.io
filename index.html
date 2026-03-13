@@ -11,6 +11,7 @@
     gtag('js', new Date());
     gtag('config', 'G-FZP7XTWVC1');
   </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230a0a0a'/><text x='16' y='23' font-family='monospace' font-weight='800' font-size='22' fill='%2300ff41' text-anchor='middle'>H</text></svg>">
   <title>hemlix — Yuxuan Sun</title>
   <meta name="description" content="Yuxuan Sun — Security Researcher, Vulnerability Hunter, CTF Player">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -434,7 +435,7 @@
       <span class="top-bar-left">hemlix@icl:~$</span>
       <div class="top-bar-right">
         <a href="https://github.com/sunyxedu" target="_blank" rel="noopener">[github]</a>
-        <a href="mailto:sunyxedu@gmail.com" onclick="handleEmail(event)">[email]</a>
+        <a href="#contact">[email]</a>
         <a href="resume.pdf" target="_blank" rel="noopener">[resume]</a>
       </div>
     </div>
@@ -619,7 +620,7 @@
     </section>
 
     <!-- Contact -->
-    <section class="reveal">
+    <section id="contact" class="reveal">
       <div class="panel">
         <div class="section-header">
           <span class="section-title">// contact</span>
@@ -628,7 +629,7 @@
         <div class="contact-line">
           <span class="prompt-symbol">$</span>
           <span>echo $EMAIL &rarr;</span>
-          <a href="mailto:sunyxedu@gmail.com" onclick="handleEmail(event)" class="contact-box">sunyxedu@gmail.com</a>
+          <a href="mailto:sunyxedu@gmail.com" class="contact-box">sunyxedu@gmail.com</a>
         </div>
       </div>
     </section>
@@ -652,16 +653,6 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Email fallback: try mailto, if no handler opens Gmail compose after timeout
-    function handleEmail(e) {
-      e.preventDefault();
-      const gmailUrl = 'https://mail.google.com/mail/?view=cm&to=sunyxedu@gmail.com';
-      const w = window.open('', '_blank');
-      window.location.href = 'mailto:sunyxedu@gmail.com';
-      setTimeout(function() {
-        if (w) w.location.href = gmailUrl;
-      }, 500);
-    }
   </script>
 </body>
 </html>
