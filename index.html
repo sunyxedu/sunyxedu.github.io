@@ -111,93 +111,25 @@
       animation: fadeIn 0.6s ease 0.1s forwards;
     }
 
+    .hero-cmd {
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-cmd .prompt-sym {
+      color: var(--green);
+      text-shadow: 0 0 8px rgba(0,255,65,0.4);
+    }
+
     .hero-name {
-      font-size: clamp(3rem, 10vw, 5.5rem);
+      font-size: clamp(1.6rem, 5vw, 2.5rem);
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1;
       margin-bottom: 0.5rem;
-      position: relative;
-      display: inline-block;
-      background: linear-gradient(135deg, #00ff41 0%, #00d4ff 50%, #00ff41 100%);
-      background-size: 200% 200%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: gradientShift 4s ease infinite;
-      filter: drop-shadow(0 0 20px rgba(0,255,65,0.15));
-    }
-
-    .hero-name::before,
-    .hero-name::after {
-      content: 'HEMLIX';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: inherit;
-      background-size: inherit;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: gradientShift 4s ease infinite;
-    }
-
-    .hero-name::before {
-      animation: gradientShift 4s ease infinite, glitchTop 4s ease-in-out infinite;
-      clip-path: inset(0 0 60% 0);
-    }
-
-    .hero-name::after {
-      animation: gradientShift 4s ease infinite, glitchBottom 4s ease-in-out infinite;
-      clip-path: inset(60% 0 0 0);
-    }
-
-    .hero-name:hover {
-      filter: drop-shadow(0 0 30px rgba(0,255,65,0.3));
-    }
-
-    .hero-name:hover::before {
-      animation: gradientShift 2s ease infinite, glitchTopFast 0.4s ease-in-out infinite;
-    }
-
-    .hero-name:hover::after {
-      animation: gradientShift 2s ease infinite, glitchBottomFast 0.4s ease-in-out infinite;
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    @keyframes glitchTop {
-      0%, 88%, 100% { transform: translate(0); }
-      90% { transform: translate(-3px, -1px); }
-      92% { transform: translate(3px, 1px); }
-      94% { transform: translate(-2px, 0); }
-    }
-
-    @keyframes glitchBottom {
-      0%, 88%, 100% { transform: translate(0); }
-      91% { transform: translate(2px, 1px); }
-      93% { transform: translate(-3px, 0); }
-      95% { transform: translate(1px, -1px); }
-    }
-
-    @keyframes glitchTopFast {
-      0%, 100% { transform: translate(0); }
-      25% { transform: translate(-4px, -2px); }
-      50% { transform: translate(4px, 2px); }
-      75% { transform: translate(-3px, 1px); }
-    }
-
-    @keyframes glitchBottomFast {
-      0%, 100% { transform: translate(0); }
-      25% { transform: translate(3px, 1px); }
-      50% { transform: translate(-4px, -1px); }
-      75% { transform: translate(2px, 2px); }
+      color: var(--green);
+      text-shadow: 0 0 10px rgba(0,255,65,0.25), 0 0 40px rgba(0,255,65,0.08);
     }
 
     /* ── Prompt line ── */
@@ -491,15 +423,17 @@
 
     <!-- Top bar -->
     <div class="top-bar">
-      <span class="top-bar-left">hemlix@void:~$</span>
+      <span class="top-bar-left">hemlix@icl:~$</span>
       <div class="top-bar-right">
         <a href="https://github.com/sunyxedu" target="_blank" rel="noopener">[github]</a>
         <a href="mailto:sunyxedu@gmail.com">[email]</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">[resume]</a>
       </div>
     </div>
 
     <!-- Hero Name -->
     <div class="hero-header">
+      <div class="hero-cmd"><span class="prompt-sym">$</span> whoami</div>
       <h1 class="hero-name">HEMLIX</h1>
     </div>
 
@@ -507,7 +441,7 @@
     <div class="prompt">
       <div class="prompt-line">
         <span class="prompt-symbol">$</span>
-        <span class="prompt-text">I find vulnerabilities and exploit them.<span class="cursor"></span></span>
+        <span class="prompt-text">I teach machines to learn, compete and win.<span class="cursor"></span></span>
       </div>
       <p class="prompt-sub">
         <span style="color: var(--comment);">// </span>Yuxuan Sun &mdash; Computing @
@@ -531,7 +465,7 @@
             <li>
               Security Researcher @ <a href="https://xlab.tencent.com/en/" target="_blank" rel="noopener">Tencent Xuanwu Lab</a> &mdash;
               built <a href="https://github.com/XuanwuAI/CodeRetrX" target="_blank" rel="noopener">CodeRetrX</a>, a semantic code retrieval framework.
-              <span class="badge red">Black Hat Asia 2026</span>
+              <a href="https://blackhat.com/asia-26/arsenal/schedule/index.html#coderetrx-one-click-to-start-your-journey-of-agentic-bug-hunting-50342" target="_blank" rel="noopener"><span class="badge red">Black Hat Asia 2026</span></a>
               Used it to power a vulnerability detection agent that found 20+ vulnerabilities,
               including <a href="https://github.com/advisories/GHSA-95v9-hv42-pwrj" target="_blank" rel="noopener">CVE-2025-57801</a> (High, CVSS 8.6) which I verified.
             </li>
@@ -541,14 +475,18 @@
             </li>
             <li>
               Intern CTF player with <a href="https://ctftime.org/team/58979" target="_blank" rel="noopener">r3kapig</a> &mdash;
-              5th/955 @ LA CTF 2026. 8th/970 @ Srdnlen CTF. Team ranked #1 on CTFtime 2025.
-              Helping build <strong>Auto-CTFer</strong>.
+              5th/955 @ LA CTF 2026. 8th/970 @ Srdnlen CTF.
+              Helping build <strong>Auto-CTFer</strong>. Team ranked #1 on CTFtime 2025.
             </li>
             <li>
               Building <strong>GamingMaster</strong> &mdash; a single shared-weight model that masters nearly all competitive games.
               Sub-project: <strong>AlphaGen</strong>, an RL bot for
               <a href="https://generals.io" target="_blank" rel="noopener">generals.io</a>
               using imitation learning + offline policy improvement. Collab with MIT.
+            </li>
+            <li>
+              Building <strong>RedShift</strong> &mdash; an automated vulnerability discovery tool.
+              Automatically discovers vulnerabilities, generates PoCs, and exploits them.
             </li>
           </ul>
         </div>
@@ -569,16 +507,38 @@
               <a href="https://www.imperial.ac.uk/" target="_blank" rel="noopener">Imperial College London</a> Security &amp; ML Lab.
             </li>
             <li>
-              Cryptographic accumulators research @ <a href="https://www.tencent.com/" target="_blank" rel="noopener">Tencent</a>
-              (2023-2024) &mdash; novel transparency system with Merkle Trees. Paper cited by Intel Labs.
+              <a href="https://eprint.iacr.org/2024/1788" target="_blank" rel="noopener">Cryptographic accumulators research</a> @ <a href="https://www.tencent.com/" target="_blank" rel="noopener">Tencent</a>
+              (2023-2024) &mdash; novel transparency system with Merkle Trees. Paper cited by <strong>Intel Labs</strong>.
             </li>
             <li>
               <strong>B-Emulator</strong> &amp; <strong>B-Arm Assembler</strong> &mdash;
               full ARM emulator with UART/timer/HVS + RL-based cache replacement.
-              <span class="badge gold">Best Project</span>
+              <span class="badge gold">Imperial Best Overall Project Award</span>
             </li>
             <li>
-              Mentored Chinese NOI Gold medalists on automated offensive security @ Tencent TSpark.
+              Mentored Chinese NOI Gold medalists on automated offensive security @ Tencent TSpark (2025).
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vulnerabilities -->
+    <section class="reveal">
+      <div class="panel">
+        <div class="section-header">
+          <span class="section-title">// vulnerabilities</span>
+          <span class="section-label">high severity</span>
+        </div>
+        <div class="section-body">
+          <ul>
+            <li>
+              <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-57801" target="_blank" rel="noopener">CVE-2025-57801</a>
+              &mdash; Signature malleability in gnark EdDSA/ECDSA. <span class="badge red">CVSS 8.6</span>
+            </li>
+            <li>
+              <a href="https://github.com/emmansun/gmsm/security/advisories/GHSA-5xxp-2vrj-x855" target="_blank" rel="noopener">CVE-2026-32614</a>
+              &mdash; SM9 encryption forgery in gmsm. <span class="badge red">CVSS 7.5</span>
             </li>
           </ul>
         </div>
@@ -598,8 +558,8 @@
             <span class="tag">Vulnerability Discovery</span>
             <span class="tag">Fuzzing</span>
             <span class="tag">Static Analysis</span>
-            <span class="tag">Game AI</span>
-            <span class="tag">Deep RL</span>
+            <span class="tag">Competitive Game AI</span>
+            <span class="tag">Deep Learning</span>
             <span class="tag">LLM Agents</span>
           </div>
         </div>
@@ -647,6 +607,7 @@
             <li>Piano &mdash; Level 10, CMA Grading Examination.</li>
             <li>Go (Weiqi) &mdash; 5-Dan.</li>
             <li>Ultimate Champion in Clash Royale. Top-20 in <a href="https://generals.io" target="_blank" rel="noopener">generals.io</a>.</li>
+            <li>Badminton Enthusiast.</li>
           </ul>
         </div>
       </div>
