@@ -11,9 +11,9 @@
     gtag('js', new Date());
     gtag('config', 'G-FZP7XTWVC1');
   </script>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230a0a0a'/><text x='16' y='23' font-family='monospace' font-weight='800' font-size='22' fill='%2300ff41' text-anchor='middle'>H</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230e1210'/><text x='16' y='23' font-family='monospace' font-weight='800' font-size='22' fill='%238df59b' text-anchor='middle'>H</text></svg>">
   <title>hemlix — Yuxuan Sun</title>
-  <meta name="description" content="Yuxuan Sun — Security Researcher, Vulnerability Hunter, CTF Player">
+  <meta name="description" content="Yuxuan Sun — Security Researcher, AI Infra Engineer, Vulnerability Hunter, CTF Player">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,19 +21,16 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #0a0a0a;
-      --bg-panel: #0f0f0f;
-      --text: #b0b0b0;
-      --text-bright: #e0e0e0;
-      --green: #00ff41;
-      --green-dim: #00cc33;
-      --green-dark: rgba(0, 255, 65, 0.08);
-      --cyan: #00d4ff;
-      --red: #ff3333;
-      --yellow: #ffcc00;
-      --border: #1a1a1a;
-      --border-bright: #2a2a2a;
-      --comment: #555;
+      --bg: #0e1210;
+      --text: #b2bab3;
+      --text-bright: #f2f6f2;
+      --green: #8df59b;
+      --green-dim: #63b56f;
+      --red: #f97e75;
+      --yellow: #e0b13a;
+      --border: #262e29;
+      --border-bright: #3a453e;
+      --comment: #6d7970;
     }
 
     html { scroll-behavior: smooth; }
@@ -42,47 +39,23 @@
       font-family: 'JetBrains Mono', monospace;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.75;
       font-size: 13px;
       min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Scanlines overlay ── */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: repeating-linear-gradient(
-        0deg, transparent, transparent 2px,
-        rgba(0, 0, 0, 0.03) 2px, rgba(0, 0, 0, 0.03) 4px
-      );
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    /* ── CRT vignette ── */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.4) 100%);
-      pointer-events: none;
-      z-index: 9998;
-    }
-
-    ::selection { background: var(--green); color: #000; }
+    ::selection { background: var(--green); color: var(--bg); }
 
     .container {
       width: 100%;
-      max-width: 760px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
+      padding: 2.5rem 1.5rem 4rem;
     }
 
     @media (min-width: 768px) {
-      .container { padding: 3rem 2rem 5rem; }
+      .container { padding: 4rem 2rem 6rem; }
     }
 
     /* ── Top bar ── */
@@ -90,9 +63,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.5rem 0;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
+      margin-bottom: 3.5rem;
       font-size: 12px;
       opacity: 0;
       animation: fadeIn 0.5s ease forwards;
@@ -102,13 +73,14 @@
 
     .top-bar-right {
       display: flex;
-      gap: 1rem;
+      gap: 1.25rem;
+      align-items: center;
     }
 
     .top-bar-right a, .top-bar-right .lang-toggle {
       color: var(--comment);
       text-decoration: none;
-      transition: color 0.2s;
+      transition: color 0.15s;
     }
 
     .top-bar-right a:hover, .top-bar-right .lang-toggle:hover { color: var(--green); }
@@ -119,14 +91,11 @@
       font-family: inherit;
       font-size: 12px;
       cursor: pointer;
-      padding: 0.05rem 0.4rem;
-      transition: all 0.2s;
+      padding: 0.05rem 0.45rem;
+      transition: color 0.15s, border-color 0.15s;
     }
 
-    .lang-toggle:hover {
-      border-color: var(--green);
-      box-shadow: 0 0 8px rgba(0, 255, 65, 0.1);
-    }
+    .lang-toggle:hover { border-color: var(--green-dim); }
 
     /* ── Language toggle ── */
     .zh { display: none; }
@@ -137,39 +106,34 @@
     .zh-block { display: none !important; }
     .en-block { display: flex; }
 
-    /* ── Hero Name (glitch style) ── */
+    /* ── Hero ── */
     .hero-header {
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
       opacity: 0;
       animation: fadeIn 0.6s ease 0.1s forwards;
     }
 
     .hero-cmd {
       font-size: 13px;
-      color: var(--text);
-      margin-bottom: 0.4rem;
+      color: var(--comment);
+      margin-bottom: 0.5rem;
     }
 
-    .hero-cmd .prompt-sym {
-      color: var(--green);
-      text-shadow: 0 0 8px rgba(0,255,65,0.4);
-    }
+    .hero-cmd .prompt-sym { color: var(--green); }
 
     .hero-name {
-      font-size: clamp(1.6rem, 5vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
+      font-size: clamp(1.7rem, 5vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
       line-height: 1;
-      margin-bottom: 0.5rem;
-      color: var(--green);
-      text-shadow: 0 0 10px rgba(0,255,65,0.25), 0 0 40px rgba(0,255,65,0.08);
+      color: var(--text-bright);
     }
 
     /* ── Prompt line ── */
     .prompt {
-      margin-bottom: 2.5rem;
+      margin-bottom: 3.5rem;
       opacity: 0;
-      animation: fadeIn 0.6s ease 0.3s forwards;
+      animation: fadeIn 0.6s ease 0.25s forwards;
     }
 
     .prompt-line {
@@ -181,91 +145,80 @@
     .prompt-symbol {
       color: var(--green);
       flex-shrink: 0;
-      text-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
     }
 
     .prompt-text {
       color: var(--text-bright);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 500;
     }
 
     .prompt-text .cursor {
       display: inline-block;
-      width: 8px;
-      height: 15px;
+      width: 7px;
+      height: 14px;
       background: var(--green);
-      margin-left: 3px;
+      margin-left: 4px;
       vertical-align: text-bottom;
-      animation: blink 1s step-end infinite;
-      box-shadow: 0 0 6px rgba(0, 255, 65, 0.5);
+      animation: blink 1.2s step-end infinite;
     }
 
     .prompt-sub {
-      margin-top: 0.5rem;
+      margin-top: 0.75rem;
       padding-left: 1.5rem;
       color: var(--text);
       font-size: 12.5px;
     }
 
-    .prompt-sub a {
-      color: var(--cyan);
+    /* ── Links ── */
+    .prompt-sub a, section a {
+      color: var(--text-bright);
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: all 0.2s;
+      border-bottom: 1px solid var(--border-bright);
+      transition: color 0.15s, border-color 0.15s;
     }
 
-    .prompt-sub a:hover {
-      border-bottom-color: var(--cyan);
-      text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+    .prompt-sub a:hover, section a:hover {
+      color: var(--green);
+      border-bottom-color: var(--green-dim);
     }
 
     /* ── Sections ── */
-    section { margin-bottom: 2rem; }
+    section { margin-bottom: 3rem; }
 
     .section-header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 0.5rem 1rem;
+      align-items: baseline;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.1rem;
       border-bottom: 1px solid var(--border);
-      background: var(--bg);
     }
 
     .section-title {
       font-size: 11px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       color: var(--green);
-      text-shadow: 0 0 6px rgba(0, 255, 65, 0.2);
     }
 
     .section-label {
-      font-size: 10px;
+      font-size: 11px;
       color: var(--comment);
-    }
-
-    section .panel {
-      border: 1px solid var(--border);
-      background: var(--bg-panel);
-    }
-
-    .section-body {
-      padding: 1rem;
     }
 
     section ul {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 1rem;
     }
 
     section li {
       font-size: 12.5px;
       line-height: 1.8;
-      padding-left: 1.2rem;
+      padding-left: 1.25rem;
       position: relative;
     }
 
@@ -274,20 +227,6 @@
       position: absolute;
       left: 0;
       color: var(--green-dim);
-      font-weight: 600;
-    }
-
-    section a {
-      color: var(--cyan);
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(0, 212, 255, 0.3);
-      transition: all 0.2s;
-    }
-
-    section a:hover {
-      color: #fff;
-      border-bottom-color: var(--cyan);
-      text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
     }
 
     strong { color: var(--text-bright); font-weight: 600; }
@@ -295,67 +234,53 @@
     /* ── Badge ── */
     .badge {
       display: inline-block;
-      font-size: 9px;
-      font-weight: 700;
+      font-size: 9.5px;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      padding: 0.1rem 0.4rem;
-      margin-left: 0.3rem;
+      line-height: 1.7;
+      padding: 0 0.4rem;
+      margin-left: 0.35rem;
       vertical-align: middle;
+      border: 1px solid;
     }
 
-    .badge.red {
-      background: var(--red);
-      color: #fff;
-      box-shadow: 0 0 8px rgba(255, 51, 51, 0.3);
-    }
+    .badge.red { color: var(--red); border-color: rgba(244, 112, 103, 0.4); }
+    .badge.gold { color: var(--yellow); border-color: rgba(212, 167, 44, 0.4); }
+    .badge.green { color: var(--green); border-color: rgba(126, 231, 135, 0.4); }
 
-    .badge.gold {
-      background: var(--yellow);
-      color: #000;
-      box-shadow: 0 0 8px rgba(255, 204, 0, 0.3);
-    }
-
-    .badge.green {
-      background: var(--green);
-      color: #000;
-      box-shadow: 0 0 8px rgba(0, 255, 65, 0.3);
-    }
+    section a .badge { border-bottom: 1px solid; }
 
     /* ── Tags ── */
     .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 0.5rem;
     }
 
     .tag {
       font-size: 11px;
-      padding: 0.2rem 0.6rem;
+      padding: 0.15rem 0.6rem;
       border: 1px solid var(--border-bright);
-      color: var(--green-dim);
-      background: var(--green-dark);
-      transition: all 0.2s;
+      color: var(--text);
+      transition: color 0.15s, border-color 0.15s;
     }
 
     .tag:hover {
-      border-color: var(--green);
+      border-color: var(--green-dim);
       color: var(--green);
-      text-shadow: 0 0 6px rgba(0, 255, 65, 0.3);
-      box-shadow: 0 0 10px rgba(0, 255, 65, 0.05);
     }
 
     /* ── Stats grid ── */
     .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 0.75rem;
     }
 
     .stat {
-      padding: 0.75rem;
+      padding: 0.8rem 1rem;
       border: 1px solid var(--border);
-      background: var(--bg);
     }
 
     .stat-label {
@@ -363,14 +288,13 @@
       color: var(--comment);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.3rem;
     }
 
     .stat-value {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--green);
       font-weight: 600;
-      text-shadow: 0 0 8px rgba(0, 255, 65, 0.2);
     }
 
     .stat-detail {
@@ -381,42 +305,31 @@
 
     .stat-detail a {
       color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px dotted var(--border-bright);
-      transition: color 0.2s;
+      border-bottom-color: var(--border);
     }
-
-    .stat-detail a:hover { color: var(--cyan); }
 
     /* ── Contact ── */
     .contact-line {
       font-size: 12.5px;
-      padding: 0.75rem 1rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      flex-wrap: wrap;
     }
-
-    .contact-line .prompt-symbol { font-size: 12px; }
 
     .contact-box {
       color: var(--green);
-      border: 1px solid var(--border-bright);
-      padding: 0.15rem 0.5rem;
-      border-bottom: 1px solid var(--border-bright);
-      transition: all 0.2s;
+      text-decoration: none;
+      border-bottom: 1px solid var(--green-dim);
+      transition: color 0.15s;
     }
 
-    .contact-box:hover {
-      border-color: var(--green);
-      box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
-      text-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
-    }
+    .contact-box:hover { color: var(--text-bright); }
 
     /* ── Footer ── */
     footer {
-      margin-top: 2rem;
-      padding-top: 1rem;
+      margin-top: 4rem;
+      padding-top: 1.25rem;
       border-top: 1px solid var(--border);
       font-size: 11px;
       color: var(--comment);
@@ -425,7 +338,7 @@
     /* ── Scroll reveal ── */
     .reveal {
       opacity: 0;
-      transform: translateY(10px);
+      transform: translateY(8px);
       transition: opacity 0.45s ease, transform 0.45s ease;
     }
 
@@ -435,7 +348,7 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
+      from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -443,11 +356,17 @@
       50% { opacity: 0; }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      .top-bar, .hero-header, .prompt, .reveal { opacity: 1; transform: none; animation: none; transition: none; }
+      .prompt-text .cursor { animation: none; }
+    }
+
     /* ── Mobile ── */
     @media (max-width: 480px) {
       body { font-size: 12px; }
-      .container { padding: 1.5rem 1rem 3rem; }
+      .container { padding: 2rem 1.25rem 3rem; }
       .stats { grid-template-columns: 1fr; }
+      .top-bar { margin-bottom: 2.5rem; }
     }
   </style>
 </head>
@@ -478,7 +397,7 @@
       <div class="prompt-line">
         <span class="prompt-symbol">$</span>
         <span class="prompt-text">
-          <span class="en">I teach machines to learn, compete and win.</span>
+          <span class="en">I teach machines to win, and build the rails they run on.</span>
           <span class="zh">自动化一切竞技性任务。</span>
           <span class="cursor"></span>
         </span>
