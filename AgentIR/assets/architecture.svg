@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 434" role="img" aria-labelledby="title desc">
+  <title id="title">AgentIR execution architecture</title>
+  <desc id="desc">A Python program is traced into a guarded graph. The scheduler sends ready work to vLLM engine adapters and tool workers. Their results resolve dependencies and decisions. Only surviving output is published. An optional static shape compiler provides a scheduling plan.</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="m1 1 6 3-6 3" fill="none" stroke="#71868a" stroke-width="1.3"/></marker></defs>
+  <style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#2d383c;font-size:14px}.title{font-weight:600;font-size:16px}.sub{fill:#617075;font-size:12px}.box{fill:#fff;stroke:#d3dedd;stroke-width:1.3}.line{fill:none;stroke:#71868a;stroke-width:1.4;marker-end:url(#arrow)}.green{fill:#edf5f3;stroke:#9ebeb8}</style>
+  <rect class="box" x="22" y="90" width="157" height="80" rx="5"/><text class="title" x="38" y="120">Python program</text><text class="sub" x="38" y="143">infer · op · choose</text>
+  <path class="line" d="M179 130h35"/>
+  <rect class="box" x="216" y="90" width="152" height="80" rx="5"/><text class="title" x="232" y="120">Tracer</text><text class="sub" x="232" y="143">Construct ahead</text>
+  <path class="line" d="M368 130h35"/>
+  <rect class="box green" x="405" y="90" width="170" height="80" rx="5"/><text class="title" x="422" y="120">Guarded IR</text><text class="sub" x="422" y="143">Data + control edges</text>
+  <path class="line" d="M490 170v42"/>
+  <rect class="box green" x="405" y="215" width="170" height="84" rx="5"/><text class="title" x="422" y="246">Scheduler</text><text class="sub" x="422" y="271">Readiness · priority</text>
+  <path class="line" d="M575 244h33v-108h24"/>
+  <rect class="box" x="636" y="90" width="162" height="92" rx="5"/><text class="title" x="652" y="119">Engine adapters</text><text class="sub" x="652" y="142">Local vLLM</text><text class="sub" x="652" y="162">Certified remote vLLM</text>
+  <path class="line" d="M575 265h57"/>
+  <rect class="box" x="636" y="226" width="162" height="78" rx="5"/><text class="title" x="652" y="254">Tool workers</text><text class="sub" x="652" y="278">Effect-aware dispatch</text>
+  <path class="line" d="M717 90V42H490v43" stroke-dasharray="5 5"/><text class="sub" x="522" y="31">Results resolve the graph</text>
+  <path class="line" d="M717 304v38H522v-37" stroke-dasharray="5 5"/><text class="sub" x="558" y="360">Observations + completion</text>
+  <rect class="box" x="22" y="230" width="212" height="73" rx="5" stroke-dasharray="5 4"/><text class="title" x="38" y="260">Static shape compiler</text><text class="sub" x="38" y="282">Optional, no engine required</text>
+  <path class="line" d="M234 266h166" stroke-dasharray="5 5"/><text class="sub" x="268" y="253">Funding plan</text>
+  <path class="line" d="M460 299v88H236"/><text class="sub" x="284" y="376">Surviving work</text>
+  <rect class="box green" x="22" y="351" width="212" height="66" rx="5"/><text class="title" x="38" y="378">Committed result</text><text class="sub" x="38" y="399">force(...) · ledger · timeline</text>
+</svg>

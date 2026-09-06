@@ -1,0 +1,2393 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Understand, build, and verify speculative agent programs with AgentIR.">
+      
+      
+      
+        <link rel="canonical" href="https://hemlix.me/AgentIR/reference/api/">
+      
+      
+        <link rel="prev" href="../../verification/experiments/">
+      
+      
+        <link rel="next" href="../configuration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/mark.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Python API - AgentIR</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AgentIR" class="md-header__button md-logo" aria-label="AgentIR" data-md-component="logo">
+      
+  <img src="../../assets/mark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AgentIR
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/sunyxedu/AgentIR" title="View the source repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">sunyxedu/AgentIR</div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AgentIR" class="md-nav__button md-logo" aria-label="AgentIR" data-md-component="logo">
+      
+  <img src="../../assets/mark.svg" alt="logo">
+
+    </a>
+    AgentIR
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/sunyxedu/AgentIR" title="View the source repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">sunyxedu/AgentIR</div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your first program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build programs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Build programs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Branching and loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and observations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vllm-backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models and vLLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/remote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/harbor-terminal-bench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Harbor and Terminal-Bench
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understand the design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Understand the design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity and the IR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scheduling and commitment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/tool-streaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streaming tool calls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prediction and optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/compilation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static shape compilation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verify and measure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Verify and measure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../verification/correctness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Correctness checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../verification/diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timelines and diagnostics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../verification/benchmarking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../verification/experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Experiment archive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-construction-and-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt construction and generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt construction and generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lit(s)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catxs-and-fmttemplate-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cat(*xs) and fmt(template, **parts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inferx-modelmain-logprobsfalse-hint00-params" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        infer(x, *, model="main", logprobs=False, hint=0.0, **params)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expandx-k-modelmain-logprobsfalse-hint00-params" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        expand(x, k, *, model="main", logprobs=False, hint=0.0, **params)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#values-and-publication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Values and publication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values and publication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textx-and-out_textx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        text(x) and out_text(x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logprobs_ofx-and-top_logprobs_ofx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        logprobs_of(x) and top_logprobs_of(x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opf-args-purefalse-label-afternone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        op(f, *args, pure=False, label="", after=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collectvals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        collect(vals)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forcex-timeoutnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        force(x, timeout=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selection-and-repetition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selection and repetition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selection and repetition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosepool-by-k1-hintnone-predict_losersnone-boundnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        choose(pool, by, k=1, hint=None, predict_losers=None, bound=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gatex-cond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gate(x, cond)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loopinit-body-max_iters-lookaheadnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        loop(init, body, max_iters, lookahead=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection_boundspool-bounds-k1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        selection_bounds(pool, bounds, k=1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefetch_on_streamsource-build-modeljudge-chunk_tokensnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        prefetch_on_stream(source, build, *, model="judge", chunk_tokens=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direct-tools-and-projections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct tools and projections
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct tools and projections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toolfn-argsnone-name-effectunknown-alphanone-alpha_name-afternone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tool(fn, args=None, *, name="", effect="unknown", alpha=None, alpha_name="", after=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obst-alphanone-name-alpha_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        obs(t, alpha=None, *, name="", alpha_name="")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observet-alphanone-name-alpha_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        observe(t, alpha=None, *, name="", alpha_name="")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ackt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ack(t)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expectt-guess-alphanone-name-alpha_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        expect(t, guess, *, alpha=None, name="", alpha_name="")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classifyt-cases-alphanone-alpha_name-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        classify(t, cases, *, alpha=None, alpha_name="", name="")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callsy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        calls(y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autonomous-tool-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autonomous tool definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Autonomous tool definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tooldeffn-effectunknown-obs-guess-descriptionnone-input_schemanone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ToolDef(fn, effect="unknown", ..., obs=..., guess=..., description=None, input_schema=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observation-policy-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observation policy types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-and-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime and diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canonical-advanced-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canonical advanced modules
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribute
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contribute
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/source-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work on the documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-construction-and-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt construction and generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt construction and generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lit(s)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catxs-and-fmttemplate-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cat(*xs) and fmt(template, **parts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inferx-modelmain-logprobsfalse-hint00-params" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        infer(x, *, model="main", logprobs=False, hint=0.0, **params)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expandx-k-modelmain-logprobsfalse-hint00-params" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        expand(x, k, *, model="main", logprobs=False, hint=0.0, **params)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#values-and-publication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Values and publication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values and publication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textx-and-out_textx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        text(x) and out_text(x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logprobs_ofx-and-top_logprobs_ofx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        logprobs_of(x) and top_logprobs_of(x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opf-args-purefalse-label-afternone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        op(f, *args, pure=False, label="", after=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collectvals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        collect(vals)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forcex-timeoutnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        force(x, timeout=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selection-and-repetition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selection and repetition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selection and repetition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosepool-by-k1-hintnone-predict_losersnone-boundnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        choose(pool, by, k=1, hint=None, predict_losers=None, bound=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gatex-cond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gate(x, cond)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loopinit-body-max_iters-lookaheadnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        loop(init, body, max_iters, lookahead=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection_boundspool-bounds-k1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        selection_bounds(pool, bounds, k=1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefetch_on_streamsource-build-modeljudge-chunk_tokensnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        prefetch_on_stream(source, build, *, model="judge", chunk_tokens=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direct-tools-and-projections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct tools and projections
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct tools and projections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toolfn-argsnone-name-effectunknown-alphanone-alpha_name-afternone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tool(fn, args=None, *, name="", effect="unknown", alpha=None, alpha_name="", after=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obst-alphanone-name-alpha_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        obs(t, alpha=None, *, name="", alpha_name="")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observet-alphanone-name-alpha_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        observe(t, alpha=None, *, name="", alpha_name="")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ackt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ack(t)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expectt-guess-alphanone-name-alpha_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        expect(t, guess, *, alpha=None, name="", alpha_name="")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classifyt-cases-alphanone-alpha_name-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        classify(t, cases, *, alpha=None, alpha_name="", name="")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callsy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        calls(y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autonomous-tool-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autonomous tool definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Autonomous tool definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tooldeffn-effectunknown-obs-guess-descriptionnone-input_schemanone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ToolDef(fn, effect="unknown", ..., obs=..., guess=..., description=None, input_schema=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observation-policy-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observation policy types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-and-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime and diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canonical-advanced-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canonical advanced modules
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="python-api">Python API<a class="headerlink" href="#python-api" title="Permanent link">&para;</a></h1>
+<p>This reference covers the supported root exports in <code>agentir.__all__</code> for <strong>1.3.0</strong>. Signatures below emphasize public arguments; types and adapter-specific details live in the linked source modules. Begin with <a href="../../getting-started/concepts/">core concepts</a> for the programming model.</p>
+<p>The functions are also available through the <code>agentir.api</code> module. <code>agentir.__version__</code> reports the package version.</p>
+<h2 id="prompt-construction-and-generation">Prompt construction and generation<a class="headerlink" href="#prompt-construction-and-generation" title="Permanent link">&para;</a></h2>
+<h3 id="lits"><code>lit(s)</code><a class="headerlink" href="#lits" title="Permanent link">&para;</a></h3>
+<p>Create a <code>Seq</code> from a string or token-ID tuple, according to the runtime wire. The literal belongs to the current tracing context.</p>
+<h3 id="catxs-and-fmttemplate-parts"><code>cat(*xs)</code> and <code>fmt(template, **parts)</code><a class="headerlink" href="#catxs-and-fmttemplate-parts" title="Permanent link">&para;</a></h3>
+<p>Compose symbolic prompt states. <code>cat</code> preserves producer and observation segments and canonicalizes adjacent literals. <code>fmt</code> supports named composition without automatically converting every handle into a string.</p>
+<p>Composition supports at most one independent unresolved choice. Combining independent choices into a Cartesian product is not implemented.</p>
+<h3 id="inferx-modelmain-logprobsfalse-hint00-params"><code>infer(x, *, model="main", logprobs=False, hint=0.0, **params)</code><a class="headerlink" href="#inferx-modelmain-logprobsfalse-hint00-params" title="Permanent link">&para;</a></h3>
+<p>Register one continuation. A normal result is a <code>Seq</code> containing its input state and generated output. An unresolved <code>Choice</code> is hoisted into guarded per-member continuations. A <code>Val</code> holding a handle introduces a materialization barrier.</p>
+<p><code>params</code> are the validated <a href="../configuration/#sampling-parameters">sampling parameters</a>. Request log probabilities with <code>logprobs=True</code>. <code>hint</code> is scheduling advice, not a score used to select the output.</p>
+<p>With <code>tools=registry</code>, this function runs the autonomous tool loop. Its options include <code>max_turns=8</code>, optional <code>max_calls</code>, <code>timeout</code>, and <code>system</code>. The tool loop defaults to eight call slots, a 600-second timeout, 512 output tokens per turn, and temperature zero when not overridden. It returns the final assistant-turn <code>Seq</code> and requires the token wire.</p>
+<p><code>projection=</code> accepts a prepared streamed projection for advanced custom tool control. It conflicts with autonomous <code>tools=</code> mode. The <code>_stream_projection</code> argument is internal.</p>
+<h3 id="expandx-k-modelmain-logprobsfalse-hint00-params"><code>expand(x, k, *, model="main", logprobs=False, hint=0.0, **params)</code><a class="headerlink" href="#expandx-k-modelmain-logprobsfalse-hint00-params" title="Permanent link">&para;</a></h3>
+<p>Register <code>k</code> sampling lanes from a shared input. Each lane receives a distinct draw identity. Returns a list of handles; physical prefix reuse depends on the engine cache.</p>
+<h2 id="values-and-publication">Values and publication<a class="headerlink" href="#values-and-publication" title="Permanent link">&para;</a></h2>
+<h3 id="textx-and-out_textx"><code>text(x)</code> and <code>out_text(x)</code><a class="headerlink" href="#textx-and-out_textx" title="Permanent link">&para;</a></h3>
+<p>Return <code>Val[str]</code> for the complete prompt state or the generated tail, respectively. A selected <code>Choice</code> is resolved under its publication conditions when forced.</p>
+<h3 id="logprobs_ofx-and-top_logprobs_ofx"><code>logprobs_of(x)</code> and <code>top_logprobs_of(x)</code><a class="headerlink" href="#logprobs_ofx-and-top_logprobs_ofx" title="Permanent link">&para;</a></h3>
+<p>Return asynchronous per-token log-probability observations. The producer must have been created with the required log-probability observation mode and top-k setting. These functions cannot retroactively request engine observations.</p>
+<h3 id="opf-args-purefalse-label-afternone"><code>op(f, *args, pure=False, label="", after=None)</code><a class="headerlink" href="#opf-args-purefalse-label-afternone" title="Permanent link">&para;</a></h3>
+<p>Run a Python function when its inputs are available and its effect conditions permit it. Return a <code>Val</code>. The default fences effects until commitment; <code>pure=True</code> declares replayable computation suitable for speculative execution.</p>
+<p><code>label</code> identifies the operation in diagnostics. <code>after</code> adds predecessor ordering. Keep expensive blocking work out of event-loop callbacks; <code>op</code> bodies use the operation worker pool.</p>
+<h3 id="collectvals"><code>collect(vals)</code><a class="headerlink" href="#collectvals" title="Permanent link">&para;</a></h3>
+<p>Return one <code>Val</code> containing all results in input order. Callback aggregation waits for every member to settle and reports the first failure in list order. It does not allocate a blocking worker per member.</p>
+<h3 id="forcex-timeoutnone"><code>force(x, timeout=None)</code><a class="headerlink" href="#forcex-timeoutnone" title="Permanent link">&para;</a></h3>
+<p>Materialize a value or handle after the relevant guards allow publication. A rejected world raises <code>Squashed</code>; a surviving failure propagates. This blocks the tracer where a concrete result is required.</p>
+<h2 id="selection-and-repetition">Selection and repetition<a class="headerlink" href="#selection-and-repetition" title="Permanent link">&para;</a></h2>
+<h3 id="choosepool-by-k1-hintnone-predict_losersnone-boundnone"><code>choose(pool, by, k=1, hint=None, predict_losers=None, bound=None)</code><a class="headerlink" href="#choosepool-by-k1-hintnone-predict_losersnone-boundnone" title="Permanent link">&para;</a></h3>
+<p>Select <code>k</code> ranked members using a concrete or asynchronous ranking of pool indices. Return a list of rank-specific <code>Choice</code> handles. Rankings must contain distinct, valid integer positions and enough members for <code>k</code>; duplicate pool members are invalid.</p>
+<p><code>hint</code> carries per-member scheduling information. <code>predict_losers</code> can demote speculative work without removing its surviving execution obligation. <code>bound</code> introduces the distinct <a href="../../design/optimization/#use-score-bounds-only-with-a-valid-proof">bound-commit algorithm</a>.</p>
+<h3 id="gatex-cond"><code>gate(x, cond)</code><a class="headerlink" href="#gatex-cond" title="Permanent link">&para;</a></h3>
+<p>Keep <code>x</code> when the condition is true; otherwise squash it. Returns a <code>Choice</code>, with no false-case fallback value.</p>
+<h3 id="loopinit-body-max_iters-lookaheadnone"><code>loop(init, body, max_iters, lookahead=None)</code><a class="headerlink" href="#loopinit-body-max_iters-lookaheadnone" title="Permanent link">&para;</a></h3>
+<p>Call <code>body(state) → (next_state, continue_condition)</code> under successive entry guards. Return the state entering the first round whose condition is false, or the final next state if the bound is exhausted. See <a href="../../guides/control-flow/#iterate-while-preserving-the-stop-decision">loop semantics</a>.</p>
+<h3 id="selection_boundspool-bounds-k1"><code>selection_bounds(pool, bounds, k=1)</code><a class="headerlink" href="#selection_boundspool-bounds-k1" title="Permanent link">&para;</a></h3>
+<p>Open a bound-commit contest. <code>bounds</code> aligns with the flattened pool; <code>None</code> exempts a member. Attach each member's score with <code>contest.attach(index, score_val)</code>, then pass <code>bound=contest</code> to a matching <code>choose</code>. Valid upper bounds and strict rival-score evidence are required.</p>
+<h3 id="prefetch_on_streamsource-build-modeljudge-chunk_tokensnone"><code>prefetch_on_stream(source, build, *, model="judge", chunk_tokens=None)</code><a class="headerlink" href="#prefetch_on_streamsource-build-modeljudge-chunk_tokensnone" title="Permanent link">&para;</a></h3>
+<p>Register advisory text-prefix cache warming for a transformed future prompt. Enabled only with speculation and <code>SpecConfig.judge_prefetch</code>, and requires the text wire. <code>build(full_text_so_far)</code> returns a prompt string or <code>None</code>; it must be fast and pure. Prefetch outputs are discarded.</p>
+<h2 id="direct-tools-and-projections">Direct tools and projections<a class="headerlink" href="#direct-tools-and-projections" title="Permanent link">&para;</a></h2>
+<h3 id="toolfn-argsnone-name-effectunknown-alphanone-alpha_name-afternone"><code>tool(fn, args=None, *, name="", effect="unknown", alpha=None, alpha_name="", after=None)</code><a class="headerlink" href="#toolfn-argsnone-name-effectunknown-alphanone-alpha_name-afternone" title="Permanent link">&para;</a></h3>
+<p>Register a tool body receiving one JSON argument dictionary. <code>args=None</code> means an empty dictionary. Nested values resolve before canonical argument hashing. <code>effect</code> is <code>"unknown"</code> or <code>"speculable"</code>.</p>
+<p><code>alpha</code> declares a pure observation projection; <code>alpha_name</code> names it. <code>after</code> accepts a tool handle, value, or sequence of such predecessors and waits for their settlement without propagating their values or failures.</p>
+<h3 id="obst-alphanone-name-alpha_name"><code>obs(t, alpha=None, *, name="", alpha_name="")</code><a class="headerlink" href="#obst-alphanone-name-alpha_name" title="Permanent link">&para;</a></h3>
+<p>Return a <code>Seq</code> containing a late-bound named observation segment. Its bytes are supplied only when the projection image is materialized.</p>
+<h3 id="observet-alphanone-name-alpha_name"><code>observe(t, alpha=None, *, name="", alpha_name="")</code><a class="headerlink" href="#observet-alphanone-name-alpha_name" title="Permanent link">&para;</a></h3>
+<p>Return the structured projected image as a <code>Val</code>. Use this for Python computation on the declared observation.</p>
+<h3 id="ackt"><code>ack(t)</code><a class="headerlink" href="#ackt" title="Permanent link">&para;</a></h3>
+<p>Return <code>Val[None]</code> when the body finishes, propagating its failure without reading the observation.</p>
+<h3 id="expectt-guess-alphanone-name-alpha_name"><code>expect(t, guess, *, alpha=None, name="", alpha_name="")</code><a class="headerlink" href="#expectt-guess-alphanone-name-alpha_name" title="Permanent link">&para;</a></h3>
+<p>Return a hit/miss <code>Choice</code>: the guessed string on exact image equality, or a real-observation hole on mismatch. Both surviving paths preserve the declared observation bytes.</p>
+<h3 id="classifyt-cases-alphanone-alpha_name-name"><code>classify(t, cases, *, alpha=None, alpha_name="", name="")</code><a class="headerlink" href="#classifyt-cases-alphanone-alpha_name-name" title="Permanent link">&para;</a></h3>
+<p>Route exact projected image strings to already-constructed branch values. <code>cases</code> is a closed mapping. An observation outside it is a projection error.</p>
+<h3 id="callsy"><code>calls(y)</code><a class="headerlink" href="#callsy" title="Permanent link">&para;</a></h3>
+<p>Expose the prefix-stable <code>ProjectedCalls</code> interface of a generated <code>Seq</code> that was created with a prepared tool-stream projection. It is for custom streamed tool control, not for parsing arbitrary generated text after the fact. See <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/tools.py"><code>tool_projection</code></a> in the canonical tools module and <a href="../../design/tool-streaming/">streaming design</a>.</p>
+<h2 id="autonomous-tool-definitions">Autonomous tool definitions<a class="headerlink" href="#autonomous-tool-definitions" title="Permanent link">&para;</a></h2>
+<h3 id="tooldeffn-effectunknown-obs-guess-descriptionnone-input_schemanone"><code>ToolDef(fn, effect="unknown", ..., obs=..., guess=..., description=None, input_schema=None)</code><a class="headerlink" href="#tooldeffn-effectunknown-obs-guess-descriptionnone-input_schemanone" title="Permanent link">&para;</a></h3>
+<p>Configure one named tool in the <code>infer(..., tools={name: definition})</code> registry. <code>input_schema</code> describes only the arguments, without a provider function wrapper. <code>description</code> defaults to the callable's first docstring line, with the mapping key as the neutral fallback.</p>
+<p>Omitting both the observation contract and guess enables the default exact policy and draft predictor. Explicit <code>obs=Exact()</code> or <code>guess=None</code> suppresses the implicit predictor. The older <code>policy=</code> spelling is accepted, but supplying it together with <code>obs=</code> is an error.</p>
+<h3 id="observation-policy-types">Observation policy types<a class="headerlink" href="#observation-policy-types" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Export</th>
+<th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Policy</code></td>
+<td>Conservative protocol base: exact image through a real-result hole; shallow call-local sessions</td>
+</tr>
+<tr>
+<td><code>Exact()</code></td>
+<td>Select guesses only on exact equality; otherwise use the real image</td>
+</tr>
+<tr>
+<td><code>Ignore(text="done")</code></td>
+<td>Constant observation without reading the result</td>
+</tr>
+<tr>
+<td><code>Project(alpha)</code></td>
+<td>Pure reduction before exact observation selection</td>
+</tr>
+<tr>
+<td><code>Enum(cases, by=...)</code></td>
+<td>Ordered declared representatives selected through the classifier</td>
+</tr>
+<tr>
+<td><code>hole()</code></td>
+<td>A placeholder filled by the real image</td>
+</tr>
+<tr>
+<td><code>open()</code></td>
+<td>Alias of <code>hole()</code>; distinct from Python's file-opening built-in</td>
+</tr>
+</tbody>
+</table>
+<p>For custom <code>new_session</code>, <code>project</code>, <code>slots</code>, and <code>select</code>, read <a href="../../design/tool-streaming/#keep-policies-local-and-selectors-constrained">policy execution</a>.</p>
+<h2 id="runtime-and-diagnostics">Runtime and diagnostics<a class="headerlink" href="#runtime-and-diagnostics" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Export</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>make_runtime(...)</code></td>
+<td>Construct local main and optional judge engines</td>
+</tr>
+<tr>
+<td><code>make_remote_runtime(...)</code></td>
+<td>Construct a certified remote token-wire runtime</td>
+</tr>
+<tr>
+<td><code>EngineSpec</code></td>
+<td>Declare the local model, capacity, engine arguments, parser, and drafter</td>
+</tr>
+<tr>
+<td><code>ModelSpec</code></td>
+<td>Bind a role to an engine specification and chat template settings</td>
+</tr>
+<tr>
+<td><code>Runtime</code></td>
+<td>Own engines, tracing contexts, scheduler, worker pools, and ledgers</td>
+</tr>
+<tr>
+<td><code>SpecConfig</code></td>
+<td>Configure branch speculation and advisory policies</td>
+</tr>
+<tr>
+<td><code>render_timeline(panels, out_path, *, title="")</code></td>
+<td>Write a standalone SVG from one or more timeline panels</td>
+</tr>
+<tr>
+<td><code>Squashed</code></td>
+<td>Exception signaling that the requested world was rejected</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="../configuration/">runtime configuration</a> for constructors, defaults, and lifecycle methods. Import <code>TimelinePanel</code> from <code>agentir.diagnostics.viz</code>.</p>
+<h2 id="canonical-advanced-modules">Canonical advanced modules<a class="headerlink" href="#canonical-advanced-modules" title="Permanent link">&para;</a></h2>
+<p><code>agentir.compile</code> provides <code>shape_trace</code>, <code>StaticGraph</code>, <code>GraphBreak</code>, and plan types. <code>agentir.tracing.tools</code> provides <code>tool_projection</code> and the compatibility <code>infer_tools</code> function. Adapter-specific remote and judge-server types live under <code>agentir.execution</code>.</p>
+<p>Although <code>infer_tools</code>, <code>tool_projection</code>, and <code>TimelinePanel</code> remain root attributes for compatibility, they are not in the supported root <code>__all__</code> surface. New examples use their canonical modules or <code>infer(..., tools=...)</code>.</p>
+<p>Source: <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/__init__.py">root exports</a>, <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/api.py">DSL implementation</a>, and <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/tools.py">tool definitions</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../verification/experiments/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Experiment archive">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Experiment archive
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Runtime configuration">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Runtime configuration
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      AgentIR · Documentation for 1.3.0
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
