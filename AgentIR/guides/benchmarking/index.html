@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://hemlix.me/AgentIR/reference/cli/">
+        <link rel="canonical" href="https://hemlix.me/AgentIR/guides/benchmarking/">
       
       
-        <link rel="prev" href="../configuration/">
+        <link rel="prev" href="../diagnostics/">
       
       
-        <link rel="next" href="../troubleshooting/">
+        <link rel="next" href="../../advanced/optimizations/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Command line - AgentIR</title>
+        <title>Benchmarking - AgentIR</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#command-line" class="md-skip">
+        <a href="#benchmarking" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Command line
+              Benchmarking
             
           </span>
         </div>
@@ -549,8 +549,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -585,11 +587,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -610,7 +612,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -684,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/control-flow/" class="md-nav__link">
+      <a href="../control-flow/" class="md-nav__link">
         
   
   
@@ -712,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/tools/" class="md-nav__link">
+      <a href="../tools/" class="md-nav__link">
         
   
   
@@ -740,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/algorithms/" class="md-nav__link">
+      <a href="../algorithms/" class="md-nav__link">
         
   
   
@@ -768,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/models/" class="md-nav__link">
+      <a href="../models/" class="md-nav__link">
         
   
   
@@ -796,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/remote/" class="md-nav__link">
+      <a href="../remote/" class="md-nav__link">
         
   
   
@@ -824,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/harbor/" class="md-nav__link">
+      <a href="../harbor/" class="md-nav__link">
         
   
   
@@ -852,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/compile/" class="md-nav__link">
+      <a href="../compile/" class="md-nav__link">
         
   
   
@@ -880,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/diagnostics/" class="md-nav__link">
+      <a href="../diagnostics/" class="md-nav__link">
         
   
   
@@ -905,10 +907,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../guides/benchmarking/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarking
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -924,6 +953,81 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-gates-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run the gates first
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-paired-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A paired run
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hold-everything-else-fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hold everything else fixed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choose-the-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choose the unit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summarize-honestly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summarize honestly
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1061,10 +1165,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1087,11 +1189,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1112,7 +1214,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1130,7 +1232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/" class="md-nav__link">
+      <a href="../../reference/api/" class="md-nav__link">
         
   
   
@@ -1158,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
+      <a href="../../reference/configuration/" class="md-nav__link">
         
   
   
@@ -1183,37 +1285,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Command line
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../reference/cli/" class="md-nav__link">
         
   
   
@@ -1229,81 +1304,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#engine-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Engine options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#speculation-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Speculation options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bench" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        bench
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-and-refdiff" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        check and refdiff
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1316,7 +1316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1344,7 +1344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
+      <a href="../../reference/glossary/" class="md-nav__link">
         
   
   
@@ -1520,10 +1520,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#engine-options" class="md-nav__link">
+  <a href="#run-the-gates-first" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Engine options
+        Run the gates first
       
     </span>
   </a>
@@ -1531,10 +1531,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#speculation-options" class="md-nav__link">
+  <a href="#a-paired-run" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Speculation options
+        A paired run
       
     </span>
   </a>
@@ -1542,10 +1542,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#algorithm-options" class="md-nav__link">
+  <a href="#hold-everything-else-fixed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithm options
+        Hold everything else fixed
       
     </span>
   </a>
@@ -1553,10 +1553,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bench" class="md-nav__link">
+  <a href="#choose-the-unit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        bench
+        Choose the unit
       
     </span>
   </a>
@@ -1564,10 +1564,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#check-and-refdiff" class="md-nav__link">
+  <a href="#summarize-honestly" class="md-nav__link">
     <span class="md-ellipsis">
       
-        check and refdiff
+        Summarize honestly
       
     </span>
   </a>
@@ -1594,172 +1594,56 @@
   
 
 
-<h1 id="command-line">Command line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h1>
-<p><code>agentir</code> drives real benchmarks and checks on in-process vLLM engines. <code>agentir COMMAND --help</code> prints the full option list.</p>
+<h1 id="benchmarking">Benchmarking<a class="headerlink" href="#benchmarking" title="Permanent link">&para;</a></h1>
+<p>A good benchmark answers three questions separately: did the two arms compute the same thing, which mechanism changed, and how much faster was it at the intended concurrency. <code>agentir bench</code> handles the mechanics; this page explains how to use it so the answer means something.</p>
+<h2 id="run-the-gates-first">Run the gates first<a class="headerlink" href="#run-the-gates-first" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>agentir<span class="w"> </span>check<span class="w"> </span>--model<span class="w"> </span>Qwen/Qwen2.5-0.5B-Instruct<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--algo<span class="w"> </span>beam_search<span class="w"> </span>--task<span class="w"> </span>gsm8k<span class="w"> </span>--offset<span class="w"> </span><span class="m">0</span><span class="w"> </span>--runtime-graph<span class="w"> </span>check.svg
+</code></pre></div>
+<p><code>check</code> runs both <a href="../../internals/verification/">verification gates</a> on one problem and exits non-zero on any divergence. A speedup measured on a configuration that fails the gates is not a result.</p>
+<h2 id="a-paired-run">A paired run<a class="headerlink" href="#a-paired-run" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>agentir<span class="w"> </span>bench<span class="w"> </span>--model<span class="w"> </span>Qwen/Qwen2.5-0.5B-Instruct<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>--task<span class="w"> </span>gsm8k<span class="w"> </span>--algo<span class="w"> </span>heavy<span class="w"> </span>--n<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--spec<span class="w"> </span>both<span class="w"> </span>--concurrency<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--out<span class="w"> </span>runs/heavy.jsonl<span class="w"> </span>--dump-ledger<span class="w"> </span>runs/heavy-ledgers<span class="w"> </span>--runtime-graph<span class="w"> </span>runs/heavy-timelines
+</code></pre></div>
+<p><code>--spec both</code> runs speculation off then on over the same problems with the same run seed and the same per-problem invocation key, so both arms sample the same tokens, then prints the paired summary: mean and percentile wall time, accuracy, answer agreement, committed and wasted tokens, speculative hit rate, and accumulated lead. The JSONL holds the metadata, arm summaries, and per-problem records.</p>
+<p>Other modes: <code>--spec ladder</code> adds the serial and oracle arms (see <a href="../../internals/verification/#the-ablation-ladder">the ablation ladder</a>); <code>--spec fastbase</code> adds a phase-serial beam baseline that batches decode and grading but forbids overlap between them.</p>
+<h2 id="hold-everything-else-fixed">Hold everything else fixed<a class="headerlink" href="#hold-everything-else-fixed" title="Permanent link">&para;</a></h2>
+<p>Record, and keep identical between arms: model and revision, engine version and arguments, chat template and parser, sampling parameters, algorithm knobs, task slice, run seed, wire, and concurrency. For tools add the effect declaration, projection, predictor, and certificate. The bound-commit flag is an algorithm knob and must match in both arms, because it changes which losing-branch tokens exist.</p>
+<p>Speculation-only knobs (<code>--judge-prefetch</code>, <code>--ev-gate</code>, <code>--spec-preempt</code>, <code>--depth1-unmetered</code>, <code>--prune-margin</code>) apply to the spec-on arm only, so the off arm stays a pristine baseline. vLLM token drafting is an engine setting; if you vary it, vary it explicitly in both arms rather than folding it into "spec on".</p>
+<h2 id="choose-the-unit">Choose the unit<a class="headerlink" href="#choose-the-unit" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Command</th>
-<th>Purpose</th>
-<th>Model needed</th>
+<th>Question</th>
+<th>Profile</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>agentir list</code></td>
-<td>print tasks and algorithms</td>
-<td>no</td>
+<td>Does one task finish sooner?</td>
+<td>paired per-task latency at <code>--concurrency 1</code></td>
 </tr>
 <tr>
-<td><code>agentir warm</code></td>
-<td>build the engine, load weights, exit</td>
-<td>yes</td>
+<td>Does a loaded server finish more tasks?</td>
+<td>a fixed higher-concurrency throughput profile, reported separately</td>
 </tr>
 <tr>
-<td><code>agentir bench</code></td>
-<td>run a dataset slice under an algorithm</td>
-<td>yes</td>
+<td>What did the speedup cost?</td>
+<td>committed versus wasted tokens, request counts, engine time</td>
 </tr>
 <tr>
-<td><code>agentir refdiff</code></td>
-<td>verification gate A on one problem</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>agentir check</code></td>
-<td>gates A and B on one problem</td>
-<td>yes</td>
+<td>Is quality preserved?</td>
+<td>paired accuracy with a declared non-inferiority margin</td>
 </tr>
 </tbody>
 </table>
-<p>Every model-executing command fails fast with install instructions if vLLM is not importable.</p>
-<h2 id="engine-options">Engine options<a class="headerlink" href="#engine-options" title="Permanent link">&para;</a></h2>
-<p><code>--model</code> (required), <code>--judge-model</code>, <code>--devices</code>, <code>--judge-devices</code>, <code>--judge-process</code>, <code>--max-model-len</code>, <code>--gpu-mem</code>, <code>--judge-gpu-mem</code>, <code>--max-inflight 32</code>, <code>--wire {text,tokens}</code>.</p>
-<h2 id="speculation-options">Speculation options<a class="headerlink" href="#speculation-options" title="Permanent link">&para;</a></h2>
-<p><code>--spec {on,off,both,ladder,fastbase}</code> (default <code>on</code>), <code>--window 2</code>, <code>--spec-inflight 8</code>, <code>--depth1-unmetered</code>, <code>--judge-prefetch</code>, <code>--ev-gate</code>, <code>--spec-preempt</code>, <code>--prune-margin M</code>. The optional lanes apply to spec-enabled arms only.</p>
-<table>
-<thead>
-<tr>
-<th><code>--spec</code></th>
-<th>Arms</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>off</code>, <code>on</code></td>
-<td>one guarded arm</td>
-</tr>
-<tr>
-<td><code>both</code></td>
-<td>spec-off then spec-on, same problems, same seeds</td>
-</tr>
-<tr>
-<td><code>ladder</code></td>
-<td>serial reference, spec-off recording decisions, spec-on, oracle replay</td>
-</tr>
-<tr>
-<td><code>fastbase</code></td>
-<td>phase-serial beam baseline, spec-off, spec-on</td>
-</tr>
-</tbody>
-</table>
-<h2 id="algorithm-options">Algorithm options<a class="headerlink" href="#algorithm-options" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Default</th>
-<th>Used by</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--k</code></td>
-<td>6</td>
-<td><code>self_consistency</code>, <code>best_of_n</code>, <code>heavy</code> (n), <code>sal_beam</code> (samples per step)</td>
-</tr>
-<tr>
-<td><code>--width</code>, <code>--branch</code>, <code>--rounds</code></td>
-<td>2, 2, 3</td>
-<td>beam shape; <code>--rounds</code> is <code>sal_beam</code>'s iteration bound</td>
-</tr>
-<tr>
-<td><code>--iters</code></td>
-<td>4</td>
-<td><code>reflexion</code>, <code>mcts</code></td>
-</tr>
-<tr>
-<td><code>--step-tokens</code></td>
-<td>160</td>
-<td>beam step, MCTS rollout</td>
-</tr>
-<tr>
-<td><code>--early-steps</code>, <code>--late-step-tokens</code></td>
-<td>3, unset</td>
-<td>varying step budget</td>
-</tr>
-<tr>
-<td><code>--step-stop STR</code></td>
-<td>unset</td>
-<td>step delimiter (escapes decoded, so <code>'\n\n'</code> works)</td>
-</tr>
-<tr>
-<td><code>--max-tokens</code></td>
-<td>512</td>
-<td>main budget; also the beam finish budget</td>
-</tr>
-<tr>
-<td><code>--judge-tokens</code></td>
-<td>96</td>
-<td>judge rationale budget</td>
-</tr>
-<tr>
-<td><code>--scorer {logprob,judge,prm}</code></td>
-<td><code>logprob</code></td>
-<td>beam scorer</td>
-</tr>
-<tr>
-<td><code>--prm-agg {min,last,mean,prod}</code></td>
-<td><code>min</code></td>
-<td>PRM aggregation</td>
-</tr>
-<tr>
-<td><code>--bound-commit</code></td>
-<td>off</td>
-<td>beam early round commit (needs prm, min, step-stop)</td>
-</tr>
-<tr>
-<td><code>--phase-serial</code></td>
-<td>off</td>
-<td>beam decode/grade barrier</td>
-</tr>
-<tr>
-<td><code>--prune-margin</code></td>
-<td>unset</td>
-<td>beam loser predictor (prm, min)</td>
-</tr>
-<tr>
-<td><code>--no-explain</code></td>
-<td>off</td>
-<td>skip self-consistency's explanation</td>
-</tr>
-<tr>
-<td><code>--chat</code></td>
-<td>off</td>
-<td>render prompts through the chat template</td>
-</tr>
-<tr>
-<td><code>--temperature</code>, <code>--top-p</code>, <code>--run-seed</code></td>
-<td>0.8, 0.95, 20260708</td>
-<td>sampling defaults and seed</td>
-</tr>
-</tbody>
-</table>
-<h2 id="bench"><code>bench</code><a class="headerlink" href="#bench" title="Permanent link">&para;</a></h2>
-<p><code>--task {gsm8k,math500,aime2024,amc2023}</code> and <code>--algo</code> are required. <code>--n 10</code>, <code>--offset 0</code>, <code>--concurrency 1</code>, <code>--out PATH</code> (default <code>runs/&lt;task&gt;-&lt;algo&gt;-&lt;time&gt;.jsonl</code>), <code>--dump-ledger DIR</code>, <code>--runtime-graph [DIR]</code>. Datasets download on first use into <code>~/.cache/agentir</code>.</p>
-<h2 id="check-and-refdiff"><code>check</code> and <code>refdiff</code><a class="headerlink" href="#check-and-refdiff" title="Permanent link">&para;</a></h2>
-<p><code>check</code> defaults to <code>--algo beam_search --task gsm8k</code>; <code>refdiff</code> to <code>--algo best_of_n</code>. Both take <code>--offset</code>. <code>check --runtime-graph [PATH]</code> renders the two arms on one time axis; <code>check --slow-tool-audit</code> re-executes completed speculable tools and diffs their images. Exit status 0 means every gate passed; 2 means a divergence or a failed audit.</p>
-<p>Source: <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/cli.py"><code>cli.py</code></a>.</p>
+<p>Warm-up, weight loading, and dataset download are separate phases; say which are timed. One task can contain dozens of overlapping requests, so per-request latency, per-task latency, and suite makespan are different numbers.</p>
+<h2 id="summarize-honestly">Summarize honestly<a class="headerlink" href="#summarize-honestly" title="Permanent link">&para;</a></h2>
+<p><code>agentir.bench.stats</code> provides the paired analysis the formal scripts use: per-task aggregation in log-latency space, a cluster bootstrap over tasks for the geometric-mean speedup interval, a paired sign-flip test (exact up to 16 tasks, Monte Carlo above), Holm correction across hypotheses, and quality non-inferiority whose lower confidence bound must exceed the negative margin. The task is the statistical unit; repetitions within a task are aggregated first.</p>
+<p>Decide the analysis before looking at the results, keep the raw records, and tie every summary to the configuration and artifact hashes that produced it. The frozen protocols in the <a href="../../advanced/experiments/">experiment archive</a> are examples of that discipline.</p>
+<p>Source: <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/bench/runner.py"><code>bench/runner.py</code></a>, <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/bench/stats.py"><code>bench/stats.py</code></a>, <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/bench/tasks.py"><code>bench/tasks.py</code></a>.</p>
 
 
 
@@ -1795,7 +1679,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Runtime configuration">
+          <a href="../diagnostics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Timelines and diagnostics">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1805,20 +1689,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Runtime configuration
+                Timelines and diagnostics
               </div>
             </div>
           </a>
         
         
           
-          <a href="../troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshooting">
+          <a href="../../advanced/optimizations/" class="md-footer__link md-footer__link--next" aria-label="Next: Scheduling optimizations">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Troubleshooting
+                Scheduling optimizations
               </div>
             </div>
             <div class="md-footer__button md-icon">

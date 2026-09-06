@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://hemlix.me/AgentIR/reference/cli/">
+        <link rel="canonical" href="https://hemlix.me/AgentIR/internals/tools/">
       
       
-        <link rel="prev" href="../configuration/">
+        <link rel="prev" href="../engines/">
       
       
-        <link rel="next" href="../troubleshooting/">
+        <link rel="next" href="../verification/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Command line - AgentIR</title>
+        <title>Tools and the tool loop - AgentIR</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#command-line" class="md-skip">
+        <a href="#tools-and-the-tool-loop" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Command line
+              Tools and the tool loop
             
           </span>
         </div>
@@ -248,8 +248,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -278,11 +280,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -303,7 +305,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -349,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/program/" class="md-nav__link">
+      <a href="../program/" class="md-nav__link">
         
   
   
@@ -377,7 +379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/identity/" class="md-nav__link">
+      <a href="../identity/" class="md-nav__link">
         
   
   
@@ -405,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/tracer/" class="md-nav__link">
+      <a href="../tracer/" class="md-nav__link">
         
   
   
@@ -433,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/scheduler/" class="md-nav__link">
+      <a href="../scheduler/" class="md-nav__link">
         
   
   
@@ -461,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/engines/" class="md-nav__link">
+      <a href="../engines/" class="md-nav__link">
         
   
   
@@ -486,10 +488,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../internals/tools/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and the tool loop
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -505,6 +534,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#t-nodes-and-the-effect-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        T-nodes and the effect contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observations-raw-result-projection-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observations: raw result, projection, image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observation-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observation policies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-round-of-the-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One round of the loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-retries-and-replays-stay-exact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why retries and replays stay exact
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In the code
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -517,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/verification/" class="md-nav__link">
+      <a href="../verification/" class="md-nav__link">
         
   
   
@@ -1061,10 +1176,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1087,11 +1200,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1112,7 +1225,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1130,7 +1243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/" class="md-nav__link">
+      <a href="../../reference/api/" class="md-nav__link">
         
   
   
@@ -1158,7 +1271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
+      <a href="../../reference/configuration/" class="md-nav__link">
         
   
   
@@ -1183,37 +1296,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Command line
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../reference/cli/" class="md-nav__link">
         
   
   
@@ -1229,81 +1315,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#engine-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Engine options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#speculation-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Speculation options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bench" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        bench
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-and-refdiff" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        check and refdiff
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1316,7 +1327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1344,7 +1355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
+      <a href="../../reference/glossary/" class="md-nav__link">
         
   
   
@@ -1520,10 +1531,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#engine-options" class="md-nav__link">
+  <a href="#t-nodes-and-the-effect-contract" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Engine options
+        T-nodes and the effect contract
       
     </span>
   </a>
@@ -1531,10 +1542,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#speculation-options" class="md-nav__link">
+  <a href="#observations-raw-result-projection-image" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Speculation options
+        Observations: raw result, projection, image
       
     </span>
   </a>
@@ -1542,10 +1553,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#algorithm-options" class="md-nav__link">
+  <a href="#observation-policies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithm options
+        Observation policies
       
     </span>
   </a>
@@ -1553,10 +1564,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bench" class="md-nav__link">
+  <a href="#one-round-of-the-loop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        bench
+        One round of the loop
       
     </span>
   </a>
@@ -1564,10 +1575,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#check-and-refdiff" class="md-nav__link">
+  <a href="#why-retries-and-replays-stay-exact" class="md-nav__link">
     <span class="md-ellipsis">
       
-        check and refdiff
+        Why retries and replays stay exact
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In the code
       
     </span>
   </a>
@@ -1594,172 +1616,97 @@
   
 
 
-<h1 id="command-line">Command line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h1>
-<p><code>agentir</code> drives real benchmarks and checks on in-process vLLM engines. <code>agentir COMMAND --help</code> prints the full option list.</p>
+<h1 id="tools-and-the-tool-loop">Tools and the tool loop<a class="headerlink" href="#tools-and-the-tool-loop" title="Permanent link">&para;</a></h1>
+<p>A tool call is where an agent touches the outside world. Two things about it are new compared to a model request: its body may have <strong>effects</strong> that must not be repeated, and its result is an <strong>observation</strong> whose bytes the runtime cannot predict from the graph. AgentIR handles both with explicit contracts, and then speculates across tool calls the same way it speculates across selections: by declaring candidate observations and guarding the continuation built on each.</p>
+<figure class="figure">
+<div aria-label="One round of the tool loop. Scroll horizontally on narrow screens." class="diagram-scroll" role="group" tabindex="0">
+<p><img alt="One round of the autonomous tool loop: parser event, T-node, observation policy, guarded next-turn candidates, selection." src="../../assets/tool-round.svg" /></p>
+</div>
+<figcaption>A call is dispatched as soon as its arguments close. The next turn is decoded against a guessed observation while the tool runs. <a href="../../assets/tool-round.svg">Open the diagram.</a></figcaption>
+</figure>
+<h2 id="t-nodes-and-the-effect-contract">T-nodes and the effect contract<a class="headerlink" href="#t-nodes-and-the-effect-contract" title="Permanent link">&para;</a></h2>
+<p>A tool execution is a <strong>T-node</strong>: tool name, canonical JSON arguments, DrawId, and an effect class. <code>tool(fn, args, effect=...)</code> registers one explicitly; the autonomous loop registers them from parsed model calls. The body receives one argument dictionary.</p>
 <table>
 <thead>
 <tr>
-<th>Command</th>
-<th>Purpose</th>
-<th>Model needed</th>
+<th><code>effect</code></th>
+<th>When the body runs</th>
+<th>What you promise</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>agentir list</code></td>
-<td>print tasks and algorithms</td>
-<td>no</td>
+<td><code>"unknown"</code> (default)</td>
+<td>after its guard is true and every handle it reads has committed; at most once; never retried</td>
+<td>nothing, this is the safe default</td>
 </tr>
 <tr>
-<td><code>agentir warm</code></td>
-<td>build the engine, load weights, exit</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>agentir bench</code></td>
-<td>run a dataset slice under an algorithm</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>agentir refdiff</code></td>
-<td>verification gate A on one problem</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>agentir check</code></td>
-<td>gates A and B on one problem</td>
-<td>yes</td>
+<td><code>"speculable"</code></td>
+<td>as soon as the tool scheduler admits it, possibly under a pending guard; retried up to 3 times per phase</td>
+<td>extra executions and retries are harmless, and the observation is stable enough to replay</td>
 </tr>
 </tbody>
 </table>
-<p>Every model-executing command fails fast with install instructions if vLLM is not importable.</p>
-<h2 id="engine-options">Engine options<a class="headerlink" href="#engine-options" title="Permanent link">&para;</a></h2>
-<p><code>--model</code> (required), <code>--judge-model</code>, <code>--devices</code>, <code>--judge-devices</code>, <code>--judge-process</code>, <code>--max-model-len</code>, <code>--gpu-mem</code>, <code>--judge-gpu-mem</code>, <code>--max-inflight 32</code>, <code>--wire {text,tokens}</code>.</p>
-<h2 id="speculation-options">Speculation options<a class="headerlink" href="#speculation-options" title="Permanent link">&para;</a></h2>
-<p><code>--spec {on,off,both,ladder,fastbase}</code> (default <code>on</code>), <code>--window 2</code>, <code>--spec-inflight 8</code>, <code>--depth1-unmetered</code>, <code>--judge-prefetch</code>, <code>--ev-gate</code>, <code>--spec-preempt</code>, <code>--prune-margin M</code>. The optional lanes apply to spec-enabled arms only.</p>
+<p>Cancellation is exact at the admission boundary: an unstarted speculative body is removed without ever running. A body that has already started cannot be stopped, which is precisely what <code>speculable</code> licenses. Arguments may contain <code>Val</code> and <code>Choice</code> handles anywhere in the JSON tree; they resolve before hashing, and every handle found becomes part of the unknown-effect dependency fence. A <code>Seq</code> in an argument is rejected: content leaves a Seq only through an exit.</p>
+<h2 id="observations-raw-result-projection-image">Observations: raw result, projection, image<a class="headerlink" href="#observations-raw-result-projection-image" title="Permanent link">&para;</a></h2>
+<p>The raw return value of a body never enters a prompt. A <strong>projection</strong> <code>alpha(raw)</code> reduces it to an <strong>image</strong>: a string, or a JSON-compatible value rendered canonically. Images are what <code>obs(t)</code> splices into a spine (as a late-binding <code>Obs</code> segment), what <code>observe(t)</code> returns as a <code>Val</code>, and what the verification harness records and replays.</p>
+<p>Projections are named and content-addressed by a descriptor of their callable, so two projections of one T-node are two <code>Obs</code> segments over one execution and adding a projection never re-runs the body. The image is encoded to atoms lazily, at the first prompt that needs it; on the remote wire that is a <code>/tokenize</code> request worth not paying for a losing branch.</p>
+<p>Three primitives turn an observation into a decision: <code>expect(t, guess)</code> is a two-slot hit-or-miss decision that injects the guess bytes into the hit branch; <code>classify(t, cases)</code> routes an exact image through a closed mapping; <code>ack(t)</code> resolves when the body finished, for gating on completion alone.</p>
+<h2 id="observation-policies">Observation policies<a class="headerlink" href="#observation-policies" title="Permanent link">&para;</a></h2>
+<p>The autonomous loop wraps each tool in a <code>ToolDef</code> whose <code>obs</code> policy has four methods:</p>
 <table>
 <thead>
 <tr>
-<th><code>--spec</code></th>
-<th>Arms</th>
+<th>Method</th>
+<th>Role</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>off</code>, <code>on</code></td>
-<td>one guarded arm</td>
+<td><code>new_session()</code></td>
+<td>a fresh call-local instance (shallow copy by default)</td>
 </tr>
 <tr>
-<td><code>both</code></td>
-<td>spec-off then spec-on, same problems, same seeds</td>
+<td><code>project(raw)</code></td>
+<td>the pure projection</td>
 </tr>
 <tr>
-<td><code>ladder</code></td>
-<td>serial reference, spec-off recording decisions, spec-on, oracle replay</td>
+<td><code>slots(state, call)</code></td>
+<td>the candidate images declared <em>before</em> the tool result exists</td>
 </tr>
 <tr>
-<td><code>fastbase</code></td>
-<td>phase-serial beam baseline, spec-off, spec-on</td>
+<td><code>select(image, slots)</code></td>
+<td>pick one declared slot index, reading the lazy real image if it needs to</td>
 </tr>
 </tbody>
 </table>
-<h2 id="algorithm-options">Algorithm options<a class="headerlink" href="#algorithm-options" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Default</th>
-<th>Used by</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--k</code></td>
-<td>6</td>
-<td><code>self_consistency</code>, <code>best_of_n</code>, <code>heavy</code> (n), <code>sal_beam</code> (samples per step)</td>
-</tr>
-<tr>
-<td><code>--width</code>, <code>--branch</code>, <code>--rounds</code></td>
-<td>2, 2, 3</td>
-<td>beam shape; <code>--rounds</code> is <code>sal_beam</code>'s iteration bound</td>
-</tr>
-<tr>
-<td><code>--iters</code></td>
-<td>4</td>
-<td><code>reflexion</code>, <code>mcts</code></td>
-</tr>
-<tr>
-<td><code>--step-tokens</code></td>
-<td>160</td>
-<td>beam step, MCTS rollout</td>
-</tr>
-<tr>
-<td><code>--early-steps</code>, <code>--late-step-tokens</code></td>
-<td>3, unset</td>
-<td>varying step budget</td>
-</tr>
-<tr>
-<td><code>--step-stop STR</code></td>
-<td>unset</td>
-<td>step delimiter (escapes decoded, so <code>'\n\n'</code> works)</td>
-</tr>
-<tr>
-<td><code>--max-tokens</code></td>
-<td>512</td>
-<td>main budget; also the beam finish budget</td>
-</tr>
-<tr>
-<td><code>--judge-tokens</code></td>
-<td>96</td>
-<td>judge rationale budget</td>
-</tr>
-<tr>
-<td><code>--scorer {logprob,judge,prm}</code></td>
-<td><code>logprob</code></td>
-<td>beam scorer</td>
-</tr>
-<tr>
-<td><code>--prm-agg {min,last,mean,prod}</code></td>
-<td><code>min</code></td>
-<td>PRM aggregation</td>
-</tr>
-<tr>
-<td><code>--bound-commit</code></td>
-<td>off</td>
-<td>beam early round commit (needs prm, min, step-stop)</td>
-</tr>
-<tr>
-<td><code>--phase-serial</code></td>
-<td>off</td>
-<td>beam decode/grade barrier</td>
-</tr>
-<tr>
-<td><code>--prune-margin</code></td>
-<td>unset</td>
-<td>beam loser predictor (prm, min)</td>
-</tr>
-<tr>
-<td><code>--no-explain</code></td>
-<td>off</td>
-<td>skip self-consistency's explanation</td>
-</tr>
-<tr>
-<td><code>--chat</code></td>
-<td>off</td>
-<td>render prompts through the chat template</td>
-</tr>
-<tr>
-<td><code>--temperature</code>, <code>--top-p</code>, <code>--run-seed</code></td>
-<td>0.8, 0.95, 20260708</td>
-<td>sampling defaults and seed</td>
-</tr>
-</tbody>
-</table>
-<h2 id="bench"><code>bench</code><a class="headerlink" href="#bench" title="Permanent link">&para;</a></h2>
-<p><code>--task {gsm8k,math500,aime2024,amc2023}</code> and <code>--algo</code> are required. <code>--n 10</code>, <code>--offset 0</code>, <code>--concurrency 1</code>, <code>--out PATH</code> (default <code>runs/&lt;task&gt;-&lt;algo&gt;-&lt;time&gt;.jsonl</code>), <code>--dump-ledger DIR</code>, <code>--runtime-graph [DIR]</code>. Datasets download on first use into <code>~/.cache/agentir</code>.</p>
-<h2 id="check-and-refdiff"><code>check</code> and <code>refdiff</code><a class="headerlink" href="#check-and-refdiff" title="Permanent link">&para;</a></h2>
-<p><code>check</code> defaults to <code>--algo beam_search --task gsm8k</code>; <code>refdiff</code> to <code>--algo best_of_n</code>. Both take <code>--offset</code>. <code>check --runtime-graph [PATH]</code> renders the two arms on one time axis; <code>check --slow-tool-audit</code> re-executes completed speculable tools and diffs their images. Exit status 0 means every gate passed; 2 means a divergence or a failed audit.</p>
-<p>Source: <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/cli.py"><code>cli.py</code></a>.</p>
+<p>The built-ins: <code>Exact</code> (the real image, with any guesses verified by byte equality), <code>Ignore(text)</code> (a constant, never reads the result), <code>Project(alpha)</code> (a reduced image), and <code>Enum(cases, by)</code> (a closed set of representatives plus an optional real-result hole). <code>hole()</code> marks the slot that is filled by the real observation. Selection is evaluated once per call in an advisory scope where model generation and unknown effects are forbidden, so a selector cannot smuggle a new observation into the graph.</p>
+<p>A <code>guess</code> is a predictor: a literal string, a callable returning a <code>Val</code>, or a callable that traces ordinary DSL calls (a draft model, for instance). A plain <code>ToolDef(fn)</code> with no <code>obs</code> and no <code>guess</code> gets the default draft predictor, a 32-token same-role sample whose candidate count is calibrated online from observed hit rates and latencies. A predictor that has not finished when the real observation lands is abandoned, so a slow guess never extends the critical path.</p>
+<h2 id="one-round-of-the-loop">One round of the loop<a class="headerlink" href="#one-round-of-the-loop" title="Permanent link">&para;</a></h2>
+<p><code>infer(task, tools=..., max_turns=N)</code> runs the loop in <code>infer_tools</code>. Per turn:</p>
+<ol>
+<li><strong>Render</strong> the conversation with the engine's chat template and tool schemas, and register the assistant turn as an E-node with a <strong>stream projection</strong> frozen into its identity: the model family's vLLM parser, structural constraints, and reasoning-parser state.</li>
+<li><strong>Pre-reserve the round template.</strong> Before any byte streams, the tracer creates <code>max_calls</code> deferred call slots plus an overflow sentinel, each with an existence gate and a publication gate, and reserves the next turn's draw. Slot identity therefore never depends on parser timing.</li>
+<li><strong>Stream and parse.</strong> Each engine delta goes through a fresh vLLM parser instance. A cheap structural scanner watches the argument bytes; when they could form a complete JSON value, the strict decoder tries, and a closed call is published to a per-node journal.</li>
+<li><strong>Dispatch.</strong> The published call binds its slot to a real T-node. Speculable bodies start now; unknown bodies wait for the turn and its guard to commit. For families whose calls close early, the tracer also registers the <em>predict-taken</em> next turn: assuming this call prefix is the whole inventory, it declares slots, spawns one guarded continuation per closed candidate, and starts the selector.</li>
+<li><strong>Terminate.</strong> At end of turn the full parser re-parses the entire text and must reproduce exactly the streamed inventory. Prefix guesses that turned out shorter than the real call list are squashed; the exact one commits.</li>
+<li><strong>Select.</strong> When the real image lands, <code>select</code> runs once. A hit keeps the guessed continuation; a miss keeps the hole continuation, which is data-ready now that the image exists. Multi-call rounds keep one representative vector across slots, never a Cartesian product, and fall back to a concrete barrier on any unsupported shape.</li>
+</ol>
+<p>The tool loop requires the token wire so that boundary and special tokens stay in the spine. Stop strings are refused in tool loops because they would truncate text without preserving the parser's boundary tokens.</p>
+<h2 id="why-retries-and-replays-stay-exact">Why retries and replays stay exact<a class="headerlink" href="#why-retries-and-replays-stay-exact" title="Permanent link">&para;</a></h2>
+<p>Every published call is journaled per logical E-node. A retried engine attempt replays through the same journal: it must reproduce the already-published prefix event for event, and a divergence raises <code>ProjectionDivergence</code> instead of dispatching a call twice. Deterministic parser failures are <code>ProjectionError</code>s, not engine errors: retrying the same seeded decode cannot repair malformed syntax, so the scheduler defers the error while the world is pending and surfaces it only if the world commits.</p>
+<p>Model families are resolved from an explicit table (GPT-OSS, Qwen3-Coder, Qwen3.5+, Qwen3, Qwen2, DeepSeek-V3.1, Llama-3, Mistral). An unknown model is an error rather than a silent Hermes fallback, because the wrong parser would reinterpret ordinary text as a tool call.</p>
+<h2 id="in-the-code">In the code<a class="headerlink" href="#in-the-code" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/tools.py"><code>tracing/tools.py</code></a>: <code>ToolDef</code>, <code>infer_tools</code>, <code>_collect_round</code>, <code>_new_round_template</code>, <code>_speculative_candidates</code>, <code>_select_once</code>.</li>
+<li><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/policy.py"><code>tracing/policy.py</code></a>: <code>Policy</code>, <code>Exact</code>, <code>Ignore</code>, <code>Project</code>, <code>Enum</code>, <code>LazyImage</code>, <code>hole</code>.</li>
+<li><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/predictor.py"><code>tracing/predictor.py</code></a>: the default draft predictor and its calibration.</li>
+<li><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/tool_slots.py"><code>tracing/tool_slots.py</code></a>: deferred slots and families.</li>
+<li><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/execution/tools.py"><code>execution/tools.py</code></a>: <code>ToolRecord</code>, projections, image rendering.</li>
+<li><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/execution/tool_stream.py"><code>execution/tool_stream.py</code></a>: family profiles, the JSON closure scanner, the journal, the terminal cross-check.</li>
+<li>Tests: <code>test_tools_loop.py</code>, <code>test_tools_lowering.py</code>, <code>test_tool_stream.py</code>, <code>test_tool_policy.py</code>, <code>test_deferred_tool_slots.py</code>, <code>test_default_predictor.py</code>.</li>
+</ul>
+<p>Next: <a href="../verification/">Verification</a>, which proves that none of this changed the answer.</p>
 
 
 
@@ -1795,7 +1742,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Runtime configuration">
+          <a href="../engines/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Engine adapters">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1805,20 +1752,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Runtime configuration
+                Engine adapters
               </div>
             </div>
           </a>
         
         
           
-          <a href="../troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshooting">
+          <a href="../verification/" class="md-footer__link md-footer__link--next" aria-label="Next: Verification">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Troubleshooting
+                Verification
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://hemlix.me/AgentIR/reference/cli/">
+        <link rel="canonical" href="https://hemlix.me/AgentIR/guides/models/">
       
       
-        <link rel="prev" href="../configuration/">
+        <link rel="prev" href="../algorithms/">
       
       
-        <link rel="next" href="../troubleshooting/">
+        <link rel="next" href="../remote/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Command line - AgentIR</title>
+        <title>Models, roles, and wires - AgentIR</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#command-line" class="md-skip">
+        <a href="#models-roles-and-wires" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Command line
+              Models, roles, and wires
             
           </span>
         </div>
@@ -549,8 +549,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -585,11 +587,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -610,7 +612,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -684,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/control-flow/" class="md-nav__link">
+      <a href="../control-flow/" class="md-nav__link">
         
   
   
@@ -712,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/tools/" class="md-nav__link">
+      <a href="../tools/" class="md-nav__link">
         
   
   
@@ -740,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/algorithms/" class="md-nav__link">
+      <a href="../algorithms/" class="md-nav__link">
         
   
   
@@ -765,10 +767,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../guides/models/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models, roles, and wires
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -784,6 +813,103 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a runtime
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wires" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wires
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat prompts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generation-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generation settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-speculations-two-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two speculations, two switches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-granularity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event granularity
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -796,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/remote/" class="md-nav__link">
+      <a href="../remote/" class="md-nav__link">
         
   
   
@@ -824,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/harbor/" class="md-nav__link">
+      <a href="../harbor/" class="md-nav__link">
         
   
   
@@ -852,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/compile/" class="md-nav__link">
+      <a href="../compile/" class="md-nav__link">
         
   
   
@@ -880,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/diagnostics/" class="md-nav__link">
+      <a href="../diagnostics/" class="md-nav__link">
         
   
   
@@ -908,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/benchmarking/" class="md-nav__link">
+      <a href="../benchmarking/" class="md-nav__link">
         
   
   
@@ -1061,10 +1187,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1087,11 +1211,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1112,7 +1236,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1130,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/" class="md-nav__link">
+      <a href="../../reference/api/" class="md-nav__link">
         
   
   
@@ -1158,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
+      <a href="../../reference/configuration/" class="md-nav__link">
         
   
   
@@ -1183,37 +1307,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Command line
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../reference/cli/" class="md-nav__link">
         
   
   
@@ -1229,81 +1326,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#engine-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Engine options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#speculation-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Speculation options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bench" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        bench
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-and-refdiff" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        check and refdiff
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1316,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1344,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
+      <a href="../../reference/glossary/" class="md-nav__link">
         
   
   
@@ -1520,10 +1542,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#engine-options" class="md-nav__link">
+  <a href="#create-a-runtime" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Engine options
+        Create a runtime
       
     </span>
   </a>
@@ -1531,10 +1553,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#speculation-options" class="md-nav__link">
+  <a href="#roles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Speculation options
+        Roles
       
     </span>
   </a>
@@ -1542,10 +1564,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#algorithm-options" class="md-nav__link">
+  <a href="#wires" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithm options
+        Wires
       
     </span>
   </a>
@@ -1553,10 +1575,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bench" class="md-nav__link">
+  <a href="#chat-prompts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        bench
+        Chat prompts
       
     </span>
   </a>
@@ -1564,10 +1586,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#check-and-refdiff" class="md-nav__link">
+  <a href="#generation-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        check and refdiff
+        Generation settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-speculations-two-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two speculations, two switches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-granularity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event granularity
       
     </span>
   </a>
@@ -1594,172 +1638,68 @@
   
 
 
-<h1 id="command-line">Command line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h1>
-<p><code>agentir</code> drives real benchmarks and checks on in-process vLLM engines. <code>agentir COMMAND --help</code> prints the full option list.</p>
+<h1 id="models-roles-and-wires">Models, roles, and wires<a class="headerlink" href="#models-roles-and-wires" title="Permanent link">&para;</a></h1>
+<p>This page covers the local runtime: creating it, giving models roles, choosing a wire, rendering chat prompts, and freezing generation settings. The mechanics are in <a href="../../internals/engines/">Engine adapters</a>.</p>
+<h2 id="create-a-runtime">Create a runtime<a class="headerlink" href="#create-a-runtime" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agentir</span><span class="w"> </span><span class="kn">import</span> <span class="n">SpecConfig</span><span class="p">,</span> <span class="n">make_runtime</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">runtime</span> <span class="o">=</span> <span class="n">make_runtime</span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">model</span><span class="o">=</span><span class="s2">"Qwen/Qwen2.5-0.5B-Instruct"</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">max_inflight</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">engine_args</span><span class="o">=</span><span class="p">{</span><span class="s2">"max_model_len"</span><span class="p">:</span> <span class="mi">2048</span><span class="p">,</span> <span class="s2">"gpu_memory_utilization"</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">spec</span><span class="o">=</span><span class="n">SpecConfig</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_spec_inflight</span><span class="o">=</span><span class="mi">8</span><span class="p">),</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">)</span>
+</code></pre></div>
+<p>Weights load on first use or on <code>runtime.warm()</code>. <code>engine_args</code> forwards to vLLM's <code>AsyncEngineArgs</code>. <code>max_inflight</code> caps AgentIR requests per engine and is also passed as <code>max_num_seqs</code>, so the engine is sized to exactly what the scheduler will send. Prefix caching and priority scheduling are required and enabled by default; the engine refuses a configuration that turns them off.</p>
+<h2 id="roles">Roles<a class="headerlink" href="#roles" title="Permanent link">&para;</a></h2>
+<p>Programs say <code>model="main"</code> or <code>model="judge"</code>, never a model id. <code>make_runtime</code> creates <code>main</code> and aliases <code>judge</code> to it. Give the judge its own engine with any of:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">make_runtime</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">M</span><span class="p">,</span> <span class="n">judge_model</span><span class="o">=</span><span class="n">PRM</span><span class="p">)</span>                     <span class="c1"># second model, same GPU</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">make_runtime</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">M</span><span class="p">,</span> <span class="n">judge_devices</span><span class="o">=</span><span class="s2">"1"</span><span class="p">)</span>                   <span class="c1"># same model, its own GPU</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">make_runtime</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">M</span><span class="p">,</span> <span class="n">judge_model</span><span class="o">=</span><span class="n">PRM</span><span class="p">,</span> <span class="n">judge_process</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># subprocess server, own GIL</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">make_runtime</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">M</span><span class="p">,</span> <span class="n">judge_model</span><span class="o">=</span><span class="n">PRM</span><span class="p">,</span> <span class="n">judge_server_attach</span><span class="o">=</span><span class="s2">"http://127.0.0.1:8100"</span><span class="p">)</span>
+</code></pre></div>
+<p><code>judge_process</code> is worth it when two small engines in one interpreter serialize on the GIL; it is text-wire only and serves the one-token scoring workload. For more roles, build <code>Runtime(models={role: ModelSpec(role, EngineSpec(...))}, role_aliases=...)</code> directly. Engines are deduplicated by their full resolved configuration, so two roles with identical specs share one physical engine.</p>
+<h2 id="wires">Wires<a class="headerlink" href="#wires" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Command</th>
-<th>Purpose</th>
-<th>Model needed</th>
+<th><code>wire=</code></th>
+<th>Atoms</th>
+<th>Pick it for</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>agentir list</code></td>
-<td>print tasks and algorithms</td>
-<td>no</td>
+<td><code>"text"</code> (default)</td>
+<td>strings</td>
+<td>completion-style prompts, judge-server scoring</td>
 </tr>
 <tr>
-<td><code>agentir warm</code></td>
-<td>build the engine, load weights, exit</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>agentir bench</code></td>
-<td>run a dataset slice under an algorithm</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>agentir refdiff</code></td>
-<td>verification gate A on one problem</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>agentir check</code></td>
-<td>gates A and B on one problem</td>
-<td>yes</td>
+<td><code>"tokens"</code></td>
+<td>exact token-id tuples</td>
+<td>tool loops, chat and thinking models whose boundary tokens must round-trip exactly</td>
 </tr>
 </tbody>
 </table>
-<p>Every model-executing command fails fast with install instructions if vLLM is not importable.</p>
-<h2 id="engine-options">Engine options<a class="headerlink" href="#engine-options" title="Permanent link">&para;</a></h2>
-<p><code>--model</code> (required), <code>--judge-model</code>, <code>--devices</code>, <code>--judge-devices</code>, <code>--judge-process</code>, <code>--max-model-len</code>, <code>--gpu-mem</code>, <code>--judge-gpu-mem</code>, <code>--max-inflight 32</code>, <code>--wire {text,tokens}</code>.</p>
-<h2 id="speculation-options">Speculation options<a class="headerlink" href="#speculation-options" title="Permanent link">&para;</a></h2>
-<p><code>--spec {on,off,both,ladder,fastbase}</code> (default <code>on</code>), <code>--window 2</code>, <code>--spec-inflight 8</code>, <code>--depth1-unmetered</code>, <code>--judge-prefetch</code>, <code>--ev-gate</code>, <code>--spec-preempt</code>, <code>--prune-margin M</code>. The optional lanes apply to spec-enabled arms only.</p>
-<table>
-<thead>
-<tr>
-<th><code>--spec</code></th>
-<th>Arms</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>off</code>, <code>on</code></td>
-<td>one guarded arm</td>
-</tr>
-<tr>
-<td><code>both</code></td>
-<td>spec-off then spec-on, same problems, same seeds</td>
-</tr>
-<tr>
-<td><code>ladder</code></td>
-<td>serial reference, spec-off recording decisions, spec-on, oracle replay</td>
-</tr>
-<tr>
-<td><code>fastbase</code></td>
-<td>phase-serial beam baseline, spec-off, spec-on</td>
-</tr>
-</tbody>
-</table>
-<h2 id="algorithm-options">Algorithm options<a class="headerlink" href="#algorithm-options" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Default</th>
-<th>Used by</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--k</code></td>
-<td>6</td>
-<td><code>self_consistency</code>, <code>best_of_n</code>, <code>heavy</code> (n), <code>sal_beam</code> (samples per step)</td>
-</tr>
-<tr>
-<td><code>--width</code>, <code>--branch</code>, <code>--rounds</code></td>
-<td>2, 2, 3</td>
-<td>beam shape; <code>--rounds</code> is <code>sal_beam</code>'s iteration bound</td>
-</tr>
-<tr>
-<td><code>--iters</code></td>
-<td>4</td>
-<td><code>reflexion</code>, <code>mcts</code></td>
-</tr>
-<tr>
-<td><code>--step-tokens</code></td>
-<td>160</td>
-<td>beam step, MCTS rollout</td>
-</tr>
-<tr>
-<td><code>--early-steps</code>, <code>--late-step-tokens</code></td>
-<td>3, unset</td>
-<td>varying step budget</td>
-</tr>
-<tr>
-<td><code>--step-stop STR</code></td>
-<td>unset</td>
-<td>step delimiter (escapes decoded, so <code>'\n\n'</code> works)</td>
-</tr>
-<tr>
-<td><code>--max-tokens</code></td>
-<td>512</td>
-<td>main budget; also the beam finish budget</td>
-</tr>
-<tr>
-<td><code>--judge-tokens</code></td>
-<td>96</td>
-<td>judge rationale budget</td>
-</tr>
-<tr>
-<td><code>--scorer {logprob,judge,prm}</code></td>
-<td><code>logprob</code></td>
-<td>beam scorer</td>
-</tr>
-<tr>
-<td><code>--prm-agg {min,last,mean,prod}</code></td>
-<td><code>min</code></td>
-<td>PRM aggregation</td>
-</tr>
-<tr>
-<td><code>--bound-commit</code></td>
-<td>off</td>
-<td>beam early round commit (needs prm, min, step-stop)</td>
-</tr>
-<tr>
-<td><code>--phase-serial</code></td>
-<td>off</td>
-<td>beam decode/grade barrier</td>
-</tr>
-<tr>
-<td><code>--prune-margin</code></td>
-<td>unset</td>
-<td>beam loser predictor (prm, min)</td>
-</tr>
-<tr>
-<td><code>--no-explain</code></td>
-<td>off</td>
-<td>skip self-consistency's explanation</td>
-</tr>
-<tr>
-<td><code>--chat</code></td>
-<td>off</td>
-<td>render prompts through the chat template</td>
-</tr>
-<tr>
-<td><code>--temperature</code>, <code>--top-p</code>, <code>--run-seed</code></td>
-<td>0.8, 0.95, 20260708</td>
-<td>sampling defaults and seed</td>
-</tr>
-</tbody>
-</table>
-<h2 id="bench"><code>bench</code><a class="headerlink" href="#bench" title="Permanent link">&para;</a></h2>
-<p><code>--task {gsm8k,math500,aime2024,amc2023}</code> and <code>--algo</code> are required. <code>--n 10</code>, <code>--offset 0</code>, <code>--concurrency 1</code>, <code>--out PATH</code> (default <code>runs/&lt;task&gt;-&lt;algo&gt;-&lt;time&gt;.jsonl</code>), <code>--dump-ledger DIR</code>, <code>--runtime-graph [DIR]</code>. Datasets download on first use into <code>~/.cache/agentir</code>.</p>
-<h2 id="check-and-refdiff"><code>check</code> and <code>refdiff</code><a class="headerlink" href="#check-and-refdiff" title="Permanent link">&para;</a></h2>
-<p><code>check</code> defaults to <code>--algo beam_search --task gsm8k</code>; <code>refdiff</code> to <code>--algo best_of_n</code>. Both take <code>--offset</code>. <code>check --runtime-graph [PATH]</code> renders the two arms on one time axis; <code>check --slow-tool-audit</code> re-executes completed speculable tools and diffs their images. Exit status 0 means every gate passed; 2 means a divergence or a failed audit.</p>
-<p>Source: <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/cli.py"><code>cli.py</code></a>.</p>
+<p>On the token wire, continuations are exact token prefixes and the tokenizer is the engine's own. Several engines may share a token wire only if their tokenizer programs are byte-identical; the runtime checks this at warm-up and refuses otherwise.</p>
+<h2 id="chat-prompts">Chat prompts<a class="headerlink" href="#chat-prompts" title="Permanent link">&para;</a></h2>
+<p>Chat and thinking models need their template. Render it through the role's engine and pass the result to <code>lit</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">prefix</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">chat_prefix</span><span class="p">(</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Explain why the sky is blue."</span><span class="p">}],</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">role</span><span class="o">=</span><span class="s2">"main"</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">program</span><span class="p">():</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">return</span> <span class="n">force</span><span class="p">(</span><span class="n">out_text</span><span class="p">(</span><span class="n">infer</span><span class="p">(</span><span class="n">lit</span><span class="p">(</span><span class="n">prefix</span><span class="p">),</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">128</span><span class="p">)))</span>
+</code></pre></div>
+<p><code>chat_prefix</code> returns a string on the text wire and a token tuple on the token wire (Harmony models always render to tokens). Pass <code>tools=</code> to render function schemas into the system turn. <code>chat_template_kwargs</code> on the runtime (and <code>judge_chat_template_kwargs</code>, which inherits from it unless set) is canonical, identity-bearing configuration. The built-in algorithms take <code>chat=True</code> to render their prompts this way.</p>
+<h2 id="generation-settings">Generation settings<a class="headerlink" href="#generation-settings" title="Permanent link">&para;</a></h2>
+<p>Sampling parameters are validated and frozen into the node identity at trace time. Runtime defaults are <code>max_tokens=512, temperature=0.8, top_p=0.95</code>, overridable with <code>default_params=</code>. The accepted keys are listed in <a href="../../reference/configuration/#sampling-parameters">runtime configuration</a>; anything else is an error rather than a silently dropped field. There is no per-call <code>seed</code>: it is derived from identity.</p>
+<p><code>structured=</code> takes exactly one of <code>json</code>, <code>regex</code>, <code>choice</code>, <code>grammar</code>, <code>json_object</code>, <code>structural_tag</code>. In tool loops, structural tags are compiled in a preflight before the turn is admitted, so a grammar the engine rejects fails at trace time rather than mid-speculation.</p>
+<h2 id="two-speculations-two-switches">Two speculations, two switches<a class="headerlink" href="#two-speculations-two-switches" title="Permanent link">&para;</a></h2>
+<p><code>SpecConfig.enabled</code> controls AgentIR's branch speculation. vLLM's token drafting is an engine setting (<code>EngineSpec(vllm_token_drafter={...})</code>, or <code>speculative_config</code> in <code>engine_args</code>). They are independent and identity-bearing in different places: the drafter is part of the engine key, branch speculation is not part of any identity at all. A drafting engine rejects <code>min_p</code> and <code>logit_bias</code> by key presence. See <a href="../../advanced/optimizations/#four-kinds-of-speculation">four kinds of speculation</a>.</p>
+<h2 id="event-granularity">Event granularity<a class="headerlink" href="#event-granularity" title="Permanent link">&para;</a></h2>
+<p><code>event_granularity="auto"</code> lets a committed request with no incremental consumer take one terminal stream event instead of one per engine step, which removes per-step host work on the loop thread. Speculative requests, streamed tool parsers, prefetch sources, and bound-commit targets keep the delta wire. Bytes are identical either way; only ledger <code>t_first</code> loses its first-token meaning for final-granularity attempts.</p>
 
 
 
@@ -1795,7 +1735,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Runtime configuration">
+          <a href="../algorithms/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Built-in algorithms">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1805,20 +1745,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Runtime configuration
+                Built-in algorithms
               </div>
             </div>
           </a>
         
         
           
-          <a href="../troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshooting">
+          <a href="../remote/" class="md-footer__link md-footer__link--next" aria-label="Next: Remote vLLM">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Troubleshooting
+                Remote vLLM
               </div>
             </div>
             <div class="md-footer__button md-icon">

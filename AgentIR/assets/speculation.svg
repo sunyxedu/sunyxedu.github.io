@@ -1,15 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" role="img" aria-labelledby="title desc">
-  <title id="title">Overlapping a continuation with its selection decision</title>
-  <desc id="desc">Without speculation, the continuation waits until the judge selects A. With speculation, A and B continuations begin when their own prompts are ready. At selection, A is retained and B is cancelled. This is an illustrative schedule and does not represent measured timings.</desc>
-  <style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#2d383c;font-size:13px}.head{font-weight:600;font-size:15px}.sub{fill:#617075;font-size:12px}</style>
-  <text class="head" x="22" y="28">Without speculation</text><text class="sub" x="610" y="28">Time → (illustrative)</text>
-  <text x="22" y="66">Judge</text><rect x="167" y="45" width="320" height="31" rx="3" fill="#e6ecef"/><text x="181" y="65">Compare A and B</text>
-  <text x="22" y="110">Continue A</text><path d="M167 101h320" stroke="#ccd5d7" stroke-dasharray="4 4"/><text class="sub" x="245" y="95">Wait for selection</text><rect x="487" y="85" width="290" height="31" rx="3" fill="#c8e4dc"/><text x="500" y="105">Generate the selected continuation</text>
-  <path d="M487 39v86" stroke="#617075" stroke-dasharray="4 4"/>
-  <text class="head" x="22" y="175">With speculation</text>
-  <text x="22" y="215">Judge</text><rect x="167" y="194" width="320" height="31" rx="3" fill="#e6ecef"/><text x="181" y="214">Compare A and B</text>
-  <text x="22" y="259">Continue A</text><rect x="305" y="238" width="182" height="31" rx="3" fill="#e5f0ec" stroke="#6f9c8e" stroke-dasharray="4 3"/><rect x="487" y="238" width="108" height="31" rx="3" fill="#c8e4dc"/><text x="322" y="258">Execute early</text><text x="500" y="258">Keep</text>
-  <text x="22" y="303">Continue B</text><rect x="305" y="282" width="182" height="31" rx="3" fill="#f4ebe5" stroke="#c4a58e" stroke-dasharray="4 3"/><text x="322" y="302">Execute early</text><path d="m481 292 12 12m0-12-12 12" stroke="#9c6547" stroke-width="2"/><text class="sub" x="505" y="303">Cancel</text>
-  <path d="M487 186v139" stroke="#617075" stroke-dasharray="4 4"/><text class="sub" x="425" y="344">Judge selects A</text>
-  <text class="sub" x="167" y="344">Inputs ready ↗</text><path d="M305 278v44" stroke="#ccd5d7" stroke-dasharray="3 3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-labelledby="t d">
+  <title id="t">Overlapping a continuation with the decision that selects it</title>
+  <desc id="d">Without speculation the continuation of A waits until the judge selects A. With speculation the continuations of A and B begin as soon as their own candidate text exists, while the judge is still reading. When the judge selects A, the A continuation commits and the B continuation is cancelled. Illustrative schedule, not a measurement.</desc>
+  <style>
+    text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#233746;font-size:13px}
+    .h{font-weight:650;font-size:15px}.s{fill:#5c6d7c;font-size:12px}
+  </style>
+  <rect x="1" y="1" width="898" height="338" rx="12" fill="#fff" stroke="#e3e9ed"/>
+  <text class="h" x="24" y="30">Without speculation</text><text class="s" x="700" y="30">time → (illustrative)</text>
+  <text x="24" y="66">Judge</text><rect x="160" y="46" width="330" height="30" rx="4" fill="#e6ecef"/><text x="172" y="66">read A and B, pick one</text>
+  <text x="24" y="108">Continue A</text><path d="M160 100h330" stroke="#ccd5d7" stroke-dasharray="4 4"/><text class="s" x="250" y="94">waits for the verdict</text>
+  <rect x="490" y="88" width="300" height="30" rx="4" fill="#dcefe6" stroke="#4e8a72"/><text x="502" y="108">generate the selected continuation</text>
+  <path d="M490 40v88" stroke="#617075" stroke-dasharray="4 4"/>
+
+  <text class="h" x="24" y="170">With speculation</text>
+  <text x="24" y="206">Judge</text><rect x="160" y="186" width="330" height="30" rx="4" fill="#e6ecef"/><text x="172" y="206">read A and B, pick one</text>
+  <text x="24" y="248">Continue A</text><rect x="300" y="228" width="190" height="30" rx="4" fill="#e6eef8" stroke="#4f79a8" stroke-dasharray="4 3"/><rect x="490" y="228" width="110" height="30" rx="4" fill="#dcefe6" stroke="#4e8a72"/><text x="312" y="248">speculative</text><text x="502" y="248">committed</text>
+  <text x="24" y="290">Continue B</text><rect x="300" y="270" width="190" height="30" rx="4" fill="#f6e6e3" stroke="#b0574c" stroke-dasharray="4 3"/><text x="312" y="290">speculative</text><path d="m484 279 12 12m0-12-12 12" stroke="#b0574c" stroke-width="2"/><text class="s" x="504" y="290">squashed</text>
+  <path d="M490 178v132" stroke="#617075" stroke-dasharray="4 4"/><text class="s" x="440" y="326">judge selects A</text>
+  <text class="s" x="160" y="326">A and B finished decoding ↗</text><path d="M300 262v46" stroke="#ccd5d7" stroke-dasharray="3 3"/>
+  <text class="s" x="620" y="290">saved ≈ 190 units, minus contention</text>
 </svg>

@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://hemlix.me/AgentIR/reference/cli/">
+        <link rel="canonical" href="https://hemlix.me/AgentIR/internals/scheduler/">
       
       
-        <link rel="prev" href="../configuration/">
+        <link rel="prev" href="../tracer/">
       
       
-        <link rel="next" href="../troubleshooting/">
+        <link rel="next" href="../engines/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Command line - AgentIR</title>
+        <title>The scheduler - AgentIR</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#command-line" class="md-skip">
+        <a href="#the-scheduler" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Command line
+              The scheduler
             
           </span>
         </div>
@@ -248,8 +248,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -278,11 +280,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -303,7 +305,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -349,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/program/" class="md-nav__link">
+      <a href="../program/" class="md-nav__link">
         
   
   
@@ -377,7 +379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/identity/" class="md-nav__link">
+      <a href="../identity/" class="md-nav__link">
         
   
   
@@ -405,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/tracer/" class="md-nav__link">
+      <a href="../tracer/" class="md-nav__link">
         
   
   
@@ -430,10 +432,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../internals/scheduler/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The scheduler
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -449,6 +478,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#one-thread-two-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One thread, two indexes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admission
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#committed-work-preempts-speculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Committed work preempts speculation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attempts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attempts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guard-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guard callbacks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engine-death" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engine death
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-tool-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The tool scheduler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bookkeeping-you-can-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bookkeeping you can read
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In the code
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -461,7 +609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/engines/" class="md-nav__link">
+      <a href="../engines/" class="md-nav__link">
         
   
   
@@ -489,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/tools/" class="md-nav__link">
+      <a href="../tools/" class="md-nav__link">
         
   
   
@@ -517,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/verification/" class="md-nav__link">
+      <a href="../verification/" class="md-nav__link">
         
   
   
@@ -1061,10 +1209,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1087,11 +1233,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1112,7 +1258,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1130,7 +1276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/" class="md-nav__link">
+      <a href="../../reference/api/" class="md-nav__link">
         
   
   
@@ -1158,7 +1304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
+      <a href="../../reference/configuration/" class="md-nav__link">
         
   
   
@@ -1183,37 +1329,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Command line
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../reference/cli/" class="md-nav__link">
         
   
   
@@ -1229,81 +1348,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#engine-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Engine options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#speculation-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Speculation options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bench" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        bench
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-and-refdiff" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        check and refdiff
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1316,7 +1360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1344,7 +1388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
+      <a href="../../reference/glossary/" class="md-nav__link">
         
   
   
@@ -1520,10 +1564,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#engine-options" class="md-nav__link">
+  <a href="#one-thread-two-indexes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Engine options
+        One thread, two indexes
       
     </span>
   </a>
@@ -1531,10 +1575,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#speculation-options" class="md-nav__link">
+  <a href="#admission" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Speculation options
+        Admission
       
     </span>
   </a>
@@ -1542,10 +1586,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#algorithm-options" class="md-nav__link">
+  <a href="#committed-work-preempts-speculation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithm options
+        Committed work preempts speculation
       
     </span>
   </a>
@@ -1553,10 +1597,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bench" class="md-nav__link">
+  <a href="#attempts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        bench
+        Attempts
       
     </span>
   </a>
@@ -1564,10 +1608,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#check-and-refdiff" class="md-nav__link">
+  <a href="#guard-callbacks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        check and refdiff
+        Guard callbacks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engine-death" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engine death
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-tool-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The tool scheduler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bookkeeping-you-can-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bookkeeping you can read
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In the code
       
     </span>
   </a>
@@ -1594,172 +1682,120 @@
   
 
 
-<h1 id="command-line">Command line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h1>
-<p><code>agentir</code> drives real benchmarks and checks on in-process vLLM engines. <code>agentir COMMAND --help</code> prints the full option list.</p>
+<h1 id="the-scheduler">The scheduler<a class="headerlink" href="#the-scheduler" title="Permanent link">&para;</a></h1>
+<p>The scheduler turns the guarded graph into engine requests. Its job is stated in one line in the source: <em>legality in, cost out</em>. Whether a node may run is decided by data readiness and guard state; when and in what order is a cost policy. This page follows a record through its life, then explains the funding order, cancellation, retries, and engine recovery.</p>
+<figure class="figure">
+<div aria-label="Life of an engine record. Scroll horizontally on narrow screens." class="diagram-scroll" role="group" tabindex="0">
+<p><img alt="Life of an engine record: status transitions and, independently, guard resolution." src="../../assets/record-lifecycle.svg" /></p>
+</div>
+<figcaption>Status and guard evolve independently. A record can be done long before it is committed. <a href="../../assets/record-lifecycle.svg">Open the diagram.</a></figcaption>
+</figure>
+<h2 id="one-thread-two-indexes">One thread, two indexes<a class="headerlink" href="#one-thread-two-indexes" title="Permanent link">&para;</a></h2>
+<p>The scheduler runs entirely on the runtime's asyncio thread. The tracer posts registrations, demands, and decision callbacks to it with <code>call_soon_threadsafe</code>; engine streams are asyncio tasks on the same loop. There are no locks in the scheduler because there is no concurrency inside it.</p>
+<p>It keeps every record ever registered in <code>records</code> (needed for dependency wiring, results, and diagnostics) and a separate <code>_pending</code> index of records that can still issue. An issue pass scans only the pending index, so a long-running benchmark with tens of thousands of finished nodes does not pay for them on every wake-up.</p>
+<h2 id="admission">Admission<a class="headerlink" href="#admission" title="Permanent link">&para;</a></h2>
+<p>An issue pass runs after every event: a registration, a demand, a decision resolving, an attempt ending. For each pending, data-ready record:</p>
 <table>
 <thead>
 <tr>
-<th>Command</th>
-<th>Purpose</th>
-<th>Model needed</th>
+<th>Guard</th>
+<th>Condition</th>
+<th>Issue as</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>agentir list</code></td>
-<td>print tasks and algorithms</td>
-<td>no</td>
+<td>true</td>
+<td>slot free on its engine, or a speculative victim can be preempted</td>
+<td>committed, priority 0</td>
 </tr>
 <tr>
-<td><code>agentir warm</code></td>
-<td>build the engine, load weights, exit</td>
-<td>yes</td>
+<td>pending</td>
+<td><code>depth ≤ W</code>, <code>spec_inflight &lt; β</code>, fewer than 5 failed speculative attempts, no observation barrier</td>
+<td>speculative, priority = depth</td>
 </tr>
 <tr>
-<td><code>agentir bench</code></td>
-<td>run a dataset slice under an algorithm</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>agentir refdiff</code></td>
-<td>verification gate A on one problem</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>agentir check</code></td>
-<td>gates A and B on one problem</td>
-<td>yes</td>
+<td>false / failed</td>
+<td></td>
+<td>never; the guard callback squashes it</td>
 </tr>
 </tbody>
 </table>
-<p>Every model-executing command fails fast with install instructions if vLLM is not importable.</p>
-<h2 id="engine-options">Engine options<a class="headerlink" href="#engine-options" title="Permanent link">&para;</a></h2>
-<p><code>--model</code> (required), <code>--judge-model</code>, <code>--devices</code>, <code>--judge-devices</code>, <code>--judge-process</code>, <code>--max-model-len</code>, <code>--gpu-mem</code>, <code>--judge-gpu-mem</code>, <code>--max-inflight 32</code>, <code>--wire {text,tokens}</code>.</p>
-<h2 id="speculation-options">Speculation options<a class="headerlink" href="#speculation-options" title="Permanent link">&para;</a></h2>
-<p><code>--spec {on,off,both,ladder,fastbase}</code> (default <code>on</code>), <code>--window 2</code>, <code>--spec-inflight 8</code>, <code>--depth1-unmetered</code>, <code>--judge-prefetch</code>, <code>--ev-gate</code>, <code>--spec-preempt</code>, <code>--prune-margin M</code>. The optional lanes apply to spec-enabled arms only.</p>
+<p>Committed records are sorted by data-ready time, then registration time. Speculative records are sorted by the funding order of the design:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>demanded first  →  shallower guard depth  →  lower rank sum  →  higher effective hint  →  older registration
+</code></pre></div>
+<p><em>Demanded</em> means a tracer thread is waiting on this record through an exit; refusing it could deadlock the decision the scheduler itself is waiting for. The <em>effective hint</em> is the record's own static hint plus every resolved member hint on the decisions its guard names, read at dispatch time. Hints come from <code>choose(hint=...)</code> and may resolve long after a record registered; because a descendant's guard carries its ancestor's <code>At</code> literal, fresh evidence about a candidate re-prioritizes that candidate's whole speculative subtree without re-registration. Hints are advisory: never validated, never part of identity, never able to change a byte.</p>
+<p><code>SpecConfig.depth1_unmetered=True</code> lets depth-1 continuations bypass β. Their population is already bounded by the decision's pool, so metering them only starves a late-finishing candidate's children behind deeper speculation.</p>
+<h2 id="committed-work-preempts-speculation">Committed work preempts speculation<a class="headerlink" href="#committed-work-preempts-speculation" title="Permanent link">&para;</a></h2>
+<p>If a committed record finds its engine full, <code>_preempt_for</code> cancels the worst in-flight speculative attempt on that engine: deepest guard, lowest hint, newest issue. The victim returns to pending with its NodeId and seed intact and reissues when a slot frees. Speculation never preempts committed work. With the flags off, speculation cancels nothing except a predicted loser (see <a href="../../advanced/optimizations/">optimizations</a>).</p>
+<h2 id="attempts">Attempts<a class="headerlink" href="#attempts" title="Permanent link">&para;</a></h2>
+<p><code>_issue</code> creates an <code>Attempt</code> with a fresh request id and a task running <code>Runtime.execute_node</code>, which streams from the engine adapter and aggregates deltas into <code>result_atoms</code>, exact <code>result_text</code>, logprobs, and token counts. The record's live partial stream is aliased for two advisory readers (prefix prefetch and bound-commit truncation) but is never a result.</p>
+<p>How an attempt ends decides what happens to the record:</p>
 <table>
 <thead>
 <tr>
-<th><code>--spec</code></th>
-<th>Arms</th>
+<th>Outcome</th>
+<th>Record</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>off</code>, <code>on</code></td>
-<td>one guarded arm</td>
+<td>stream finished</td>
+<td><code>done</code>; children lose this dependency and may become data-ready; committed if the guard is already true, else waits</td>
 </tr>
 <tr>
-<td><code>both</code></td>
-<td>spec-off then spec-on, same problems, same seeds</td>
+<td>cancelled with cause <code>preempt</code>, <code>spec-preempt</code>, <code>prune</code>, <code>engine-dead</code></td>
+<td>back to pending, reissue later</td>
 </tr>
 <tr>
-<td><code>ladder</code></td>
-<td>serial reference, spec-off recording decisions, spec-on, oracle replay</td>
+<td>cancelled with cause <code>squash</code></td>
+<td>stays squashed</td>
 </tr>
 <tr>
-<td><code>fastbase</code></td>
-<td>phase-serial beam baseline, spec-off, spec-on</td>
+<td>cancelled with cause <code>bound</code></td>
+<td>terminal <code>done</code> with tokens-so-far, <code>finish_reason="bound"</code> (committed algorithmic truncation)</td>
+</tr>
+<tr>
+<td>engine error, speculative</td>
+<td><code>spec_failures += 1</code>, back to pending; a node that merely <em>tried</em> early is never poisoned</td>
+</tr>
+<tr>
+<td>engine error, committed</td>
+<td>retry up to 3 times, then <code>failed</code> with source semantics</td>
+</tr>
+<tr>
+<td>deterministic projection error, speculative</td>
+<td>deferred; surfaces only if the world commits</td>
+</tr>
+<tr>
+<td><code>EngineDeadError</code></td>
+<td>begin engine recovery</td>
 </tr>
 </tbody>
 </table>
-<h2 id="algorithm-options">Algorithm options<a class="headerlink" href="#algorithm-options" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Default</th>
-<th>Used by</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--k</code></td>
-<td>6</td>
-<td><code>self_consistency</code>, <code>best_of_n</code>, <code>heavy</code> (n), <code>sal_beam</code> (samples per step)</td>
-</tr>
-<tr>
-<td><code>--width</code>, <code>--branch</code>, <code>--rounds</code></td>
-<td>2, 2, 3</td>
-<td>beam shape; <code>--rounds</code> is <code>sal_beam</code>'s iteration bound</td>
-</tr>
-<tr>
-<td><code>--iters</code></td>
-<td>4</td>
-<td><code>reflexion</code>, <code>mcts</code></td>
-</tr>
-<tr>
-<td><code>--step-tokens</code></td>
-<td>160</td>
-<td>beam step, MCTS rollout</td>
-</tr>
-<tr>
-<td><code>--early-steps</code>, <code>--late-step-tokens</code></td>
-<td>3, unset</td>
-<td>varying step budget</td>
-</tr>
-<tr>
-<td><code>--step-stop STR</code></td>
-<td>unset</td>
-<td>step delimiter (escapes decoded, so <code>'\n\n'</code> works)</td>
-</tr>
-<tr>
-<td><code>--max-tokens</code></td>
-<td>512</td>
-<td>main budget; also the beam finish budget</td>
-</tr>
-<tr>
-<td><code>--judge-tokens</code></td>
-<td>96</td>
-<td>judge rationale budget</td>
-</tr>
-<tr>
-<td><code>--scorer {logprob,judge,prm}</code></td>
-<td><code>logprob</code></td>
-<td>beam scorer</td>
-</tr>
-<tr>
-<td><code>--prm-agg {min,last,mean,prod}</code></td>
-<td><code>min</code></td>
-<td>PRM aggregation</td>
-</tr>
-<tr>
-<td><code>--bound-commit</code></td>
-<td>off</td>
-<td>beam early round commit (needs prm, min, step-stop)</td>
-</tr>
-<tr>
-<td><code>--phase-serial</code></td>
-<td>off</td>
-<td>beam decode/grade barrier</td>
-</tr>
-<tr>
-<td><code>--prune-margin</code></td>
-<td>unset</td>
-<td>beam loser predictor (prm, min)</td>
-</tr>
-<tr>
-<td><code>--no-explain</code></td>
-<td>off</td>
-<td>skip self-consistency's explanation</td>
-</tr>
-<tr>
-<td><code>--chat</code></td>
-<td>off</td>
-<td>render prompts through the chat template</td>
-</tr>
-<tr>
-<td><code>--temperature</code>, <code>--top-p</code>, <code>--run-seed</code></td>
-<td>0.8, 0.95, 20260708</td>
-<td>sampling defaults and seed</td>
-</tr>
-</tbody>
-</table>
-<h2 id="bench"><code>bench</code><a class="headerlink" href="#bench" title="Permanent link">&para;</a></h2>
-<p><code>--task {gsm8k,math500,aime2024,amc2023}</code> and <code>--algo</code> are required. <code>--n 10</code>, <code>--offset 0</code>, <code>--concurrency 1</code>, <code>--out PATH</code> (default <code>runs/&lt;task&gt;-&lt;algo&gt;-&lt;time&gt;.jsonl</code>), <code>--dump-ledger DIR</code>, <code>--runtime-graph [DIR]</code>. Datasets download on first use into <code>~/.cache/agentir</code>.</p>
-<h2 id="check-and-refdiff"><code>check</code> and <code>refdiff</code><a class="headerlink" href="#check-and-refdiff" title="Permanent link">&para;</a></h2>
-<p><code>check</code> defaults to <code>--algo beam_search --task gsm8k</code>; <code>refdiff</code> to <code>--algo best_of_n</code>. Both take <code>--offset</code>. <code>check --runtime-graph [PATH]</code> renders the two arms on one time axis; <code>check --slow-tool-audit</code> re-executes completed speculable tools and diffs their images. Exit status 0 means every gate passed; 2 means a divergence or a failed audit.</p>
-<p>Source: <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/cli.py"><code>cli.py</code></a>.</p>
+<p>Failure cascades along data edges: a child whose producer can never materialize fails immediately with the producer's cause, exactly where the serial program would have raised, instead of waiting forever.</p>
+<h2 id="guard-callbacks">Guard callbacks<a class="headerlink" href="#guard-callbacks" title="Permanent link">&para;</a></h2>
+<p>When a record registers, the scheduler subscribes to the unresolved frontier of its guard: every decision whose resolution could change the guard's value now. Because a resolution can expose deeper frontier decisions (a literal whose entry guard just turned true), <code>_reevaluate</code> re-subscribes and re-reads until nothing new appears; only then is waiting safe. Re-evaluation does one of three things:</p>
+<ul>
+<li>guard <strong>true</strong>: mark committed, resolve <code>commit_fut</code>, write a ledger row if already done;</li>
+<li>guard <strong>false</strong>: squash, cancelling any running attempt, keeping any atoms on file unpublished;</li>
+<li>guard <strong>failed</strong>: squash with the deciding computation's cause, so consumers re-raise it.</li>
+</ul>
+<p>Consumers hold two futures per record, stable across attempts: <code>done_fut</code> (data exists) and <code>commit_fut</code> (data may be published). Pure ops and speculative descendants wait on the first; <code>force</code> and unknown-effect bodies wait on the second.</p>
+<h2 id="engine-death">Engine death<a class="headerlink" href="#engine-death" title="Permanent link">&para;</a></h2>
+<p>A vLLM <code>EngineDeadError</code> is process-global. The scheduler trips one fuse per engine key: it advances the engine <em>epoch</em>, cancels every in-flight attempt of that engine with cause <code>engine-dead</code>, clears any partial results they produced, drains them, and calls the adapter's <code>restart</code> at most <code>engine_restart_limit</code> times (default 1). An attempt that finishes while its epoch is stale is fenced before it can publish. If the rebuild fails or the limit is exhausted, every pending record on that engine is poisoned with the cause, which then surfaces only in worlds that commit.</p>
+<h2 id="the-tool-scheduler">The tool scheduler<a class="headerlink" href="#the-tool-scheduler" title="Permanent link">&para;</a></h2>
+<p>Tool bodies do not share the op executor. <code>ToolScheduler</code> keeps two admission queues in front of its own thread pool: committed work always drains first; speculable bodies under a pending guard are admitted only when speculation is enabled, the guard depth is within <em>W</em>, and a separate tool budget (β, capped by worker count) has room. A queued speculative body is promoted when its guard commits and discarded when it squashes; a body that already started cannot be stopped, which is exactly what the <code>speculable</code> declaration licenses. Unknown-effect bodies are never retried. <a href="../tools/">Tools and the tool loop</a> covers the contracts.</p>
+<h2 id="bookkeeping-you-can-read">Bookkeeping you can read<a class="headerlink" href="#bookkeeping-you-can-read" title="Permanent link">&para;</a></h2>
+<p>Every record writes one ledger row when its disposition is known: <code>committed</code>, <code>wasted</code> (finished or aborted in a false world), or <code>failed</code>. Rows carry the six timestamps, token counts, the engine-reported cached-token count, <code>speculative</code>, <code>depth_at_issue</code>, and <code>finish_reason</code>. Control-plane ops, decisions, tool bodies, and tool-loop templates append to a separate event list. <a href="../../guides/diagnostics/">Timelines and diagnostics</a> shows how to read them.</p>
+<h2 id="in-the-code">In the code<a class="headerlink" href="#in-the-code" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/execution/scheduler.py"><code>execution/scheduler.py</code></a>: <code>Record</code>, <code>Attempt</code>, <code>register</code>, <code>_issue_pass</code>, <code>_effective_hint</code>, <code>_preempt_for</code>, <code>_run</code>, <code>_reevaluate</code>, <code>_squash</code>, <code>_fail</code>, <code>_finish</code>, <code>_begin_engine_recovery</code>.</li>
+<li><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/execution/runtime.py"><code>execution/runtime.py</code></a>: <code>execute_node</code>, <code>ledger_row</code>, <code>SpecConfig</code>.</li>
+<li><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/execution/tool_scheduler.py"><code>execution/tool_scheduler.py</code></a>.</li>
+<li>Tests: <code>test_scheduler_admission.py</code>, <code>test_attempts.py</code>, <code>test_engine_recovery.py</code>, <code>test_spec_hint_priority.py</code>, <code>test_tool_scheduler.py</code>.</li>
+</ul>
+<p>Next: <a href="../engines/">Engine adapters</a>, the physical side of an attempt.</p>
 
 
 
@@ -1795,7 +1831,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Runtime configuration">
+          <a href="../tracer/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The tracer">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1805,20 +1841,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Runtime configuration
+                The tracer
               </div>
             </div>
           </a>
         
         
           
-          <a href="../troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshooting">
+          <a href="../engines/" class="md-footer__link md-footer__link--next" aria-label="Next: Engine adapters">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Troubleshooting
+                Engine adapters
               </div>
             </div>
             <div class="md-footer__button md-icon">

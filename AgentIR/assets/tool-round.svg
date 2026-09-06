@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 430" role="img" aria-labelledby="t d">
+  <title id="t">One round of the autonomous tool loop</title>
+  <desc id="d">The assistant turn streams from the engine. vLLM's incremental parser closes a tool call as soon as its JSON arguments are complete. The call binds a pre-reserved slot to a real T-node, which dispatches immediately if speculable or waits for commitment if unknown. The observation policy declares candidate observations; each candidate spawns a guarded next-turn continuation. When the real observation lands, the selector verifies which candidate matched. The matching continuation commits; others are squashed; a miss falls back to the real observation.</desc>
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="m1 1 6 3.5-6 3.5" fill="none" stroke="#546b83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="b" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="m1 1 6 3.5-6 3.5" fill="none" stroke="#a77835" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#233746;font-size:14px}
+      .h{font-size:15px;font-weight:650}.s{font-size:12.5px;fill:#5c6d7c}
+      .m{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:12.5px}
+      .box{fill:#fff;stroke:#cfd9de;stroke-width:1.3}
+      .keep{fill:#dcefe6;stroke:#4e8a72}.spec{fill:#e6eef8;stroke:#4f79a8}.dead{fill:#f6e6e3;stroke:#b0574c;stroke-dasharray:4 3}
+      .dec{fill:#fbf3e6;stroke:#d3a55c}.tool{fill:#f3eefa;stroke:#9a86bd}
+      .l{fill:none;stroke:#546b83;stroke-width:1.5;marker-end:url(#a)}
+      .g{fill:none;stroke:#a77835;stroke-width:1.5;stroke-dasharray:5 4;marker-end:url(#b)}
+    </style>
+  </defs>
+  <rect x="1" y="1" width="1098" height="428" rx="12" fill="#fff" stroke="#e3e9ed"/>
+
+  <rect class="box" x="26" y="30" width="230" height="90" rx="8"/>
+  <text class="h" x="42" y="54">Assistant turn (E-node)</text>
+  <text class="s" x="42" y="76">rendered by the chat template</text>
+  <text class="s" x="42" y="94">streams token by token</text>
+  <text class="s" x="42" y="112">one fresh vLLM parser per attempt</text>
+
+  <path class="l" d="M256 75h44"/>
+  <rect class="box" x="300" y="30" width="230" height="90" rx="8"/>
+  <text class="h" x="316" y="54">Parser event</text>
+  <text class="m" x="316" y="76">call[0] = shell({"cmd": ...})</text>
+  <text class="s" x="316" y="94">published when the JSON closes,</text>
+  <text class="s" x="316" y="112">before the turn ends</text>
+
+  <path class="l" d="M415 120v40"/>
+  <rect class="box tool" x="300" y="160" width="230" height="90" rx="8"/>
+  <text class="h" x="316" y="184">T-node (slot 0 binds)</text>
+  <text class="s" x="316" y="206">speculable: runs now</text>
+  <text class="s" x="316" y="224">unknown: waits for the turn</text>
+  <text class="s" x="316" y="242">and its guard to commit</text>
+
+  <path class="l" d="M530 75h44"/>
+  <rect class="box dec" x="574" y="30" width="230" height="90" rx="8"/>
+  <text class="h" x="590" y="54">Observation policy</text>
+  <text class="m" x="590" y="76">slots = [guess, hole()]</text>
+  <text class="s" x="590" y="94">a guess: literal, Val, or a</text>
+  <text class="s" x="590" y="112">draft-model Seq · hole = real result</text>
+
+  <path class="l" d="M689 120v30"/>
+  <rect class="box spec" x="574" y="150" width="230" height="50" rx="8"/>
+  <text class="m" x="590" y="171">turn t+1 | obs = guess</text>
+  <text class="s" x="590" y="190">decodes while the tool runs</text>
+  <rect class="box" x="574" y="214" width="230" height="50" rx="8"/>
+  <text class="m" x="590" y="235">turn t+1 | obs = hole</text>
+  <text class="s" x="590" y="254">data-ready when the image lands</text>
+
+  <path class="l" d="M530 205h44v-30"/>
+  <path class="l" d="M530 220h44v19"/>
+  <text class="s" x="534" y="182">image</text>
+
+  <rect class="box dec" x="848" y="150" width="226" height="114" rx="8"/>
+  <text class="h" x="864" y="174">select(image, slots)</text>
+  <text class="s" x="864" y="196">Exact: byte-equal → keep guess</text>
+  <text class="s" x="864" y="214">else → keep the hole branch</text>
+  <text class="s" x="864" y="236">also verified: the call prefix</text>
+  <text class="s" x="864" y="254">was final (no later call)</text>
+  <path class="g" d="M848 200h-44v-25"/>
+  <path class="g" d="M848 220h-44v19"/>
+
+  <rect class="box" x="26" y="290" width="1048" height="116" rx="8" stroke-dasharray="5 4"/>
+  <text class="h" x="42" y="314">What keeps this sound</text>
+  <text class="s" x="42" y="338">· Selection returns only a declared slot index; no bytes enter through the selector.</text>
+  <text class="s" x="42" y="356">· A journal replays published calls across engine retries and rejects any divergence.</text>
+  <text class="s" x="42" y="374">· At turn end, the full parser re-parses the whole text and must agree with the streamed calls.</text>
+  <text class="s" x="42" y="392">· Each turn pre-reserves K call slots plus an overflow sentinel, so slot identity never depends on parser timing.</text>
+</svg>

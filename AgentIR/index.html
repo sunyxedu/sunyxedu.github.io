@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A guided introduction to AgentIR, from speculative execution to correct, measurable agent programs.">
+        <meta name="description" content="AgentIR is a Python IR and runtime that lets LLM agents start their next step before the decision that selects it has finished. This manual explains how it works, how to use it, and how to verify it.">
       
       
       
@@ -282,10 +282,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#start-with-the-whole-system" class="md-nav__link">
+  <a href="#how-this-manual-is-organized" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Start with the whole system
+        How this manual is organized
       
     </span>
   </a>
@@ -293,10 +293,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#find-your-next-page" class="md-nav__link">
+  <a href="#the-idea-in-one-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Find your next page
+        The idea in one example
       
     </span>
   </a>
@@ -304,10 +304,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#where-agentir-helps" class="md-nav__link">
+  <a href="#where-speculation-helps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Where AgentIR helps
+        Where speculation helps
       
     </span>
   </a>
@@ -329,6 +329,24 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -352,7 +370,7 @@
   <span class="md-ellipsis">
     
   
-    Start here
+    How it works
   
 
     
@@ -368,7 +386,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Start here
+    How it works
   
 
           </label>
@@ -401,6 +419,285 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internals/program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programs and handles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internals/identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity and guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internals/tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internals/scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The scheduler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internals/engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engine adapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internals/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and the tool loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internals/verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using AgentIR
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using AgentIR
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -465,93 +762,6 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Core concepts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Build programs
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Build programs
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="guides/control-flow/" class="md-nav__link">
         
   
@@ -587,7 +797,7 @@
   <span class="md-ellipsis">
     
   
-    Tools and observations
+    Defining tools
   
 
     
@@ -615,7 +825,7 @@
   <span class="md-ellipsis">
     
   
-    Algorithms
+    Built-in algorithms
   
 
     
@@ -636,14 +846,14 @@
   
   
     <li class="md-nav__item">
-      <a href="vllm-backend/" class="md-nav__link">
+      <a href="guides/models/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Models and vLLM
+    Models, roles, and wires
   
 
     
@@ -671,7 +881,7 @@
   <span class="md-ellipsis">
     
   
-    Remote execution
+    Remote vLLM
   
 
     
@@ -692,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="integrations/harbor-terminal-bench/" class="md-nav__link">
+      <a href="guides/harbor/" class="md-nav__link">
         
   
   
@@ -713,65 +923,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Understand the design
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Understand the design
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -779,119 +930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="design/identity/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Identity and the IR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="design/scheduler/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scheduling and commitment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="design/tool-streaming/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Streaming tool calls
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="design/optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prediction and optimization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="design/compilation/" class="md-nav__link">
+      <a href="guides/compile/" class="md-nav__link">
         
   
   
@@ -912,65 +951,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Verify and measure
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Verify and measure
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -978,35 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="verification/correctness/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Correctness checks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="verification/diagnostics/" class="md-nav__link">
+      <a href="guides/diagnostics/" class="md-nav__link">
         
   
   
@@ -1034,7 +986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="verification/benchmarking/" class="md-nav__link">
+      <a href="guides/benchmarking/" class="md-nav__link">
         
   
   
@@ -1055,6 +1007,71 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1062,7 +1079,35 @@
   
   
     <li class="md-nav__item">
-      <a href="verification/experiments/" class="md-nav__link">
+      <a href="advanced/optimizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scheduling optimizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="advanced/experiments/" class="md-nav__link">
         
   
   
@@ -1098,6 +1143,18 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1110,10 +1167,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1131,8 +1188,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1297,6 +1354,12 @@
   
     
     
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1309,17 +1372,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Contribute
+    Contributing
   
 
     
@@ -1330,12 +1393,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Contribute
+    Contributing
   
 
           </label>
@@ -1383,7 +1446,7 @@
   <span class="md-ellipsis">
     
   
-    Work on the documentation
+    Documentation
   
 
     
@@ -1431,10 +1494,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#start-with-the-whole-system" class="md-nav__link">
+  <a href="#how-this-manual-is-organized" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Start with the whole system
+        How this manual is organized
       
     </span>
   </a>
@@ -1442,10 +1505,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#find-your-next-page" class="md-nav__link">
+  <a href="#the-idea-in-one-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Find your next page
+        The idea in one example
       
     </span>
   </a>
@@ -1453,10 +1516,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#where-agentir-helps" class="md-nav__link">
+  <a href="#where-speculation-helps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Where AgentIR helps
+        Where speculation helps
       
     </span>
   </a>
@@ -1483,43 +1546,47 @@
   
 
 
-<p class="eyebrow">AgentIR 1.3.0 · Python · vLLM</p>
+<p class="eyebrow">AgentIR 1.3.0 · Python 3.11+ · vLLM 0.24</p>
 
 <h1 id="agentir-documentation">AgentIR documentation<a class="headerlink" href="#agentir-documentation" title="Permanent link">&para;</a></h1>
-<p class="lead">Write an agent's decisions in Python. Let the runtime begin useful work before those decisions finish.</p>
+<p class="lead">Speculative execution for LLM agents. Write the agent's search and selection logic in plain Python; the runtime starts possible next steps while the decision between them is still being made, then keeps the selected one and cancels the rest.</p>
 
-<p>AgentIR is an intermediate representation and runtime for agent programs that generate candidates, evaluate them, and continue from a selection. It makes the difference between <strong>needing a result to build a request</strong> and <strong>needing a decision to keep that request</strong> explicit. That distinction creates opportunities to overlap work.</p>
-<p>For example, while a judge compares three answers, AgentIR can start a continuation for each answer. Once the judge selects one, its continuation survives and the others are cancelled. The program still publishes only the selected result.</p>
-<h2 id="start-with-the-whole-system">Start with the whole system<a class="headerlink" href="#start-with-the-whole-system" title="Permanent link">&para;</a></h2>
-<p>Follow the stages below to understand what you write, what AgentIR constructs, and what runs on the engine. Each stage opens the corresponding explanation.</p>
-<div class="workflow">
-<p><a href="getting-started/first-program/"><span class="step">01 / EXPRESS</span><strong>Write the program</strong><small>Generate, evaluate, select, continue.</small></a></p>
-<p><a href="architecture/#2-the-tracer-builds-a-guarded-graph"><span class="step">02 / TRACE</span><strong>Build the graph</strong><small>Separate data from keep-or-cancel decisions.</small></a></p>
-<p><a href="design/scheduler/"><span class="step">03 / EXECUTE</span><strong>Schedule ready work</strong><small>Run committed work first; use spare capacity.</small></a></p>
-<p><a href="verification/correctness/"><span class="step">04 / VERIFY</span><strong>Check what survives</strong><small>Compare outputs, identities, and effects.</small></a></p>
+<p>Test-time scaling means giving an agent more compute to search for a better answer: sample several candidates, judge them, continue from the best. Every one of those judgments is a wait. While a judge model compares two answers, the next request usually sits idle, even though either answer already contains everything needed to start its continuation.</p>
+<p>AgentIR makes that opportunity explicit. It separates the <strong>data</strong> a request needs to be built from the <strong>decision</strong> it needs to be kept. A continuation can start as soon as its data exists; the decision only determines whether its result survives. The runtime tracks both, so an agent program written without any mention of speculation still gets it, and a verification harness can prove that the answer is byte-for-byte what the serial program would have produced.</p>
+<figure class="figure">
+<div aria-label="The AgentIR pipeline. Scroll horizontally on narrow screens." class="diagram-scroll" role="group" tabindex="0">
+<p><img alt="The AgentIR pipeline: a Python program is traced into a guarded graph; the scheduler issues ready work to vLLM engines and tool workers; results resolve data holes and decisions; surviving work commits and losing work is squashed; verification compares the result with a serial reference." src="assets/pipeline.svg" /></p>
 </div>
-<p>Begin with the <a href="architecture/">architecture</a> for the diagram and a complete walk through these stages. To run code immediately, go to <a href="getting-started/installation/">installation</a> and <a href="getting-started/first-program/">your first program</a>.</p>
-<h2 id="find-your-next-page">Find your next page<a class="headerlink" href="#find-your-next-page" title="Permanent link">&para;</a></h2>
-<div class="reading-route">
-<p><strong>Learn the programming model</strong></p>
-<p>Understand <a href="getting-started/concepts/">symbolic handles and decisions</a>, then express <a href="guides/control-flow/">branching and loops</a>. A small vocabulary carries through the entire manual.</p>
-</div>
-<div class="reading-route">
-<p><strong>Build a working agent</strong></p>
-<p>Connect <a href="guides/tools/">tools and observation policies</a>, choose an <a href="guides/algorithms/">algorithm</a>, and configure <a href="vllm-backend/">local models</a>, a <a href="guides/remote/">remote server</a>, or <a href="integrations/harbor-terminal-bench/">Harbor</a>.</p>
-</div>
-<div class="reading-route">
-<p><strong>Understand why execution is safe</strong></p>
-<p>Follow <a href="design/identity/">identity</a>, <a href="design/scheduler/">commitment</a>, and <a href="design/tool-streaming/">streaming tool calls</a>. Learn which <a href="design/optimization/">optimizations</a> change scheduling and which change the algorithm.</p>
-</div>
-<div class="reading-route">
-<p><strong>Measure or extend the implementation</strong></p>
-<p>Run <a href="verification/correctness/">correctness checks</a>, read a <a href="verification/diagnostics/">timeline</a>, and design a <a href="verification/benchmarking/">benchmark</a>. Use the <a href="contributing/source-map/">source map</a> to find the implementation and its tests.</p>
-</div>
-<h2 id="where-agentir-helps">Where AgentIR helps<a class="headerlink" href="#where-agentir-helps" title="Permanent link">&para;</a></h2>
-<p>Speculation is most useful when the program exposes a continuation before the decision selecting it finishes, and the engine has capacity to run it. Candidate search, judge-and-refine pipelines, and predictable tool observations can provide that structure. Speedup depends on decision latency, surviving work, cache reuse, and contention; it is a measurement, not a runtime guarantee.</p>
-<p>AgentIR's branch speculation and vLLM's draft-token decoding operate at different levels. Either can be enabled independently. See <a href="design/optimization/#four-mechanisms-at-different-levels">the four optimization mechanisms</a> before interpreting an experiment.</p>
-<p>Need a specific name or default? Open the <a href="reference/api/">Python API</a>, <a href="reference/configuration/">runtime configuration</a>, <a href="reference/cli/">CLI</a>, or <a href="reference/glossary/">glossary</a>.</p>
+<figcaption>The four stages every invocation passes through. Solid edges carry data; dashed edges carry decisions. <a href="assets/pipeline.svg">Open the diagram.</a></figcaption>
+</figure>
+<h2 id="how-this-manual-is-organized">How this manual is organized<a class="headerlink" href="#how-this-manual-is-organized" title="Permanent link">&para;</a></h2>
+<p>The manual follows the pipeline in the figure. Read the first part top to bottom once; after that, jump to whichever page you need.</p>
+<p><strong>How it works</strong> explains the design, one stage per page, each starting with its own diagram and ending with pointers into the source.</p>
+<ol>
+<li><a href="architecture/">Architecture</a>: the whole pipeline on one page, walked through with a concrete program.</li>
+<li><a href="internals/program/">Programs and handles</a>: what you write, and the three symbolic handles that flow through it.</li>
+<li><a href="internals/identity/">Identity and guards</a>: how a request gets a stable name and seed before it runs, and how a guard says whether it may be kept.</li>
+<li><a href="internals/tracer/">The tracer</a>: how a Python call becomes a graph node without waiting, including the hoist and loop unrolling.</li>
+<li><a href="internals/scheduler/">The scheduler</a>: how ready work is funded, committed, squashed, retried, and recovered.</li>
+<li><a href="internals/engines/">Engine adapters</a>: the three ways vLLM is driven, and the text and token wires.</li>
+<li><a href="internals/tools/">Tools and the tool loop</a>: effect contracts, observation policies, and streaming tool calls.</li>
+<li><a href="internals/verification/">Verification</a>: the serial reference and the two differential gates that prove speculation is invisible.</li>
+</ol>
+<p><strong>Using AgentIR</strong> is task oriented: <a href="getting-started/installation/">install</a>, run <a href="getting-started/first-program/">your first program</a>, then follow the guides for <a href="guides/control-flow/">control flow</a>, <a href="guides/tools/">tools</a>, <a href="guides/algorithms/">the built-in algorithms</a>, <a href="guides/models/">models and wires</a>, <a href="guides/remote/">remote servers</a>, <a href="guides/harbor/">Harbor</a>, <a href="guides/compile/">static compilation</a>, <a href="guides/diagnostics/">timelines</a>, and <a href="guides/benchmarking/">benchmarking</a>.</p>
+<p><strong>Advanced</strong> covers the <a href="advanced/optimizations/">scheduling optimizations</a> layered on top of the basic policy, and the <a href="advanced/experiments/">experiment archive</a>.</p>
+<p><strong>Reference</strong> holds the exact contracts: <a href="reference/api/">Python API</a>, <a href="reference/configuration/">runtime configuration</a>, <a href="reference/cli/">CLI</a>, <a href="reference/troubleshooting/">troubleshooting</a>, and a <a href="reference/glossary/">glossary</a>.</p>
+<h2 id="the-idea-in-one-example">The idea in one example<a class="headerlink" href="#the-idea-in-one-example" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">candidates</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>                      <span class="c1"># four samples, one prefill</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">scores</span> <span class="o">=</span> <span class="n">collect</span><span class="p">([</span><span class="n">op</span><span class="p">(</span><span class="n">grade</span><span class="p">,</span> <span class="n">out_text</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">])</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">best</span> <span class="o">=</span> <span class="n">choose</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">op</span><span class="p">(</span><span class="n">rank</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">answer</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">best</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Explain the answer:"</span><span class="p">)))</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">return</span> <span class="n">force</span><span class="p">(</span><span class="n">out_text</span><span class="p">(</span><span class="n">answer</span><span class="p">))</span>
+</code></pre></div>
+<p><code>choose</code> does not wait for the ranking. It returns a placeholder for "whichever candidate ranks first". When <code>infer</code> continues from that placeholder, the tracer registers one explanation per candidate, each carrying a condition (a <em>guard</em>) that says which ranking outcome would keep it. Each explanation needs only its own candidate's text to start, so the scheduler can run all four while the grader is still working. When the ranking resolves, one explanation commits and three are cancelled. <code>force</code> returns only the committed one.</p>
+<p>Every request's sampling seed is derived from its logical identity, not from when it ran, so a continuation issued early produces the same tokens it would have produced after the decision. That is what lets <a href="internals/verification/">verification</a> demand byte identity between speculation on and off.</p>
+<h2 id="where-speculation-helps">Where speculation helps<a class="headerlink" href="#where-speculation-helps" title="Permanent link">&para;</a></h2>
+<p>Speculation pays off when a program exposes a continuation before the decision selecting it resolves, and the engine has spare capacity to run it. Candidate search (best-of-N, beam search, MCTS), judge-and-refine loops, and tool calls with predictable results all have that shape. Slow judges create the opportunity; a saturated GPU erases it. The <a href="guides/benchmarking/">benchmarking guide</a> shows how to measure the difference honestly.</p>
+<p>AgentIR speculates over <strong>agent decisions</strong>. That is a different level from vLLM's token-level speculative decoding, and the two compose. See <a href="advanced/optimizations/#four-kinds-of-speculation">scheduling optimizations</a> before comparing them.</p>
 
 
 
@@ -1601,7 +1668,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.footer", "navigation.top", "content.code.copy", "search.suggest", "search.highlight"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.footer", "navigation.top", "navigation.indexes", "content.code.copy", "search.suggest", "search.highlight"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.d7400e89.min.js"></script>

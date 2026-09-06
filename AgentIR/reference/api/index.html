@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Understand, build, and verify speculative agent programs with AgentIR.">
+        <meta name="description" content="Speculative execution for LLM agents and test-time scaling. Architecture, internals, guides, and reference.">
       
       
       
         <link rel="canonical" href="https://hemlix.me/AgentIR/reference/api/">
       
       
-        <link rel="prev" href="../../verification/experiments/">
+        <link rel="prev" href="../../advanced/experiments/">
       
       
         <link rel="next" href="../configuration/">
@@ -252,6 +252,24 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -274,7 +292,7 @@
   <span class="md-ellipsis">
     
   
-    Start here
+    How it works
   
 
     
@@ -290,7 +308,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Start here
+    How it works
   
 
           </label>
@@ -323,6 +341,285 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programs and handles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity and guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The scheduler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engine adapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and the tool loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using AgentIR
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using AgentIR
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -387,93 +684,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Core concepts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Build programs
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Build programs
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../guides/control-flow/" class="md-nav__link">
         
   
@@ -509,7 +719,7 @@
   <span class="md-ellipsis">
     
   
-    Tools and observations
+    Defining tools
   
 
     
@@ -537,7 +747,7 @@
   <span class="md-ellipsis">
     
   
-    Algorithms
+    Built-in algorithms
   
 
     
@@ -558,14 +768,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vllm-backend/" class="md-nav__link">
+      <a href="../../guides/models/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Models and vLLM
+    Models, roles, and wires
   
 
     
@@ -593,7 +803,7 @@
   <span class="md-ellipsis">
     
   
-    Remote execution
+    Remote vLLM
   
 
     
@@ -614,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/harbor-terminal-bench/" class="md-nav__link">
+      <a href="../../guides/harbor/" class="md-nav__link">
         
   
   
@@ -635,65 +845,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Understand the design
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Understand the design
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -701,119 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/identity/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Identity and the IR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/scheduler/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scheduling and commitment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/tool-streaming/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Streaming tool calls
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prediction and optimization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/compilation/" class="md-nav__link">
+      <a href="../../guides/compile/" class="md-nav__link">
         
   
   
@@ -834,65 +873,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Verify and measure
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Verify and measure
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -900,35 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/correctness/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Correctness checks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../verification/diagnostics/" class="md-nav__link">
+      <a href="../../guides/diagnostics/" class="md-nav__link">
         
   
   
@@ -956,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/benchmarking/" class="md-nav__link">
+      <a href="../../guides/benchmarking/" class="md-nav__link">
         
   
   
@@ -977,6 +929,71 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -984,7 +1001,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/experiments/" class="md-nav__link">
+      <a href="../../advanced/optimizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scheduling optimizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/experiments/" class="md-nav__link">
         
   
   
@@ -1022,6 +1067,18 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1034,10 +1091,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1055,8 +1112,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1133,340 +1190,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prompt-construction-and-generation" class="md-nav__link">
+  <a href="#prompts-and-generation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prompt construction and generation
+        Prompts and generation
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Prompt construction and generation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lits" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        lit(s)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#catxs-and-fmttemplate-parts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cat(*xs) and fmt(template, **parts)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inferx-modelmain-logprobsfalse-hint00-params" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        infer(x, *, model="main", logprobs=False, hint=0.0, **params)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#expandx-k-modelmain-logprobsfalse-hint00-params" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        expand(x, k, *, model="main", logprobs=False, hint=0.0, **params)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#values-and-publication" class="md-nav__link">
+  <a href="#reading-values-out" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Values and publication
+        Reading values out
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Values and publication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#textx-and-out_textx" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        text(x) and out_text(x)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logprobs_ofx-and-top_logprobs_ofx" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        logprobs_of(x) and top_logprobs_of(x)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#opf-args-purefalse-label-afternone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        op(f, *args, pure=False, label="", after=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#collectvals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        collect(vals)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#forcex-timeoutnone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        force(x, timeout=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#selection-and-repetition" class="md-nav__link">
+  <a href="#control-plane" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Selection and repetition
+        Control plane
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Selection and repetition">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#choosepool-by-k1-hintnone-predict_losersnone-boundnone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        choose(pool, by, k=1, hint=None, predict_losers=None, bound=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gatex-cond" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        gate(x, cond)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loopinit-body-max_iters-lookaheadnone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        loop(init, body, max_iters, lookahead=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#selection_boundspool-bounds-k1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        selection_bounds(pool, bounds, k=1)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prefetch_on_streamsource-build-modeljudge-chunk_tokensnone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        prefetch_on_stream(source, build, *, model="judge", chunk_tokens=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#direct-tools-and-projections" class="md-nav__link">
+  <a href="#direct-tools" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Direct tools and projections
+        Direct tools
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Direct tools and projections">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#toolfn-argsnone-name-effectunknown-alphanone-alpha_name-afternone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        tool(fn, args=None, *, name="", effect="unknown", alpha=None, alpha_name="", after=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#obst-alphanone-name-alpha_name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        obs(t, alpha=None, *, name="", alpha_name="")
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#observet-alphanone-name-alpha_name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        observe(t, alpha=None, *, name="", alpha_name="")
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ackt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ack(t)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#expectt-guess-alphanone-name-alpha_name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        expect(t, guess, *, alpha=None, name="", alpha_name="")
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#classifyt-cases-alphanone-alpha_name-name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        classify(t, cases, *, alpha=None, alpha_name="", name="")
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#callsy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        calls(y)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#autonomous-tool-definitions" class="md-nav__link">
+  <a href="#tool-definitions-and-policies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Autonomous tool definitions
+        Tool definitions and policies
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Autonomous tool definitions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tooldeffn-effectunknown-obs-guess-descriptionnone-input_schemanone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ToolDef(fn, effect="unknown", ..., obs=..., guess=..., description=None, input_schema=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#observation-policy-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Observation policy types
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1482,10 +1256,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#canonical-advanced-modules" class="md-nav__link">
+  <a href="#not-in-__all__-still-useful" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Canonical advanced modules
+        Not in __all__, still useful
       
     </span>
   </a>
@@ -1628,6 +1402,12 @@
   
     
     
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1640,17 +1420,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Contribute
+    Contributing
   
 
     
@@ -1661,12 +1441,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Contribute
+    Contributing
   
 
           </label>
@@ -1714,7 +1494,7 @@
   <span class="md-ellipsis">
     
   
-    Work on the documentation
+    Documentation
   
 
     
@@ -1762,340 +1542,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prompt-construction-and-generation" class="md-nav__link">
+  <a href="#prompts-and-generation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prompt construction and generation
+        Prompts and generation
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Prompt construction and generation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lits" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        lit(s)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#catxs-and-fmttemplate-parts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cat(*xs) and fmt(template, **parts)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inferx-modelmain-logprobsfalse-hint00-params" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        infer(x, *, model="main", logprobs=False, hint=0.0, **params)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#expandx-k-modelmain-logprobsfalse-hint00-params" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        expand(x, k, *, model="main", logprobs=False, hint=0.0, **params)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#values-and-publication" class="md-nav__link">
+  <a href="#reading-values-out" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Values and publication
+        Reading values out
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Values and publication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#textx-and-out_textx" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        text(x) and out_text(x)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logprobs_ofx-and-top_logprobs_ofx" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        logprobs_of(x) and top_logprobs_of(x)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#opf-args-purefalse-label-afternone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        op(f, *args, pure=False, label="", after=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#collectvals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        collect(vals)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#forcex-timeoutnone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        force(x, timeout=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#selection-and-repetition" class="md-nav__link">
+  <a href="#control-plane" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Selection and repetition
+        Control plane
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Selection and repetition">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#choosepool-by-k1-hintnone-predict_losersnone-boundnone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        choose(pool, by, k=1, hint=None, predict_losers=None, bound=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gatex-cond" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        gate(x, cond)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loopinit-body-max_iters-lookaheadnone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        loop(init, body, max_iters, lookahead=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#selection_boundspool-bounds-k1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        selection_bounds(pool, bounds, k=1)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prefetch_on_streamsource-build-modeljudge-chunk_tokensnone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        prefetch_on_stream(source, build, *, model="judge", chunk_tokens=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#direct-tools-and-projections" class="md-nav__link">
+  <a href="#direct-tools" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Direct tools and projections
+        Direct tools
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Direct tools and projections">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#toolfn-argsnone-name-effectunknown-alphanone-alpha_name-afternone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        tool(fn, args=None, *, name="", effect="unknown", alpha=None, alpha_name="", after=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#obst-alphanone-name-alpha_name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        obs(t, alpha=None, *, name="", alpha_name="")
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#observet-alphanone-name-alpha_name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        observe(t, alpha=None, *, name="", alpha_name="")
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ackt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ack(t)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#expectt-guess-alphanone-name-alpha_name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        expect(t, guess, *, alpha=None, name="", alpha_name="")
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#classifyt-cases-alphanone-alpha_name-name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        classify(t, cases, *, alpha=None, alpha_name="", name="")
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#callsy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        calls(y)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#autonomous-tool-definitions" class="md-nav__link">
+  <a href="#tool-definitions-and-policies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Autonomous tool definitions
+        Tool definitions and policies
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Autonomous tool definitions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tooldeffn-effectunknown-obs-guess-descriptionnone-input_schemanone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ToolDef(fn, effect="unknown", ..., obs=..., guess=..., description=None, input_schema=None)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#observation-policy-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Observation policy types
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2111,10 +1608,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#canonical-advanced-modules" class="md-nav__link">
+  <a href="#not-in-__all__-still-useful" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Canonical advanced modules
+        Not in __all__, still useful
       
     </span>
   </a>
@@ -2142,66 +1639,70 @@
 
 
 <h1 id="python-api">Python API<a class="headerlink" href="#python-api" title="Permanent link">&para;</a></h1>
-<p>This reference covers the supported root exports in <code>agentir.__all__</code> for <strong>1.3.0</strong>. Signatures below emphasize public arguments; types and adapter-specific details live in the linked source modules. Begin with <a href="../../getting-started/concepts/">core concepts</a> for the programming model.</p>
-<p>The functions are also available through the <code>agentir.api</code> module. <code>agentir.__version__</code> reports the package version.</p>
-<h2 id="prompt-construction-and-generation">Prompt construction and generation<a class="headerlink" href="#prompt-construction-and-generation" title="Permanent link">&para;</a></h2>
-<h3 id="lits"><code>lit(s)</code><a class="headerlink" href="#lits" title="Permanent link">&para;</a></h3>
-<p>Create a <code>Seq</code> from a string or token-ID tuple, according to the runtime wire. The literal belongs to the current tracing context.</p>
-<h3 id="catxs-and-fmttemplate-parts"><code>cat(*xs)</code> and <code>fmt(template, **parts)</code><a class="headerlink" href="#catxs-and-fmttemplate-parts" title="Permanent link">&para;</a></h3>
-<p>Compose symbolic prompt states. <code>cat</code> preserves producer and observation segments and canonicalizes adjacent literals. <code>fmt</code> supports named composition without automatically converting every handle into a string.</p>
-<p>Composition supports at most one independent unresolved choice. Combining independent choices into a Cartesian product is not implemented.</p>
-<h3 id="inferx-modelmain-logprobsfalse-hint00-params"><code>infer(x, *, model="main", logprobs=False, hint=0.0, **params)</code><a class="headerlink" href="#inferx-modelmain-logprobsfalse-hint00-params" title="Permanent link">&para;</a></h3>
-<p>Register one continuation. A normal result is a <code>Seq</code> containing its input state and generated output. An unresolved <code>Choice</code> is hoisted into guarded per-member continuations. A <code>Val</code> holding a handle introduces a materialization barrier.</p>
-<p><code>params</code> are the validated <a href="../configuration/#sampling-parameters">sampling parameters</a>. Request log probabilities with <code>logprobs=True</code>. <code>hint</code> is scheduling advice, not a score used to select the output.</p>
-<p>With <code>tools=registry</code>, this function runs the autonomous tool loop. Its options include <code>max_turns=8</code>, optional <code>max_calls</code>, <code>timeout</code>, and <code>system</code>. The tool loop defaults to eight call slots, a 600-second timeout, 512 output tokens per turn, and temperature zero when not overridden. It returns the final assistant-turn <code>Seq</code> and requires the token wire.</p>
-<p><code>projection=</code> accepts a prepared streamed projection for advanced custom tool control. It conflicts with autonomous <code>tools=</code> mode. The <code>_stream_projection</code> argument is internal.</p>
-<h3 id="expandx-k-modelmain-logprobsfalse-hint00-params"><code>expand(x, k, *, model="main", logprobs=False, hint=0.0, **params)</code><a class="headerlink" href="#expandx-k-modelmain-logprobsfalse-hint00-params" title="Permanent link">&para;</a></h3>
-<p>Register <code>k</code> sampling lanes from a shared input. Each lane receives a distinct draw identity. Returns a list of handles; physical prefix reuse depends on the engine cache.</p>
-<h2 id="values-and-publication">Values and publication<a class="headerlink" href="#values-and-publication" title="Permanent link">&para;</a></h2>
-<h3 id="textx-and-out_textx"><code>text(x)</code> and <code>out_text(x)</code><a class="headerlink" href="#textx-and-out_textx" title="Permanent link">&para;</a></h3>
-<p>Return <code>Val[str]</code> for the complete prompt state or the generated tail, respectively. A selected <code>Choice</code> is resolved under its publication conditions when forced.</p>
-<h3 id="logprobs_ofx-and-top_logprobs_ofx"><code>logprobs_of(x)</code> and <code>top_logprobs_of(x)</code><a class="headerlink" href="#logprobs_ofx-and-top_logprobs_ofx" title="Permanent link">&para;</a></h3>
-<p>Return asynchronous per-token log-probability observations. The producer must have been created with the required log-probability observation mode and top-k setting. These functions cannot retroactively request engine observations.</p>
-<h3 id="opf-args-purefalse-label-afternone"><code>op(f, *args, pure=False, label="", after=None)</code><a class="headerlink" href="#opf-args-purefalse-label-afternone" title="Permanent link">&para;</a></h3>
-<p>Run a Python function when its inputs are available and its effect conditions permit it. Return a <code>Val</code>. The default fences effects until commitment; <code>pure=True</code> declares replayable computation suitable for speculative execution.</p>
-<p><code>label</code> identifies the operation in diagnostics. <code>after</code> adds predecessor ordering. Keep expensive blocking work out of event-loop callbacks; <code>op</code> bodies use the operation worker pool.</p>
-<h3 id="collectvals"><code>collect(vals)</code><a class="headerlink" href="#collectvals" title="Permanent link">&para;</a></h3>
-<p>Return one <code>Val</code> containing all results in input order. Callback aggregation waits for every member to settle and reports the first failure in list order. It does not allocate a blocking worker per member.</p>
-<h3 id="forcex-timeoutnone"><code>force(x, timeout=None)</code><a class="headerlink" href="#forcex-timeoutnone" title="Permanent link">&para;</a></h3>
-<p>Materialize a value or handle after the relevant guards allow publication. A rejected world raises <code>Squashed</code>; a surviving failure propagates. This blocks the tracer where a concrete result is required.</p>
-<h2 id="selection-and-repetition">Selection and repetition<a class="headerlink" href="#selection-and-repetition" title="Permanent link">&para;</a></h2>
-<h3 id="choosepool-by-k1-hintnone-predict_losersnone-boundnone"><code>choose(pool, by, k=1, hint=None, predict_losers=None, bound=None)</code><a class="headerlink" href="#choosepool-by-k1-hintnone-predict_losersnone-boundnone" title="Permanent link">&para;</a></h3>
-<p>Select <code>k</code> ranked members using a concrete or asynchronous ranking of pool indices. Return a list of rank-specific <code>Choice</code> handles. Rankings must contain distinct, valid integer positions and enough members for <code>k</code>; duplicate pool members are invalid.</p>
-<p><code>hint</code> carries per-member scheduling information. <code>predict_losers</code> can demote speculative work without removing its surviving execution obligation. <code>bound</code> introduces the distinct <a href="../../design/optimization/#use-score-bounds-only-with-a-valid-proof">bound-commit algorithm</a>.</p>
-<h3 id="gatex-cond"><code>gate(x, cond)</code><a class="headerlink" href="#gatex-cond" title="Permanent link">&para;</a></h3>
-<p>Keep <code>x</code> when the condition is true; otherwise squash it. Returns a <code>Choice</code>, with no false-case fallback value.</p>
-<h3 id="loopinit-body-max_iters-lookaheadnone"><code>loop(init, body, max_iters, lookahead=None)</code><a class="headerlink" href="#loopinit-body-max_iters-lookaheadnone" title="Permanent link">&para;</a></h3>
-<p>Call <code>body(state) → (next_state, continue_condition)</code> under successive entry guards. Return the state entering the first round whose condition is false, or the final next state if the bound is exhausted. See <a href="../../guides/control-flow/#iterate-while-preserving-the-stop-decision">loop semantics</a>.</p>
-<h3 id="selection_boundspool-bounds-k1"><code>selection_bounds(pool, bounds, k=1)</code><a class="headerlink" href="#selection_boundspool-bounds-k1" title="Permanent link">&para;</a></h3>
-<p>Open a bound-commit contest. <code>bounds</code> aligns with the flattened pool; <code>None</code> exempts a member. Attach each member's score with <code>contest.attach(index, score_val)</code>, then pass <code>bound=contest</code> to a matching <code>choose</code>. Valid upper bounds and strict rival-score evidence are required.</p>
-<h3 id="prefetch_on_streamsource-build-modeljudge-chunk_tokensnone"><code>prefetch_on_stream(source, build, *, model="judge", chunk_tokens=None)</code><a class="headerlink" href="#prefetch_on_streamsource-build-modeljudge-chunk_tokensnone" title="Permanent link">&para;</a></h3>
-<p>Register advisory text-prefix cache warming for a transformed future prompt. Enabled only with speculation and <code>SpecConfig.judge_prefetch</code>, and requires the text wire. <code>build(full_text_so_far)</code> returns a prompt string or <code>None</code>; it must be fast and pure. Prefetch outputs are discarded.</p>
-<h2 id="direct-tools-and-projections">Direct tools and projections<a class="headerlink" href="#direct-tools-and-projections" title="Permanent link">&para;</a></h2>
-<h3 id="toolfn-argsnone-name-effectunknown-alphanone-alpha_name-afternone"><code>tool(fn, args=None, *, name="", effect="unknown", alpha=None, alpha_name="", after=None)</code><a class="headerlink" href="#toolfn-argsnone-name-effectunknown-alphanone-alpha_name-afternone" title="Permanent link">&para;</a></h3>
-<p>Register a tool body receiving one JSON argument dictionary. <code>args=None</code> means an empty dictionary. Nested values resolve before canonical argument hashing. <code>effect</code> is <code>"unknown"</code> or <code>"speculable"</code>.</p>
-<p><code>alpha</code> declares a pure observation projection; <code>alpha_name</code> names it. <code>after</code> accepts a tool handle, value, or sequence of such predecessors and waits for their settlement without propagating their values or failures.</p>
-<h3 id="obst-alphanone-name-alpha_name"><code>obs(t, alpha=None, *, name="", alpha_name="")</code><a class="headerlink" href="#obst-alphanone-name-alpha_name" title="Permanent link">&para;</a></h3>
-<p>Return a <code>Seq</code> containing a late-bound named observation segment. Its bytes are supplied only when the projection image is materialized.</p>
-<h3 id="observet-alphanone-name-alpha_name"><code>observe(t, alpha=None, *, name="", alpha_name="")</code><a class="headerlink" href="#observet-alphanone-name-alpha_name" title="Permanent link">&para;</a></h3>
-<p>Return the structured projected image as a <code>Val</code>. Use this for Python computation on the declared observation.</p>
-<h3 id="ackt"><code>ack(t)</code><a class="headerlink" href="#ackt" title="Permanent link">&para;</a></h3>
-<p>Return <code>Val[None]</code> when the body finishes, propagating its failure without reading the observation.</p>
-<h3 id="expectt-guess-alphanone-name-alpha_name"><code>expect(t, guess, *, alpha=None, name="", alpha_name="")</code><a class="headerlink" href="#expectt-guess-alphanone-name-alpha_name" title="Permanent link">&para;</a></h3>
-<p>Return a hit/miss <code>Choice</code>: the guessed string on exact image equality, or a real-observation hole on mismatch. Both surviving paths preserve the declared observation bytes.</p>
-<h3 id="classifyt-cases-alphanone-alpha_name-name"><code>classify(t, cases, *, alpha=None, alpha_name="", name="")</code><a class="headerlink" href="#classifyt-cases-alphanone-alpha_name-name" title="Permanent link">&para;</a></h3>
-<p>Route exact projected image strings to already-constructed branch values. <code>cases</code> is a closed mapping. An observation outside it is a projection error.</p>
-<h3 id="callsy"><code>calls(y)</code><a class="headerlink" href="#callsy" title="Permanent link">&para;</a></h3>
-<p>Expose the prefix-stable <code>ProjectedCalls</code> interface of a generated <code>Seq</code> that was created with a prepared tool-stream projection. It is for custom streamed tool control, not for parsing arbitrary generated text after the fact. See <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/tools.py"><code>tool_projection</code></a> in the canonical tools module and <a href="../../design/tool-streaming/">streaming design</a>.</p>
-<h2 id="autonomous-tool-definitions">Autonomous tool definitions<a class="headerlink" href="#autonomous-tool-definitions" title="Permanent link">&para;</a></h2>
-<h3 id="tooldeffn-effectunknown-obs-guess-descriptionnone-input_schemanone"><code>ToolDef(fn, effect="unknown", ..., obs=..., guess=..., description=None, input_schema=None)</code><a class="headerlink" href="#tooldeffn-effectunknown-obs-guess-descriptionnone-input_schemanone" title="Permanent link">&para;</a></h3>
-<p>Configure one named tool in the <code>infer(..., tools={name: definition})</code> registry. <code>input_schema</code> describes only the arguments, without a provider function wrapper. <code>description</code> defaults to the callable's first docstring line, with the mapping key as the neutral fallback.</p>
-<p>Omitting both the observation contract and guess enables the default exact policy and draft predictor. Explicit <code>obs=Exact()</code> or <code>guess=None</code> suppresses the implicit predictor. The older <code>policy=</code> spelling is accepted, but supplying it together with <code>obs=</code> is an error.</p>
-<h3 id="observation-policy-types">Observation policy types<a class="headerlink" href="#observation-policy-types" title="Permanent link">&para;</a></h3>
+<p>The supported public surface is <code>agentir.__all__</code> in <strong>1.3.0</strong>, re-exported from <code>agentir.tracing.api</code> (the DSL), <code>agentir.execution</code> (runtime), <code>agentir.tracing.tools</code> (tool definitions and policies), and <code>agentir.diagnostics.viz</code>. Everything is importable from the root: <code>from agentir import infer, choose, make_runtime</code>. The same names are also reachable through <code>agentir.api</code>; <code>agentir.__version__</code> reports the version.</p>
+<h2 id="prompts-and-generation">Prompts and generation<a class="headerlink" href="#prompts-and-generation" title="Permanent link">&para;</a></h2>
+<dl>
+<dt><code>lit(s)</code> → <code>Seq</code></dt>
+<dd>A literal from a string, or a token-id tuple on the token wire.</dd>
+<dt><code>cat(*xs)</code> → <code>Seq | Choice</code></dt>
+<dd>Concatenate <code>Seq</code>, <code>str</code>, <code>Val[str]</code>, and at most one unresolved <code>Choice</code>, which the result distributes over. A <code>Val</code> part blocks the tracer until it resolves and commits.</dd>
+<dt><code>fmt(template, **parts)</code> → <code>Seq | Choice</code></dt>
+<dd><code>cat</code> with named holes: <code>fmt("Q: {q}\nA: {a}", q=seq1, a=seq2)</code>.</dd>
+<dt><code>infer(x, *, model="main", logprobs=False, hint=0.0, **params)</code> → <code>Seq | Choice</code></dt>
+<dd>One continuation of <code>x</code>. Over an unresolved <code>Choice</code>, one guarded continuation per member (the hoist). Over a <code>Val</code> holding a handle, a barrier. <code>params</code> are the <a href="../configuration/#sampling-parameters">sampling parameters</a>; <code>hint</code> is an advisory funding priority.</dd>
+<dd>With <code>tools={name: ToolDef}</code> it runs the autonomous tool loop and returns the final assistant turn; extra options <code>max_turns=8</code>, <code>max_calls=8</code>, <code>timeout=600.0</code>, <code>system=None</code>, <code>max_tokens=512</code>, <code>temperature=0.0</code>. Requires the token wire.</dd>
+<dd>With <code>projection=</code> it uses a prepared tool-stream projection (advanced, see <code>calls</code>).</dd>
+<dt><code>expand(x, k, *, model="main", logprobs=False, hint=0.0, **params)</code> → <code>list[Seq]</code></dt>
+<dd><em>k</em> continuations of <code>x</code>: identical prompts, lanes 0..k-1 of one draw, distinct seeds.</dd>
+</dl>
+<h2 id="reading-values-out">Reading values out<a class="headerlink" href="#reading-values-out" title="Permanent link">&para;</a></h2>
+<dl>
+<dt><code>text(x)</code> → <code>Val[str]</code> / <code>out_text(x)</code> → <code>Val[str]</code></dt>
+<dd>The full state, or only the generated tail. Accept <code>Seq</code>, <code>Choice</code>, or <code>Val</code>. Resolve as soon as the data exists, even speculatively; publication is enforced by <code>force</code>.</dd>
+<dt><code>logprobs_of(x)</code> → <code>Val[list[float]]</code> / <code>top_logprobs_of(x)</code> → <code>Val[list[dict]]</code></dt>
+<dd>Sampled-token logprobs (request with <code>logprobs=True</code>) or per-position top-k alternatives (request with <code>logprob_topk=k</code>).</dd>
+<dt><code>collect(vals)</code> → <code>Val[list]</code></dt>
+<dd>Gather Vals in list order without a worker per element. The first failure in list order is surfaced.</dd>
+<dt><code>force(x, timeout=None)</code> → value</dt>
+<dd>The blocking exit. Waits for <code>x</code>'s data and for its guard to be true. Raises <code>Squashed</code> for a rejected world and the deciding computation's own exception for a failed one.</dd>
+</dl>
+<h2 id="control-plane">Control plane<a class="headerlink" href="#control-plane" title="Permanent link">&para;</a></h2>
+<dl>
+<dt><code>op(f, *args, pure=False, label="", after=None)</code> → <code>Val</code></dt>
+<dd>Run <code>f</code> on the worker pool once its inputs resolve. <code>pure=True</code> allows execution on speculative data (a promise of determinism and no side effects). The default waits for its entry guard and its dependencies to commit and runs at most once. <code>after</code> orders the body behind other Vals without consuming their values.</dd>
+<dt><code>choose(pool, by, k=1, hint=None, predict_losers=None, bound=None)</code> → <code>list[Choice]</code></dt>
+<dd>Pick <em>k</em> members by index. <code>by</code> is a ranking (positions, best first) as a <code>Val</code> or a static int or list. <code>hint</code> is a per-member list of floats or Vals for funding priority. <code>predict_losers</code> is an advisory loser predictor. <code>bound</code> enables <a href="../../advanced/optimizations/#bound-commit">bound commit</a>. Duplicate pool members and invalid rankings are errors.</dd>
+<dt><code>gate(x, cond)</code> → <code>Choice</code></dt>
+<dd>Keep <code>x</code> when <code>cond</code> (a <code>Val[bool]</code> or a bool) is true. No false branch.</dd>
+<dt><code>loop(init, body, max_iters, lookahead=None)</code> → state</dt>
+<dd><code>body(state) -&gt; (next_state, continue_val)</code>. Unrolls predict-taken up to <code>lookahead</code> unresolved rounds (default: the window). Returns the state that entered the round whose condition was false.</dd>
+<dt><code>selection_bounds(pool, bounds, k=1)</code> → contest</dt>
+<dd>Open a bound-commit contest; <code>contest.attach(i, score_val)</code> adds evidence; pass it to <code>choose(..., bound=contest)</code>.</dd>
+<dt><code>prefetch_on_stream(source, build, *, model="judge", chunk_tokens=None)</code></dt>
+<dd>Advisory cache warming for a consumer whose prompt is <code>build(text_so_far)</code>. Text wire, speculation and <code>judge_prefetch</code> enabled, else inert.</dd>
+</dl>
+<h2 id="direct-tools">Direct tools<a class="headerlink" href="#direct-tools" title="Permanent link">&para;</a></h2>
+<dl>
+<dt><code>tool(fn, args=None, *, name="", effect="unknown", alpha=None, alpha_name="", after=None)</code> → <code>ToolHandle</code></dt>
+<dd>Register one tool execution. <code>fn(args_dict)</code>. <code>args</code> may nest <code>Val</code> and <code>Choice</code> handles, never <code>Seq</code>. <code>alpha</code> is the declared projection.</dd>
+<dt><code>obs(t, alpha=None, *, name="", alpha_name="")</code> → <code>Seq</code></dt>
+<dd>The projected image as a late-binding prompt segment.</dd>
+<dt><code>observe(t, alpha=None, *, name="", alpha_name="")</code> → <code>Val</code></dt>
+<dd>The projected image as a control-plane value.</dd>
+<dt><code>ack(t)</code> → <code>Val[None]</code></dt>
+<dd>Completion, with the body's failure if any.</dd>
+<dt><code>expect(t, guess, *, alpha=None, name="", alpha_name="")</code> → <code>Choice</code></dt>
+<dd>A hit-or-miss decision: the guess bytes on exact equality, the real image otherwise.</dd>
+<dt><code>classify(t, cases, *, alpha=None, alpha_name="", name="")</code> → <code>Choice</code></dt>
+<dd>Route the exact image string through a closed mapping to already-traced branch values; an unlisted image is a <code>ProjectionError</code>.</dd>
+<dt><code>calls(y)</code> → <code>ProjectedCalls</code></dt>
+<dd>Prefix-stable call slots of a <code>Seq</code> generated with <code>infer(prompt, projection=tool_projection(...))</code>. Slot <code>i</code>'s <code>.name</code> and <code>.args</code> are early <code>Val</code> exits; <code>len</code> waits for the terminal inventory. <code>tool_projection</code> lives in <code>agentir.tracing.tools</code>.</dd>
+</dl>
+<h2 id="tool-definitions-and-policies">Tool definitions and policies<a class="headerlink" href="#tool-definitions-and-policies" title="Permanent link">&para;</a></h2>
+<dl>
+<dt><code>ToolDef(fn, effect="unknown", *, obs=..., guess=..., description=None, input_schema=None)</code></dt>
+<dd>One entry of the <code>tools=</code> registry. <code>input_schema</code> is the argument JSON Schema. With neither <code>obs</code> nor <code>guess</code>, the default is <code>Exact()</code> plus the draft predictor; <code>obs=Exact()</code> or <code>guess=None</code> disables the predictor. <code>policy=</code> is an accepted alias of <code>obs=</code>.</dd>
+</dl>
 <table>
 <thead>
 <tr>
@@ -2212,35 +1713,30 @@
 <tbody>
 <tr>
 <td><code>Policy</code></td>
-<td>Conservative protocol base: exact image through a real-result hole; shallow call-local sessions</td>
+<td>base class: <code>new_session</code>, <code>project</code>, <code>slots</code>, <code>select</code>; exact image through one hole</td>
 </tr>
 <tr>
 <td><code>Exact()</code></td>
-<td>Select guesses only on exact equality; otherwise use the real image</td>
+<td>real image; guesses verified by byte equality</td>
 </tr>
 <tr>
 <td><code>Ignore(text="done")</code></td>
-<td>Constant observation without reading the result</td>
+<td>constant image, result never read</td>
 </tr>
 <tr>
 <td><code>Project(alpha)</code></td>
-<td>Pure reduction before exact observation selection</td>
+<td>image is <code>alpha(raw)</code></td>
 </tr>
 <tr>
-<td><code>Enum(cases, by=...)</code></td>
-<td>Ordered declared representatives selected through the classifier</td>
+<td><code>Enum(cases, by=fn)</code></td>
+<td>closed representatives keyed by <code>by(raw)</code>; a <code>hole()</code> case admits the real result</td>
 </tr>
 <tr>
-<td><code>hole()</code></td>
-<td>A placeholder filled by the real image</td>
-</tr>
-<tr>
-<td><code>open()</code></td>
-<td>Alias of <code>hole()</code>; distinct from Python's file-opening built-in</td>
+<td><code>hole()</code> / <code>open()</code></td>
+<td>the slot filled by the real observation (<code>open</code> shadows the builtin; import it deliberately)</td>
 </tr>
 </tbody>
 </table>
-<p>For custom <code>new_session</code>, <code>project</code>, <code>slots</code>, and <code>select</code>, read <a href="../../design/tool-streaming/#keep-policies-local-and-selectors-constrained">policy execution</a>.</p>
 <h2 id="runtime-and-diagnostics">Runtime and diagnostics<a class="headerlink" href="#runtime-and-diagnostics" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2252,43 +1748,34 @@
 <tbody>
 <tr>
 <td><code>make_runtime(...)</code></td>
-<td>Construct local main and optional judge engines</td>
+<td>local main engine, optional judge engine, subprocess judge, or attached judge server</td>
 </tr>
 <tr>
 <td><code>make_remote_runtime(...)</code></td>
-<td>Construct a certified remote token-wire runtime</td>
+<td>certified remote vLLM runtime on the token wire</td>
 </tr>
 <tr>
-<td><code>EngineSpec</code></td>
-<td>Declare the local model, capacity, engine arguments, parser, and drafter</td>
+<td><code>Runtime(models, *, role_aliases=None, spec=None, run_seed=..., default_params=None, wire=None, wire_mode="text", event_granularity="auto", op_workers=32, tracer_workers=16)</code></td>
+<td>the general constructor over <code>{role: ModelSpec}</code></td>
 </tr>
 <tr>
-<td><code>ModelSpec</code></td>
-<td>Bind a role to an engine specification and chat template settings</td>
-</tr>
-<tr>
-<td><code>Runtime</code></td>
-<td>Own engines, tracing contexts, scheduler, worker pools, and ledgers</td>
-</tr>
-<tr>
-<td><code>SpecConfig</code></td>
-<td>Configure branch speculation and advisory policies</td>
-</tr>
-<tr>
-<td><code>render_timeline(panels, out_path, *, title="")</code></td>
-<td>Write a standalone SVG from one or more timeline panels</td>
+<td><code>EngineSpec</code>, <code>ModelSpec</code>, <code>SpecConfig</code></td>
+<td>engine, role, and speculation configuration</td>
 </tr>
 <tr>
 <td><code>Squashed</code></td>
-<td>Exception signaling that the requested world was rejected</td>
+<td>raised by <code>force</code> for a rejected world</td>
+</tr>
+<tr>
+<td><code>render_timeline(panels, out_path, *, title="")</code></td>
+<td>SVG timeline from <code>TimelinePanel</code>s (import the panel class from <code>agentir.diagnostics.viz</code>)</td>
 </tr>
 </tbody>
 </table>
-<p>See <a href="../configuration/">runtime configuration</a> for constructors, defaults, and lifecycle methods. Import <code>TimelinePanel</code> from <code>agentir.diagnostics.viz</code>.</p>
-<h2 id="canonical-advanced-modules">Canonical advanced modules<a class="headerlink" href="#canonical-advanced-modules" title="Permanent link">&para;</a></h2>
-<p><code>agentir.compile</code> provides <code>shape_trace</code>, <code>StaticGraph</code>, <code>GraphBreak</code>, and plan types. <code>agentir.tracing.tools</code> provides <code>tool_projection</code> and the compatibility <code>infer_tools</code> function. Adapter-specific remote and judge-server types live under <code>agentir.execution</code>.</p>
-<p>Although <code>infer_tools</code>, <code>tool_projection</code>, and <code>TimelinePanel</code> remain root attributes for compatibility, they are not in the supported root <code>__all__</code> surface. New examples use their canonical modules or <code>infer(..., tools=...)</code>.</p>
-<p>Source: <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/__init__.py">root exports</a>, <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/api.py">DSL implementation</a>, and <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/tools.py">tool definitions</a>.</p>
+<p>Runtime methods: <code>run(fn, *args, problem_key="p0", invocation_key=None, **kwargs)</code>, <code>submit(...)</code> (returns a future), <code>warm(timeout=3600.0)</code>, <code>chat_prefix(messages, *, role="main", tools=None, ...)</code>, <code>ledger_for(problem_key)</code>, <code>events_for(problem_key)</code>, <code>snapshot()</code>, <code>close()</code>, and the context-manager protocol.</p>
+<h2 id="not-in-__all__-still-useful">Not in <code>__all__</code>, still useful<a class="headerlink" href="#not-in-__all__-still-useful" title="Permanent link">&para;</a></h2>
+<p><code>agentir.api.settle(choice)</code> waits for a placeholder and returns the bound member handle. <code>agentir.api.pace_unrolling(selections, lookahead)</code> throttles hand-written round loops. <code>agentir.api.speculation_window()</code> reports the effective window. <code>agentir.compile.shape_trace</code> and <code>StaticGraph</code> are the static compiler. <code>agentir.diagnostics.reference.reference_differential</code> and <code>run_serial</code> are the verification entry points. <code>infer_tools</code>, <code>tool_projection</code>, and <code>TimelinePanel</code> remain importable from the root for compatibility.</p>
+<p>Source: <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/__init__.py"><code>__init__.py</code></a>, <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/api.py"><code>tracing/api.py</code></a>, <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/tools.py"><code>tracing/tools.py</code></a>, <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/policy.py"><code>tracing/policy.py</code></a>.</p>
 
 
 
@@ -2324,7 +1811,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../verification/experiments/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Experiment archive">
+          <a href="../../advanced/experiments/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Experiment archive">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2383,7 +1870,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "navigation.indexes", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

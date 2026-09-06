@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://hemlix.me/AgentIR/reference/cli/">
+        <link rel="canonical" href="https://hemlix.me/AgentIR/guides/compile/">
       
       
-        <link rel="prev" href="../configuration/">
+        <link rel="prev" href="../harbor/">
       
       
-        <link rel="next" href="../troubleshooting/">
+        <link rel="next" href="../diagnostics/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Command line - AgentIR</title>
+        <title>Static shape compilation - AgentIR</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#command-line" class="md-skip">
+        <a href="#static-shape-compilation" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Command line
+              Static shape compilation
             
           </span>
         </div>
@@ -549,8 +549,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -585,11 +587,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -610,7 +612,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -684,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/control-flow/" class="md-nav__link">
+      <a href="../control-flow/" class="md-nav__link">
         
   
   
@@ -712,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/tools/" class="md-nav__link">
+      <a href="../tools/" class="md-nav__link">
         
   
   
@@ -740,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/algorithms/" class="md-nav__link">
+      <a href="../algorithms/" class="md-nav__link">
         
   
   
@@ -768,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/models/" class="md-nav__link">
+      <a href="../models/" class="md-nav__link">
         
   
   
@@ -796,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/remote/" class="md-nav__link">
+      <a href="../remote/" class="md-nav__link">
         
   
   
@@ -824,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/harbor/" class="md-nav__link">
+      <a href="../harbor/" class="md-nav__link">
         
   
   
@@ -849,10 +851,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../guides/compile/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static shape compilation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -868,6 +897,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compile-a-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compile a program
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops-become-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loops become loops
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-the-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read the graph
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#produce-a-funding-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Produce a funding plan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-breaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph breaks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -880,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/diagnostics/" class="md-nav__link">
+      <a href="../diagnostics/" class="md-nav__link">
         
   
   
@@ -908,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/benchmarking/" class="md-nav__link">
+      <a href="../benchmarking/" class="md-nav__link">
         
   
   
@@ -1061,10 +1176,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1087,11 +1200,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1112,7 +1225,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1130,7 +1243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/" class="md-nav__link">
+      <a href="../../reference/api/" class="md-nav__link">
         
   
   
@@ -1158,7 +1271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
+      <a href="../../reference/configuration/" class="md-nav__link">
         
   
   
@@ -1183,37 +1296,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Command line
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../reference/cli/" class="md-nav__link">
         
   
   
@@ -1229,81 +1315,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#engine-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Engine options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#speculation-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Speculation options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bench" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        bench
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-and-refdiff" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        check and refdiff
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1316,7 +1327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1344,7 +1355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
+      <a href="../../reference/glossary/" class="md-nav__link">
         
   
   
@@ -1520,10 +1531,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#engine-options" class="md-nav__link">
+  <a href="#compile-a-program" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Engine options
+        Compile a program
       
     </span>
   </a>
@@ -1531,10 +1542,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#speculation-options" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Speculation options
+        How it works
       
     </span>
   </a>
@@ -1542,10 +1553,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#algorithm-options" class="md-nav__link">
+  <a href="#loops-become-loops" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithm options
+        Loops become loops
       
     </span>
   </a>
@@ -1553,10 +1564,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bench" class="md-nav__link">
+  <a href="#read-the-graph" class="md-nav__link">
     <span class="md-ellipsis">
       
-        bench
+        Read the graph
       
     </span>
   </a>
@@ -1564,10 +1575,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#check-and-refdiff" class="md-nav__link">
+  <a href="#produce-a-funding-plan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        check and refdiff
+        Produce a funding plan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-breaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph breaks
       
     </span>
   </a>
@@ -1594,172 +1616,83 @@
   
 
 
-<h1 id="command-line">Command line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h1>
-<p><code>agentir</code> drives real benchmarks and checks on in-process vLLM engines. <code>agentir COMMAND --help</code> prints the full option list.</p>
+<h1 id="static-shape-compilation">Static shape compilation<a class="headerlink" href="#static-shape-compilation" title="Permanent link">&para;</a></h1>
+<p><code>agentir.compile.shape_trace</code> runs a program once over <strong>symbolic</strong> values and returns its structure as a graph: every engine-node shell, op, decision, loop body with its back-edge, and bounded tool slot, before any model is loaded. Use it to see what the tracer will build, to serialize a program's shape, or to produce a per-decision funding plan for the scheduler.</p>
+<h2 id="compile-a-program">Compile a program<a class="headerlink" href="#compile-a-program" title="Permanent link">&para;</a></h2>
+<p>This runs with the base install and no GPU:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agentir</span><span class="w"> </span><span class="kn">import</span> <span class="n">cat</span><span class="p">,</span> <span class="n">choose</span><span class="p">,</span> <span class="n">collect</span><span class="p">,</span> <span class="n">expand</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="n">infer</span><span class="p">,</span> <span class="n">lit</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">out_text</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agentir.compile</span><span class="w"> </span><span class="kn">import</span> <span class="n">shape_trace</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">rank_by_length</span><span class="p">(</span><span class="n">answers</span><span class="p">):</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">)),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">program</span><span class="p">(</span><span class="n">question</span><span class="p">):</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">candidates</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">lit</span><span class="p">(</span><span class="n">question</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">answers</span> <span class="o">=</span> <span class="n">collect</span><span class="p">([</span><span class="n">out_text</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">])</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">ranking</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">rank_by_length</span><span class="p">,</span> <span class="n">answers</span><span class="p">,</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">best</span> <span class="o">=</span> <span class="n">choose</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">ranking</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="n">final</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">best</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Summarize:"</span><span class="p">)),</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="k">return</span> <span class="n">force</span><span class="p">(</span><span class="n">out_text</span><span class="p">(</span><span class="n">final</span><span class="p">))</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">graph</span> <span class="o">=</span> <span class="n">shape_trace</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="s2">"Explain prefix caching."</span><span class="p">)</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"program-shape.json"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">to_json</span><span class="p">())</span>
+</code></pre></div>
+<p>The summary lists three <code>expand</code> shells, a <code>collect</code> op, a ranking op, one <code>choose</code>, and one guarded <code>infer</code> continuation. <code>rank_by_length</code> was never called on real text: <code>op</code> returns a symbol, and only a Python <em>branch</em> on a symbol is refused.</p>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<p>The shape tracer is a third context that duck-types the serial hooks: <code>serial = True</code> routes every primitive to it, exactly like the reference interpreter, so no new dispatch path exists in the DSL. Each primitive emits one trace event per node shell. Identity parity is structural, not re-derived: draws come from the same <code>DrawLedger</code>, parameters merge through the same validation, and spine templates canonicalize with the same literal merge, so a shell's precomputed identity chunks finalize to exactly the NodeId the live tracer mints once the dynamic hole digests are known.</p>
+<p><code>ShapeChoice</code> is the compiled form of the hoist: one parametric shell stands for every member's world instance, with a <code>sel</code> segment in its spine instead of <em>n</em> copies.</p>
+<h2 id="loops-become-loops">Loops become loops<a class="headerlink" href="#loops-become-loops" title="Permanent link">&para;</a></h2>
+<p>The fold pass detects consecutive isomorphic blocks in the event stream (same signatures, references that shift by exactly the period, or point to the same pre-loop node) and collapses them into one body plus back-edges annotated with a trip count. A block that continues the problem literal in round 0 and a selection afterwards is absorbed as the first iteration with its literal as the init binding, so <code>for t in range(rounds)</code> folds to <code>trip_count == rounds</code>. A Python map over an array, whose references slide through pre-region values, is correctly not a loop. <code>loop</code> declares its structure, so the tracer emits it pre-folded with a <em>bound</em> trip; so does the tool loop, whose turns fold to one assistant shell plus <code>max_calls</code> slot shells.</p>
+<h2 id="read-the-graph">Read the graph<a class="headerlink" href="#read-the-graph" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Command</th>
-<th>Purpose</th>
-<th>Model needed</th>
+<th>Element</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>agentir list</code></td>
-<td>print tasks and algorithms</td>
-<td>no</td>
+<td>node shell</td>
+<td>the static part of an engine request, op, decision, or tool slot, with an identity prefix when one exists</td>
 </tr>
 <tr>
-<td><code>agentir warm</code></td>
-<td>build the engine, load weights, exit</td>
-<td>yes</td>
+<td><code>cat_data</code> edge</td>
+<td>spine concatenation</td>
 </tr>
 <tr>
-<td><code>agentir bench</code></td>
-<td>run a dataset slice under an algorithm</td>
-<td>yes</td>
+<td><code>transform_data</code> edge</td>
+<td>an opaque op</td>
 </tr>
 <tr>
-<td><code>agentir refdiff</code></td>
-<td>verification gate A on one problem</td>
-<td>yes</td>
+<td><code>control</code> edge</td>
+<td>a selection determines whether the target survives</td>
 </tr>
 <tr>
-<td><code>agentir check</code></td>
-<td>gates A and B on one problem</td>
-<td>yes</td>
+<td>loop</td>
+<td>body shell ids, trip count and kind, carried ports with init bindings</td>
+</tr>
+<tr>
+<td>guard</td>
+<td>pool size, <em>k</em>, continuations, and the maximum useful speculation depth below it</td>
 </tr>
 </tbody>
 </table>
-<p>Every model-executing command fails fast with install instructions if vLLM is not importable.</p>
-<h2 id="engine-options">Engine options<a class="headerlink" href="#engine-options" title="Permanent link">&para;</a></h2>
-<p><code>--model</code> (required), <code>--judge-model</code>, <code>--devices</code>, <code>--judge-devices</code>, <code>--judge-process</code>, <code>--max-model-len</code>, <code>--gpu-mem</code>, <code>--judge-gpu-mem</code>, <code>--max-inflight 32</code>, <code>--wire {text,tokens}</code>.</p>
-<h2 id="speculation-options">Speculation options<a class="headerlink" href="#speculation-options" title="Permanent link">&para;</a></h2>
-<p><code>--spec {on,off,both,ladder,fastbase}</code> (default <code>on</code>), <code>--window 2</code>, <code>--spec-inflight 8</code>, <code>--depth1-unmetered</code>, <code>--judge-prefetch</code>, <code>--ev-gate</code>, <code>--spec-preempt</code>, <code>--prune-margin M</code>. The optional lanes apply to spec-enabled arms only.</p>
-<table>
-<thead>
-<tr>
-<th><code>--spec</code></th>
-<th>Arms</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>off</code>, <code>on</code></td>
-<td>one guarded arm</td>
-</tr>
-<tr>
-<td><code>both</code></td>
-<td>spec-off then spec-on, same problems, same seeds</td>
-</tr>
-<tr>
-<td><code>ladder</code></td>
-<td>serial reference, spec-off recording decisions, spec-on, oracle replay</td>
-</tr>
-<tr>
-<td><code>fastbase</code></td>
-<td>phase-serial beam baseline, spec-off, spec-on</td>
-</tr>
-</tbody>
-</table>
-<h2 id="algorithm-options">Algorithm options<a class="headerlink" href="#algorithm-options" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Default</th>
-<th>Used by</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--k</code></td>
-<td>6</td>
-<td><code>self_consistency</code>, <code>best_of_n</code>, <code>heavy</code> (n), <code>sal_beam</code> (samples per step)</td>
-</tr>
-<tr>
-<td><code>--width</code>, <code>--branch</code>, <code>--rounds</code></td>
-<td>2, 2, 3</td>
-<td>beam shape; <code>--rounds</code> is <code>sal_beam</code>'s iteration bound</td>
-</tr>
-<tr>
-<td><code>--iters</code></td>
-<td>4</td>
-<td><code>reflexion</code>, <code>mcts</code></td>
-</tr>
-<tr>
-<td><code>--step-tokens</code></td>
-<td>160</td>
-<td>beam step, MCTS rollout</td>
-</tr>
-<tr>
-<td><code>--early-steps</code>, <code>--late-step-tokens</code></td>
-<td>3, unset</td>
-<td>varying step budget</td>
-</tr>
-<tr>
-<td><code>--step-stop STR</code></td>
-<td>unset</td>
-<td>step delimiter (escapes decoded, so <code>'\n\n'</code> works)</td>
-</tr>
-<tr>
-<td><code>--max-tokens</code></td>
-<td>512</td>
-<td>main budget; also the beam finish budget</td>
-</tr>
-<tr>
-<td><code>--judge-tokens</code></td>
-<td>96</td>
-<td>judge rationale budget</td>
-</tr>
-<tr>
-<td><code>--scorer {logprob,judge,prm}</code></td>
-<td><code>logprob</code></td>
-<td>beam scorer</td>
-</tr>
-<tr>
-<td><code>--prm-agg {min,last,mean,prod}</code></td>
-<td><code>min</code></td>
-<td>PRM aggregation</td>
-</tr>
-<tr>
-<td><code>--bound-commit</code></td>
-<td>off</td>
-<td>beam early round commit (needs prm, min, step-stop)</td>
-</tr>
-<tr>
-<td><code>--phase-serial</code></td>
-<td>off</td>
-<td>beam decode/grade barrier</td>
-</tr>
-<tr>
-<td><code>--prune-margin</code></td>
-<td>unset</td>
-<td>beam loser predictor (prm, min)</td>
-</tr>
-<tr>
-<td><code>--no-explain</code></td>
-<td>off</td>
-<td>skip self-consistency's explanation</td>
-</tr>
-<tr>
-<td><code>--chat</code></td>
-<td>off</td>
-<td>render prompts through the chat template</td>
-</tr>
-<tr>
-<td><code>--temperature</code>, <code>--top-p</code>, <code>--run-seed</code></td>
-<td>0.8, 0.95, 20260708</td>
-<td>sampling defaults and seed</td>
-</tr>
-</tbody>
-</table>
-<h2 id="bench"><code>bench</code><a class="headerlink" href="#bench" title="Permanent link">&para;</a></h2>
-<p><code>--task {gsm8k,math500,aime2024,amc2023}</code> and <code>--algo</code> are required. <code>--n 10</code>, <code>--offset 0</code>, <code>--concurrency 1</code>, <code>--out PATH</code> (default <code>runs/&lt;task&gt;-&lt;algo&gt;-&lt;time&gt;.jsonl</code>), <code>--dump-ledger DIR</code>, <code>--runtime-graph [DIR]</code>. Datasets download on first use into <code>~/.cache/agentir</code>.</p>
-<h2 id="check-and-refdiff"><code>check</code> and <code>refdiff</code><a class="headerlink" href="#check-and-refdiff" title="Permanent link">&para;</a></h2>
-<p><code>check</code> defaults to <code>--algo beam_search --task gsm8k</code>; <code>refdiff</code> to <code>--algo best_of_n</code>. Both take <code>--offset</code>. <code>check --runtime-graph [PATH]</code> renders the two arms on one time axis; <code>check --slow-tool-audit</code> re-executes completed speculable tools and diffs their images. Exit status 0 means every gate passed; 2 means a divergence or a failed audit.</p>
-<p>Source: <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/cli.py"><code>cli.py</code></a>.</p>
+<p>Shells whose identity binds at run time (tool slots, chat-rendered turns, dynamic-literal holes) carry an <code>identity_note</code> instead of a prefix. <code>StaticGraph.from_json</code> round-trips the JSON.</p>
+<h2 id="produce-a-funding-plan">Produce a funding plan<a class="headerlink" href="#produce-a-funding-plan" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agentir</span><span class="w"> </span><span class="kn">import</span> <span class="n">SpecConfig</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">spec</span> <span class="o">=</span> <span class="n">SpecConfig</span><span class="p">(</span><span class="n">static_plan</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">plan</span><span class="p">())</span>
+</code></pre></div>
+<p><code>plan()</code> lowers the guard structure to a <code>StaticPlan</code>: per decision site, a speculation-depth bound (from the longest chain of selections below it, or the global window when a loop back-edge makes it unbounded) and a <strong>sibling budget</strong> of <em>k</em>, since at most <em>k</em> of <em>P</em> members commit and funding more distinct members' subtrees is provably waste. The scheduler matches decisions by call site. A plan is capacity policy only: guards, identity, committed admission, and results are untouched. See <a href="../../advanced/optimizations/#static-plans">static plans</a>.</p>
+<h2 id="graph-breaks">Graph breaks<a class="headerlink" href="#graph-breaks" title="Permanent link">&para;</a></h2>
+<p>Any <code>bool</code>, <code>len</code>, <code>int</code>, <code>str</code>, iteration, or membership test on a symbol raises <code>GraphBreak</code> with the file and line of the branch. So does <code>chat_prefix</code> (it needs the engine's template) and the observation-decision primitives <code>expect</code> and <code>classify</code>. A graph break is a compiler boundary, not a runtime bug: the program still runs normally under the live tracer, just without a plan.</p>
+<p>Source: <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/compile/tracer.py"><code>compile/tracer.py</code></a>, <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/compile/fold.py"><code>fold.py</code></a>, <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/compile/graph.py"><code>graph.py</code></a>, <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/compile/symbols.py"><code>symbols.py</code></a>; tests <code>test_compile_shape.py</code>, <code>test_compile_plan.py</code>.</p>
 
 
 
@@ -1795,7 +1728,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Runtime configuration">
+          <a href="../harbor/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Harbor and Terminal-Bench">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1805,20 +1738,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Runtime configuration
+                Harbor and Terminal-Bench
               </div>
             </div>
           </a>
         
         
           
-          <a href="../troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshooting">
+          <a href="../diagnostics/" class="md-footer__link md-footer__link--next" aria-label="Next: Timelines and diagnostics">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Troubleshooting
+                Timelines and diagnostics
               </div>
             </div>
             <div class="md-footer__button md-icon">

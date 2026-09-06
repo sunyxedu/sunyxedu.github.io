@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Understand, build, and verify speculative agent programs with AgentIR.">
+        <meta name="description" content="Speculative execution for LLM agents and test-time scaling. Architecture, internals, guides, and reference.">
       
       
       
         <link rel="canonical" href="https://hemlix.me/AgentIR/guides/remote/">
       
       
-        <link rel="prev" href="../../vllm-backend/">
+        <link rel="prev" href="../models/">
       
       
-        <link rel="next" href="../../integrations/harbor-terminal-bench/">
+        <link rel="next" href="../harbor/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Remote execution - AgentIR</title>
+        <title>Remote vLLM - AgentIR</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#remote-execution" class="md-skip">
+        <a href="#remote-vllm" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Remote execution
+              Remote vLLM
             
           </span>
         </div>
@@ -252,6 +252,24 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -274,7 +292,7 @@
   <span class="md-ellipsis">
     
   
-    Start here
+    How it works
   
 
     
@@ -290,7 +308,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Start here
+    How it works
   
 
           </label>
@@ -323,6 +341,287 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programs and handles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity and guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The scheduler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engine adapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and the tool loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using AgentIR
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using AgentIR
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -387,95 +686,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Core concepts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Build programs
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Build programs
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../control-flow/" class="md-nav__link">
         
   
@@ -511,7 +721,7 @@
   <span class="md-ellipsis">
     
   
-    Tools and observations
+    Defining tools
   
 
     
@@ -539,7 +749,7 @@
   <span class="md-ellipsis">
     
   
-    Algorithms
+    Built-in algorithms
   
 
     
@@ -560,14 +770,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vllm-backend/" class="md-nav__link">
+      <a href="../models/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Models and vLLM
+    Models, roles, and wires
   
 
     
@@ -604,7 +814,7 @@
   <span class="md-ellipsis">
     
   
-    Remote execution
+    Remote vLLM
   
 
     
@@ -622,7 +832,7 @@
   <span class="md-ellipsis">
     
   
-    Remote execution
+    Remote vLLM
   
 
     
@@ -648,10 +858,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prepare-the-server" class="md-nav__link">
+  <a href="#launch-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prepare the server
+        Launch the server
       
     </span>
   </a>
@@ -670,10 +880,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#follow-one-request" class="md-nav__link">
+  <a href="#what-one-request-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Follow one request
+        What one request does
       
     </span>
   </a>
@@ -681,10 +891,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#know-the-streaming-boundary" class="md-nav__link">
+  <a href="#the-streaming-boundary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Know the streaming boundary
+        The streaming boundary
       
     </span>
   </a>
@@ -692,10 +902,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cancellation-and-caching" class="md-nav__link">
+  <a href="#caching-and-connections" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cancellation and caching
+        Caching and connections
       
     </span>
   </a>
@@ -718,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/harbor-terminal-bench/" class="md-nav__link">
+      <a href="../harbor/" class="md-nav__link">
         
   
   
@@ -739,65 +949,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Understand the design
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Understand the design
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -805,119 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/identity/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Identity and the IR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/scheduler/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scheduling and commitment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/tool-streaming/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Streaming tool calls
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prediction and optimization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/compilation/" class="md-nav__link">
+      <a href="../compile/" class="md-nav__link">
         
   
   
@@ -938,65 +977,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Verify and measure
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Verify and measure
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -1004,35 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/correctness/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Correctness checks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../verification/diagnostics/" class="md-nav__link">
+      <a href="../diagnostics/" class="md-nav__link">
         
   
   
@@ -1060,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/benchmarking/" class="md-nav__link">
+      <a href="../benchmarking/" class="md-nav__link">
         
   
   
@@ -1081,6 +1033,71 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1088,7 +1105,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/experiments/" class="md-nav__link">
+      <a href="../../advanced/optimizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scheduling optimizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/experiments/" class="md-nav__link">
         
   
   
@@ -1124,6 +1169,18 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1136,10 +1193,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1157,8 +1214,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1323,6 +1380,12 @@
   
     
     
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1335,17 +1398,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Contribute
+    Contributing
   
 
     
@@ -1356,12 +1419,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Contribute
+    Contributing
   
 
           </label>
@@ -1409,7 +1472,7 @@
   <span class="md-ellipsis">
     
   
-    Work on the documentation
+    Documentation
   
 
     
@@ -1457,10 +1520,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prepare-the-server" class="md-nav__link">
+  <a href="#launch-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prepare the server
+        Launch the server
       
     </span>
   </a>
@@ -1479,10 +1542,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#follow-one-request" class="md-nav__link">
+  <a href="#what-one-request-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Follow one request
+        What one request does
       
     </span>
   </a>
@@ -1490,10 +1553,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#know-the-streaming-boundary" class="md-nav__link">
+  <a href="#the-streaming-boundary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Know the streaming boundary
+        The streaming boundary
       
     </span>
   </a>
@@ -1501,10 +1564,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cancellation-and-caching" class="md-nav__link">
+  <a href="#caching-and-connections" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cancellation and caching
+        Caching and connections
       
     </span>
   </a>
@@ -1531,27 +1594,24 @@
   
 
 
-<h1 id="remote-execution">Remote execution<a class="headerlink" href="#remote-execution" title="Permanent link">&para;</a></h1>
-<p><code>make_remote_runtime</code> runs the AgentIR tracer and scheduler on the client while a <strong>certified vLLM Tier-1 server</strong> owns tokenization, chat rendering, model execution, and tool parsing. The client needs neither local vLLM nor a local tokenizer.</p>
-<p>This is a specific token-in/token-out protocol. A server exposing only an OpenAI-compatible chat endpoint does not satisfy it.</p>
-<h2 id="prepare-the-server">Prepare the server<a class="headerlink" href="#prepare-the-server" title="Permanent link">&para;</a></h2>
-<p>Install the same AgentIR checkout into the server's vLLM 0.24.0 environment, so its middleware is importable. The following is a server launch template for the Qwen3-Coder tool family; choose context, memory, and model revision settings appropriate to your hardware:</p>
+<h1 id="remote-vllm">Remote vLLM<a class="headerlink" href="#remote-vllm" title="Permanent link">&para;</a></h1>
+<p><code>make_remote_runtime</code> runs the tracer and scheduler on the client and delegates tokenization, chat rendering, generation, and tool parsing to a <strong>certified vLLM 0.24 server</strong>. The client needs neither vLLM nor a tokenizer. The protocol is AgentIR's own token-in/token-out contract, not the OpenAI chat API, so the server must run AgentIR's middleware.</p>
+<h2 id="launch-the-server">Launch the server<a class="headerlink" href="#launch-the-server" title="Permanent link">&para;</a></h2>
+<p>Install the same AgentIR checkout into the server's vLLM environment so the middleware is importable, then:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>vllm.entrypoints.openai.api_server<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--model<span class="w"> </span>Qwen/Qwen3-Coder-30B-A3B-Instruct<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>--enable-auto-tool-choice<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>--tool-call-parser<span class="w"> </span>qwen3_xml<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>--middleware<span class="w"> </span>agentir.execution.vllm_certificate.middleware<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span>--scheduling-policy<span class="w"> </span>priority<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>--enable-prefix-caching<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span>--generation-config<span class="w"> </span>vllm
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>--enable-auto-tool-choice<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>--tool-call-parser<span class="w"> </span>qwen3_xml<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>--middleware<span class="w"> </span>agentir.execution.vllm_certificate.middleware<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>--scheduling-policy<span class="w"> </span>priority<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span>--enable-prefix-caching<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>--generation-config<span class="w"> </span>vllm
 </code></pre></div>
-<p>The parser must match the selected model family. The checked-in experiment launcher is <a href="https://github.com/sunyxedu/AgentIR/blob/main/scripts/hephaestus_terminal_bench_paired.sbatch"><code>hephaestus_terminal_bench_paired.sbatch</code></a>; its cluster paths, resource allocations, and experimental locks are specific to that environment.</p>
-<p>Probe the certificate route after startup:</p>
+<p>The tool parser must match the model family (the middleware only certifies audited parser pairs: <code>hermes</code>+<code>qwen3</code>, <code>qwen3_xml</code>, <code>qwen3_coder</code>+<code>qwen3</code>). Check the certificate route once the server is up:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>--fail<span class="w"> </span>http://127.0.0.1:8000/v1/agentir/tier1/certificate
 </code></pre></div>
-<p>An unavailable certificate or incompatible server is a setup failure. Do not substitute stock render routes to bypass the handshake.</p>
+<p>A 503 here means the server state could not be certified; read the message rather than working around it.</p>
 <h2 id="connect-the-client">Connect the client<a class="headerlink" href="#connect-the-client" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agentir</span><span class="w"> </span><span class="kn">import</span> <span class="n">force</span><span class="p">,</span> <span class="n">infer</span><span class="p">,</span> <span class="n">lit</span><span class="p">,</span> <span class="n">make_remote_runtime</span><span class="p">,</span> <span class="n">out_text</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -1567,54 +1627,51 @@
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="p">)</span> <span class="k">as</span> <span class="n">runtime</span><span class="p">:</span>
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">program</span><span class="p">))</span>
 </code></pre></div>
-<p>The remote runtime always uses the token wire and exposes <code>main</code> with a <code>judge</code> alias. A trailing <code>/v1</code> on the endpoint is normalized to the server base. Pass an API key or headers through the constructor when the server requires them.</p>
-<h2 id="follow-one-request">Follow one request<a class="headerlink" href="#follow-one-request" title="Permanent link">&para;</a></h2>
+<p>The remote runtime is always on the token wire and exposes <code>main</code> with <code>judge</code> aliased to it. Pass <code>api_key=</code> or <code>headers=</code> when the server requires them; a trailing <code>/v1</code> on the URL is normalized away.</p>
+<h2 id="what-one-request-does">What one request does<a class="headerlink" href="#what-one-request-does" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Stage</th>
+<th>Step</th>
 <th>Route</th>
-<th>Purpose</th>
+<th>Client-side guarantee</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Handshake</td>
-<td><code>/version</code> and <code>/v1/agentir/tier1/certificate</code></td>
-<td>Check the pinned version and bind the server contract</td>
+<td>handshake</td>
+<td><code>GET /v1/agentir/tier1/certificate</code></td>
+<td>version pin, served model, parser names, and certificate digest are checked; the instance id is remembered</td>
 </tr>
 <tr>
-<td>Render</td>
-<td><code>/v1/agentir/tier1/render</code></td>
-<td>Convert the conversation into exact prompt tokens and request settings</td>
+<td>render</td>
+<td><code>POST /v1/agentir/tier1/render</code></td>
+<td>exact prompt token ids and the server's complete <code>SamplingParams</code> are frozen into the E-node's identity as a <code>_remote_tier1</code> envelope</td>
 </tr>
 <tr>
-<td>Generate</td>
-<td><code>/inference/v1/generate</code></td>
-<td>Execute token-in/token-out inference</td>
+<td>generate</td>
+<td><code>POST /inference/v1/generate</code></td>
+<td>token in, token out, buffered SSE; cancellation closes the socket, which is vLLM's abort</td>
 </tr>
 <tr>
-<td>Derender</td>
-<td><code>/v1/agentir/tier1/derender</code></td>
-<td>Interpret the final tokens using the certified parser and template</td>
+<td>derender</td>
+<td><code>POST /v1/agentir/tier1/derender</code></td>
+<td>the server re-renders the original request, checks digests, and runs its completed-output parser</td>
 </tr>
 <tr>
-<td>Token conversion</td>
+<td>tokenize</td>
 <td><code>/tokenize</code>, <code>/detokenize</code></td>
-<td>Provide the remote token-wire operations</td>
+<td>the token wire's encode and decode</td>
 </tr>
 </tbody>
 </table>
-<p>The certificate binds the model and tokenizer revisions, template and parser implementation, and required features. Requests and responses carry certificate-digest and instance-ID headers. An instance change invalidates cached assumptions even if the visible model name stays the same.</p>
-<p><code>certificate_mode="required"</code> is the supported default. <code>expected_certificate_sha256</code> can pin an exact deployment contract for a controlled experiment. Version checks alone cannot establish parser or rendering equivalence.</p>
-<h2 id="know-the-streaming-boundary">Know the streaming boundary<a class="headerlink" href="#know-the-streaming-boundary" title="Permanent link">&para;</a></h2>
-<p>The client reads generation SSE incrementally, but buffers the semantic tool projection until generation and derendering finish. <strong>Remote tool calls are published at the terminal boundary.</strong> It does not provide the local adapter's early per-call dispatch during model decoding.</p>
-<p>After a call is available, a predicted next turn can still overlap the real tool execution. Keep these two overlap opportunities separate when comparing local and remote runs.</p>
-<h2 id="cancellation-and-caching">Cancellation and caching<a class="headerlink" href="#cancellation-and-caching" title="Permanent link">&para;</a></h2>
-<p>Cancellation closes the exact active HTTP connection. Successful ordinary JSON requests can reuse pooled HTTP/1.1 connections; generation SSE connections are not reused. A bounded render cache stores successful results for exact canonical requests within the certified instance, with singleflight coordination for concurrent identical renders.</p>
-<p>The default render cache holds 128 entries. Restart or handshake changes fence old cache entries and attempts. The client's restart path can re-handshake; it does not launch or repair the external service.</p>
-<p>Capabilities that cannot be safely checked remotely are rejected. For example, the current adapter cannot perform the required <code>structural_tag</code> preflight and fails closed for that feature. Higher provider protocol tiers discussed in research material are not additional implemented backends.</p>
-<p>Source: <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/execution/remote.py"><code>remote.py</code></a>, <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/execution/vllm_certificate.py"><code>vllm_certificate.py</code></a>, and <a href="https://github.com/sunyxedu/AgentIR/blob/main/tests/test_remote_tier1.py">remote protocol tests</a>.</p>
+<p>Every protected request carries the certificate digest and instance id as headers. A mismatch (412 or 428) is treated as engine death: the client fences everything issued against that instance, re-handshakes once, and either continues or poisons the engine's records with the cause. <code>expected_certificate_sha256=</code> pins a deployment exactly for a controlled experiment.</p>
+<h2 id="the-streaming-boundary">The streaming boundary<a class="headerlink" href="#the-streaming-boundary" title="Permanent link">&para;</a></h2>
+<p>Remote mode publishes tool calls <strong>after</strong> generation and derendering finish. It does not deliver the in-process adapter's mid-decode call events, because the parser lives on the server and only runs on completed output. A predicted next turn can still overlap the real tool execution once the call is known, so the second overlap of the <a href="../../internals/tools/#one-round-of-the-loop">tool loop</a> is kept and the first is not. Keep this in mind when comparing local and remote latencies.</p>
+<p>Structural-tag constraints cannot be preflighted remotely, so the client refuses them rather than risk admitting a request the server's grammar compiler will reject.</p>
+<h2 id="caching-and-connections">Caching and connections<a class="headerlink" href="#caching-and-connections" title="Permanent link">&para;</a></h2>
+<p>Successful renders are memoized in a single-flight LRU (<code>render_cache_entries</code>, default 128) keyed by certificate, instance, and canonical request. Ordinary JSON calls reuse pooled HTTP/1.1 connections; SSE connections are discarded after <code>[DONE]</code>. A restart or instance change clears the memo and the pool.</p>
+<p>The server side is documented in <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/execution/vllm_certificate.py"><code>vllm_certificate.py</code></a>; the client in <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/execution/remote.py"><code>remote.py</code></a>. Both are exercised without a GPU by <code>tests/test_remote_tier1.py</code> and <code>tests/test_vllm_certificate.py</code>.</p>
 
 
 
@@ -1650,7 +1707,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../vllm-backend/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Models and vLLM">
+          <a href="../models/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Models, roles, and wires">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1660,14 +1717,14 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Models and vLLM
+                Models, roles, and wires
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../integrations/harbor-terminal-bench/" class="md-footer__link md-footer__link--next" aria-label="Next: Harbor and Terminal-Bench">
+          <a href="../harbor/" class="md-footer__link md-footer__link--next" aria-label="Next: Harbor and Terminal-Bench">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
@@ -1709,7 +1766,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "navigation.indexes", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

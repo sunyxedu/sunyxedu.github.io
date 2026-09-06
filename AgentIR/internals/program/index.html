@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://hemlix.me/AgentIR/reference/cli/">
+        <link rel="canonical" href="https://hemlix.me/AgentIR/internals/program/">
       
       
-        <link rel="prev" href="../configuration/">
+        <link rel="prev" href="../../architecture/">
       
       
-        <link rel="next" href="../troubleshooting/">
+        <link rel="next" href="../identity/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Command line - AgentIR</title>
+        <title>Programs and handles - AgentIR</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#command-line" class="md-skip">
+        <a href="#programs-and-handles" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Command line
+              Programs and handles
             
           </span>
         </div>
@@ -248,8 +248,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -278,11 +280,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -303,7 +305,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -346,10 +348,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../internals/program/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programs and handles
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -365,6 +394,131 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-handles-instead-of-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why handles instead of strings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-handles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The three handles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The three handles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seq-state-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seq: state semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#val-content-untracked-world-tracked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Val: content untracked, world tracked
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choice-a-placeholder-with-a-decision-behind-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choice: a placeholder with a decision behind it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-eight-primitives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The eight primitives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-effect-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two effect classes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-rule-selection-routes-by-index-buys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the rule "selection routes by index" buys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In the code
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -377,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/identity/" class="md-nav__link">
+      <a href="../identity/" class="md-nav__link">
         
   
   
@@ -405,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/tracer/" class="md-nav__link">
+      <a href="../tracer/" class="md-nav__link">
         
   
   
@@ -433,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/scheduler/" class="md-nav__link">
+      <a href="../scheduler/" class="md-nav__link">
         
   
   
@@ -461,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/engines/" class="md-nav__link">
+      <a href="../engines/" class="md-nav__link">
         
   
   
@@ -489,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/tools/" class="md-nav__link">
+      <a href="../tools/" class="md-nav__link">
         
   
   
@@ -517,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../internals/verification/" class="md-nav__link">
+      <a href="../verification/" class="md-nav__link">
         
   
   
@@ -1061,10 +1215,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1087,11 +1239,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1112,7 +1264,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1130,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/" class="md-nav__link">
+      <a href="../../reference/api/" class="md-nav__link">
         
   
   
@@ -1158,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
+      <a href="../../reference/configuration/" class="md-nav__link">
         
   
   
@@ -1183,37 +1335,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Command line
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../reference/cli/" class="md-nav__link">
         
   
   
@@ -1229,81 +1354,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#engine-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Engine options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#speculation-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Speculation options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bench" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        bench
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-and-refdiff" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        check and refdiff
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1316,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1344,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
+      <a href="../../reference/glossary/" class="md-nav__link">
         
   
   
@@ -1520,10 +1570,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#engine-options" class="md-nav__link">
+  <a href="#why-handles-instead-of-strings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Engine options
+        Why handles instead of strings
       
     </span>
   </a>
@@ -1531,10 +1581,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#speculation-options" class="md-nav__link">
+  <a href="#the-three-handles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Speculation options
+        The three handles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The three handles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seq-state-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seq: state semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#val-content-untracked-world-tracked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Val: content untracked, world tracked
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choice-a-placeholder-with-a-decision-behind-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choice: a placeholder with a decision behind it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-eight-primitives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The eight primitives
       
     </span>
   </a>
@@ -1542,10 +1642,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#algorithm-options" class="md-nav__link">
+  <a href="#two-effect-classes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithm options
+        Two effect classes
       
     </span>
   </a>
@@ -1553,10 +1653,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bench" class="md-nav__link">
+  <a href="#what-the-rule-selection-routes-by-index-buys" class="md-nav__link">
     <span class="md-ellipsis">
       
-        bench
+        What the rule "selection routes by index" buys
       
     </span>
   </a>
@@ -1564,10 +1664,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#check-and-refdiff" class="md-nav__link">
+  <a href="#in-the-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        check and refdiff
+        In the code
       
     </span>
   </a>
@@ -1594,172 +1694,130 @@
   
 
 
-<h1 id="command-line">Command line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h1>
-<p><code>agentir</code> drives real benchmarks and checks on in-process vLLM engines. <code>agentir COMMAND --help</code> prints the full option list.</p>
+<h1 id="programs-and-handles">Programs and handles<a class="headerlink" href="#programs-and-handles" title="Permanent link">&para;</a></h1>
+<p>An AgentIR program is a Python function that calls eight primitives. The primitives never return strings. They return <strong>handles</strong>: symbolic values that describe work and remember what it depends on. This page explains the three handles and the primitives that create and consume them. The rest of the pipeline exists to execute what these handles describe.</p>
+<h2 id="why-handles-instead-of-strings">Why handles instead of strings<a class="headerlink" href="#why-handles-instead-of-strings" title="Permanent link">&para;</a></h2>
+<p>If <code>infer</code> returned the generated text, the program would have to wait for it before doing anything else, and every decision would become a full stop. Returning a handle lets the tracer keep running ahead: it can build a prompt that <em>refers</em> to an output that does not exist yet, hash that prompt, and register the request. The scheduler fills in the bytes later.</p>
+<p>Handles also carry provenance. When you concatenate a candidate into a judge prompt, the judge node records a data edge to the candidate node. That edge is what tells the scheduler when the judge can start, and what lets the engine's prefix cache reuse the candidate's KV blocks.</p>
+<h2 id="the-three-handles">The three handles<a class="headerlink" href="#the-three-handles" title="Permanent link">&para;</a></h2>
+<div class="diagram-scroll">
 <table>
 <thead>
 <tr>
-<th>Command</th>
-<th>Purpose</th>
-<th>Model needed</th>
+<th>Handle</th>
+<th>Stands for</th>
+<th>Readable?</th>
+<th>Created by</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>agentir list</code></td>
-<td>print tasks and algorithms</td>
-<td>no</td>
+<td><code>Seq</code></td>
+<td>An immutable token sequence: a canonical <strong>spine</strong> of literal segments and symbolic output segments.</td>
+<td>Only through an exit: <code>text</code>, <code>out_text</code>, <code>force</code>.</td>
+<td><code>lit</code>, <code>cat</code>, <code>fmt</code>, <code>infer</code>, <code>expand</code>, <code>obs</code></td>
 </tr>
 <tr>
-<td><code>agentir warm</code></td>
-<td>build the engine, load weights, exit</td>
-<td>yes</td>
+<td><code>Val[T]</code></td>
+<td>A control-plane future. Carries the node ids it awaited and the <strong>entry guard</strong> of the world it was created in.</td>
+<td><code>force(val)</code>, or as an input to another <code>op</code>.</td>
+<td><code>op</code>, <code>collect</code>, <code>out_text</code>, <code>text</code>, <code>logprobs_of</code>, <code>observe</code>, <code>ack</code></td>
 </tr>
 <tr>
-<td><code>agentir bench</code></td>
-<td>run a dataset slice under an algorithm</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>agentir refdiff</code></td>
-<td>verification gate A on one problem</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>agentir check</code></td>
-<td>gates A and B on one problem</td>
-<td>yes</td>
+<td><code>Choice</code></td>
+<td>Rank <em>r</em> of decision <em>d</em> over a pool: "whichever member <em>d</em> ranks <em>r</em>-th". Never blocks.</td>
+<td>Only after binding: <code>force</code>, or continue it with <code>infer</code>/<code>cat</code>.</td>
+<td><code>choose</code>, <code>gate</code>, <code>expect</code>, <code>classify</code></td>
 </tr>
 </tbody>
 </table>
-<p>Every model-executing command fails fast with install instructions if vLLM is not importable.</p>
-<h2 id="engine-options">Engine options<a class="headerlink" href="#engine-options" title="Permanent link">&para;</a></h2>
-<p><code>--model</code> (required), <code>--judge-model</code>, <code>--devices</code>, <code>--judge-devices</code>, <code>--judge-process</code>, <code>--max-model-len</code>, <code>--gpu-mem</code>, <code>--judge-gpu-mem</code>, <code>--max-inflight 32</code>, <code>--wire {text,tokens}</code>.</p>
-<h2 id="speculation-options">Speculation options<a class="headerlink" href="#speculation-options" title="Permanent link">&para;</a></h2>
-<p><code>--spec {on,off,both,ladder,fastbase}</code> (default <code>on</code>), <code>--window 2</code>, <code>--spec-inflight 8</code>, <code>--depth1-unmetered</code>, <code>--judge-prefetch</code>, <code>--ev-gate</code>, <code>--spec-preempt</code>, <code>--prune-margin M</code>. The optional lanes apply to spec-enabled arms only.</p>
+</div>
+<p>All three raise <code>TypeError</code> on <code>bool()</code>. A handle has no truth value yet; the silent always-true reading of an object would be a bug waiting to happen, so it is refused at the coercion site.</p>
+<h3 id="seq-state-semantics">Seq: state semantics<a class="headerlink" href="#seq-state-semantics" title="Permanent link">&para;</a></h3>
+<p><code>infer(x)</code> returns <code>x</code>'s spine <strong>plus</strong> a new output segment. That is, a Seq is a state, not a delta:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">draft</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>                 <span class="c1"># spine: [Lit(prompt), Out(draft_node)]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">review</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">draft</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="n">ask</span><span class="p">)))</span>  <span class="c1"># spine: [Lit(prompt), Out(draft_node), Lit(ask), Out(review_node)]</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">text</span><span class="p">(</span><span class="n">review</span><span class="p">)</span>      <span class="c1"># Val[str]: prompt + draft + ask + review</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">out_text</span><span class="p">(</span><span class="n">review</span><span class="p">)</span>  <span class="c1"># Val[str]: just the review</span>
+</code></pre></div>
+<p>Two Seqs with the same spine are the same handle (<code>key</code> is a content hash of the spine). Adjacent literals are merged and empty ones dropped, so how you happened to build a prompt does not change its identity.</p>
+<h3 id="val-content-untracked-world-tracked">Val: content untracked, world tracked<a class="headerlink" href="#val-content-untracked-world-tracked" title="Permanent link">&para;</a></h3>
+<p>A <code>Val</code> wraps a <code>concurrent.futures.Future</code>, but it is more than a future. It records <code>depends_nodes</code>, the engine nodes whose output it transitively awaited, and <code>entry_guard</code>, the guard under which it was minted. Exits use the first to know what to wait for; <code>force</code> uses the second to refuse to publish a value from a world that lost.</p>
+<p>An <code>op</code> runs its function on a worker pool as soon as its inputs resolve. With <code>pure=True</code> that may be on speculative data. With the default <code>pure=False</code> the op is an <strong>execution-delay barrier</strong>: it waits until its entry guard is true and every dependency it will read has committed, and it runs at most once. Declare <code>pure=True</code> only for deterministic functions with no external effects; it is a promise you make, not something Python checks.</p>
+<h3 id="choice-a-placeholder-with-a-decision-behind-it">Choice: a placeholder with a decision behind it<a class="headerlink" href="#choice-a-placeholder-with-a-decision-behind-it" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">best</span> <span class="o">=</span> <span class="n">choose</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">ranking</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>   <span class="c1"># Choice(d, rank 0)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">top2</span> <span class="o">=</span> <span class="n">choose</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">ranking</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>      <span class="c1"># [Choice(d, 0), Choice(d, 1)]</span>
+</code></pre></div>
+<p>A <code>Choice</code> holds a <code>Decision</code> and a mapping from member key to member handle. <code>derive(fn)</code> maps every member, which is how <code>cat(best, tail)</code> produces a new Choice over <code>cat(A, tail)</code>, <code>cat(B, tail)</code>, and so on. <code>bound()</code> returns the concrete member once the decision resolved, or <code>None</code> if this rank does not exist in that world (a false gate, or a failed decision's empty resolution).</p>
+<h2 id="the-eight-primitives">The eight primitives<a class="headerlink" href="#the-eight-primitives" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th><code>--spec</code></th>
-<th>Arms</th>
+<th>Primitive</th>
+<th>Role</th>
+<th>What it registers</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>off</code>, <code>on</code></td>
-<td>one guarded arm</td>
+<td><code>lit(s)</code> / <code>cat(*xs)</code></td>
+<td>Build prompts</td>
+<td>Nothing: pure spine construction</td>
 </tr>
 <tr>
-<td><code>both</code></td>
-<td>spec-off then spec-on, same problems, same seeds</td>
+<td><code>infer(x, **params)</code></td>
+<td>Continue once</td>
+<td>One engine node per possible world of <code>x</code></td>
 </tr>
 <tr>
-<td><code>ladder</code></td>
-<td>serial reference, spec-off recording decisions, spec-on, oracle replay</td>
+<td><code>expand(x, k, **params)</code></td>
+<td><em>k</em> continuations</td>
+<td><em>k</em> nodes with identical prompts and distinct lanes of one draw</td>
 </tr>
 <tr>
-<td><code>fastbase</code></td>
-<td>phase-serial beam baseline, spec-off, spec-on</td>
+<td><code>text(x)</code> / <code>out_text(x)</code></td>
+<td>Observe</td>
+<td>A <code>Val[str]</code> exit; provenance stops here</td>
+</tr>
+<tr>
+<td><code>op(f, *args, pure=...)</code></td>
+<td>Compute on the control plane</td>
+<td>A pooled task; <code>pure</code> chooses replay-on-speculation or barrier</td>
+</tr>
+<tr>
+<td><code>choose(pool, by, k)</code></td>
+<td>Select by index</td>
+<td>A <code>Decision</code> and <em>k</em> <code>Choice</code> placeholders</td>
+</tr>
+<tr>
+<td><code>gate(x, cond)</code></td>
+<td>Keep or squash</td>
+<td>A two-slot decision with only a keep member</td>
+</tr>
+<tr>
+<td><code>loop(init, body, max_iters)</code></td>
+<td>Repeat with an entry predicate</td>
+<td>One gate decision per round, traced ahead of resolution</td>
 </tr>
 </tbody>
 </table>
-<h2 id="algorithm-options">Algorithm options<a class="headerlink" href="#algorithm-options" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Default</th>
-<th>Used by</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--k</code></td>
-<td>6</td>
-<td><code>self_consistency</code>, <code>best_of_n</code>, <code>heavy</code> (n), <code>sal_beam</code> (samples per step)</td>
-</tr>
-<tr>
-<td><code>--width</code>, <code>--branch</code>, <code>--rounds</code></td>
-<td>2, 2, 3</td>
-<td>beam shape; <code>--rounds</code> is <code>sal_beam</code>'s iteration bound</td>
-</tr>
-<tr>
-<td><code>--iters</code></td>
-<td>4</td>
-<td><code>reflexion</code>, <code>mcts</code></td>
-</tr>
-<tr>
-<td><code>--step-tokens</code></td>
-<td>160</td>
-<td>beam step, MCTS rollout</td>
-</tr>
-<tr>
-<td><code>--early-steps</code>, <code>--late-step-tokens</code></td>
-<td>3, unset</td>
-<td>varying step budget</td>
-</tr>
-<tr>
-<td><code>--step-stop STR</code></td>
-<td>unset</td>
-<td>step delimiter (escapes decoded, so <code>'\n\n'</code> works)</td>
-</tr>
-<tr>
-<td><code>--max-tokens</code></td>
-<td>512</td>
-<td>main budget; also the beam finish budget</td>
-</tr>
-<tr>
-<td><code>--judge-tokens</code></td>
-<td>96</td>
-<td>judge rationale budget</td>
-</tr>
-<tr>
-<td><code>--scorer {logprob,judge,prm}</code></td>
-<td><code>logprob</code></td>
-<td>beam scorer</td>
-</tr>
-<tr>
-<td><code>--prm-agg {min,last,mean,prod}</code></td>
-<td><code>min</code></td>
-<td>PRM aggregation</td>
-</tr>
-<tr>
-<td><code>--bound-commit</code></td>
-<td>off</td>
-<td>beam early round commit (needs prm, min, step-stop)</td>
-</tr>
-<tr>
-<td><code>--phase-serial</code></td>
-<td>off</td>
-<td>beam decode/grade barrier</td>
-</tr>
-<tr>
-<td><code>--prune-margin</code></td>
-<td>unset</td>
-<td>beam loser predictor (prm, min)</td>
-</tr>
-<tr>
-<td><code>--no-explain</code></td>
-<td>off</td>
-<td>skip self-consistency's explanation</td>
-</tr>
-<tr>
-<td><code>--chat</code></td>
-<td>off</td>
-<td>render prompts through the chat template</td>
-</tr>
-<tr>
-<td><code>--temperature</code>, <code>--top-p</code>, <code>--run-seed</code></td>
-<td>0.8, 0.95, 20260708</td>
-<td>sampling defaults and seed</td>
-</tr>
-</tbody>
-</table>
-<h2 id="bench"><code>bench</code><a class="headerlink" href="#bench" title="Permanent link">&para;</a></h2>
-<p><code>--task {gsm8k,math500,aime2024,amc2023}</code> and <code>--algo</code> are required. <code>--n 10</code>, <code>--offset 0</code>, <code>--concurrency 1</code>, <code>--out PATH</code> (default <code>runs/&lt;task&gt;-&lt;algo&gt;-&lt;time&gt;.jsonl</code>), <code>--dump-ledger DIR</code>, <code>--runtime-graph [DIR]</code>. Datasets download on first use into <code>~/.cache/agentir</code>.</p>
-<h2 id="check-and-refdiff"><code>check</code> and <code>refdiff</code><a class="headerlink" href="#check-and-refdiff" title="Permanent link">&para;</a></h2>
-<p><code>check</code> defaults to <code>--algo beam_search --task gsm8k</code>; <code>refdiff</code> to <code>--algo best_of_n</code>. Both take <code>--offset</code>. <code>check --runtime-graph [PATH]</code> renders the two arms on one time axis; <code>check --slow-tool-audit</code> re-executes completed speculable tools and diffs their images. Exit status 0 means every gate passed; 2 means a divergence or a failed audit.</p>
-<p>Source: <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/cli.py"><code>cli.py</code></a>.</p>
+<p>Helpers: <code>collect</code> gathers Vals in list order without occupying a worker per element; <code>force</code> is the blocking, publication-checked exit; <code>fmt</code> is <code>cat</code> with named holes; <code>logprobs_of</code> and <code>top_logprobs_of</code> read observation channels requested at generation time.</p>
+<h2 id="two-effect-classes">Two effect classes<a class="headerlink" href="#two-effect-classes" title="Permanent link">&para;</a></h2>
+<p>Everything on the control plane is one of two things:</p>
+<ul>
+<li><strong>Pure</strong>: replayable. May run on speculative inputs; its result and its exceptions are published only when its world commits, and the exits enforce that.</li>
+<li><strong>Unknown</strong>: the default for <code>op</code>, and for tools. Fenced until its entry guard is true and the dependencies it actually reads have committed. Runs at most once. Never retried.</li>
+</ul>
+<p>An op whose <em>result</em> is a handle is not a routing mechanism. Continuing from a <code>Val</code> that holds a Seq makes the tracer wait for the value first. It is correct, merely slow. A program that wants speculation at a selection exposes that selection as a <code>choose</code>.</p>
+<h2 id="what-the-rule-selection-routes-by-index-buys">What the rule "selection routes by index" buys<a class="headerlink" href="#what-the-rule-selection-routes-by-index-buys" title="Permanent link">&para;</a></h2>
+<p>Because <code>choose</code> returns positions into a pool that already exists, the set of possible continuations is finite and known at trace time. That is the precondition for the hoist in <a href="../tracer/">the tracer</a>. It also means a ranking function, however elaborate, cannot inject new tokens into the dataflow: <code>Seq</code> has no public constructor from a string other than <code>lit</code>, and a Seq handed to a tool argument is rejected. The only way content leaves a Seq is an explicit exit, which is a provenance barrier by definition.</p>
+<h2 id="in-the-code">In the code<a class="headerlink" href="#in-the-code" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/core/values.py"><code>core/values.py</code></a>: <code>Seq</code>, <code>Val</code>, <code>Choice</code>, the <code>__bool__</code> refusal.</li>
+<li><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/core/ir.py"><code>core/ir.py</code></a>: <code>Lit</code>, <code>Out</code>, <code>Obs</code> segments and <code>canon</code>.</li>
+<li><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/tracing/api.py"><code>tracing/api.py</code></a>: every primitive; <code>op</code> shows the barrier fence (<code>_wait_committed</code>) and the entry-guard union (<code>_entry_union</code>).</li>
+</ul>
+<p>Next: <a href="../identity/">Identity and guards</a>, where a handle gets its name and its survival condition.</p>
 
 
 
@@ -1795,7 +1853,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Runtime configuration">
+          <a href="../../architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Architecture">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1805,20 +1863,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Runtime configuration
+                Architecture
               </div>
             </div>
           </a>
         
         
           
-          <a href="../troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshooting">
+          <a href="../identity/" class="md-footer__link md-footer__link--next" aria-label="Next: Identity and guards">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Troubleshooting
+                Identity and guards
               </div>
             </div>
             <div class="md-footer__button md-icon">

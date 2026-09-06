@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 300" role="img" aria-labelledby="t d">
+  <title id="t">Predict-taken loop unrolling</title>
+  <desc id="d">Round 0 of a loop is traced under the loop's entry guard. Its continue condition becomes a two-slot gate decision. Round 1 is traced under the entry guard and the round 0 gate, round 2 additionally under the round 1 gate. The tracer pauses when the number of unresolved gates exceeds the lookahead. When a gate resolves false, every deeper round is squashed as a whole.</desc>
+  <defs>
+    <marker id="b" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="m1 1 6 3.5-6 3.5" fill="none" stroke="#a77835" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="m1 1 6 3.5-6 3.5" fill="none" stroke="#546b83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#233746;font-size:14px}
+      .h{font-size:15px;font-weight:650}.s{font-size:12.5px;fill:#5c6d7c}
+      .m{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:12.5px}
+      .box{fill:#fff;stroke:#cfd9de;stroke-width:1.3}
+      .keep{fill:#dcefe6;stroke:#4e8a72}.spec{fill:#e6eef8;stroke:#4f79a8}.dead{fill:#f6e6e3;stroke:#b0574c;stroke-dasharray:4 3}
+      .dec{fill:#fbf3e6;stroke:#d3a55c}
+      .l{fill:none;stroke:#546b83;stroke-width:1.5;marker-end:url(#a)}
+      .g{fill:none;stroke:#a77835;stroke-width:1.5;stroke-dasharray:5 4;marker-end:url(#b)}
+    </style>
+  </defs>
+  <rect x="1" y="1" width="1078" height="298" rx="12" fill="#fff" stroke="#e3e9ed"/>
+  <text class="m" x="26" y="34">state, cont = body(state)      loop(init, body, max_iters, lookahead=W)</text>
+
+  <rect class="box keep" x="26" y="70" width="230" height="70" rx="8"/>
+  <text class="h" x="42" y="94">round 0</text>
+  <text class="m" x="42" y="116">guard: g0</text>
+  <text class="s" x="42" y="132">the loop's own entry guard</text>
+  <rect class="box dec" x="60" y="170" width="160" height="34" rx="6"/><text class="m" x="72" y="192">gate c0 = cont_0</text>
+  <path class="l" d="M141 140v30"/>
+
+  <path class="l" d="M256 105h60"/>
+  <rect class="box spec" x="316" y="70" width="230" height="70" rx="8"/>
+  <text class="h" x="332" y="94">round 1</text>
+  <text class="m" x="332" y="116">guard: g0 ∧ At(c0, true)</text>
+  <text class="s" x="332" y="132">traced before c0 resolves</text>
+  <rect class="box dec" x="350" y="170" width="160" height="34" rx="6"/><text class="m" x="362" y="192">gate c1 = cont_1</text>
+  <path class="l" d="M431 140v30"/>
+  <path class="g" d="M220 187h60v-47h36"/>
+
+  <path class="l" d="M546 105h60"/>
+  <rect class="box dead" x="606" y="70" width="230" height="70" rx="8"/>
+  <text class="h" x="622" y="94">round 2</text>
+  <text class="m" x="622" y="116">guard: g0 ∧ c0 ∧ c1</text>
+  <text class="s" x="622" y="132">depth 2: waits if W = 1</text>
+  <path class="g" d="M510 187h60v-47h36"/>
+
+  <text class="s" x="860" y="95">The tracer blocks on the</text>
+  <text class="s" x="860" y="113">oldest unresolved gate once</text>
+  <text class="s" x="860" y="131">more than W are pending.</text>
+
+  <text class="s" x="26" y="240">Round t's condition producer carries g_t, the guard under which round t was entered, never its own gate.</text>
+  <text class="s" x="26" y="260">If c1 resolves false: round 2 squashes as a whole and loop() returns the state that entered round 1.</text>
+  <text class="s" x="26" y="280">Each round pushes a draw-path token, so an over-unrolled round never renumbers draws made after the loop.</text>
+</svg>

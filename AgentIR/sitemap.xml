@@ -9,7 +9,11 @@
          <lastmod>2026-09-06</lastmod>
     </url>
     <url>
-         <loc>https://hemlix.me/AgentIR/vllm-backend/</loc>
+         <loc>https://hemlix.me/AgentIR/advanced/experiments/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://hemlix.me/AgentIR/advanced/optimizations/</loc>
          <lastmod>2026-09-06</lastmod>
     </url>
     <url>
@@ -18,30 +22,6 @@
     </url>
     <url>
          <loc>https://hemlix.me/AgentIR/contributing/source-map/</loc>
-         <lastmod>2026-09-06</lastmod>
-    </url>
-    <url>
-         <loc>https://hemlix.me/AgentIR/design/compilation/</loc>
-         <lastmod>2026-09-06</lastmod>
-    </url>
-    <url>
-         <loc>https://hemlix.me/AgentIR/design/identity/</loc>
-         <lastmod>2026-09-06</lastmod>
-    </url>
-    <url>
-         <loc>https://hemlix.me/AgentIR/design/optimization/</loc>
-         <lastmod>2026-09-06</lastmod>
-    </url>
-    <url>
-         <loc>https://hemlix.me/AgentIR/design/scheduler/</loc>
-         <lastmod>2026-09-06</lastmod>
-    </url>
-    <url>
-         <loc>https://hemlix.me/AgentIR/design/tool-streaming/</loc>
-         <lastmod>2026-09-06</lastmod>
-    </url>
-    <url>
-         <loc>https://hemlix.me/AgentIR/getting-started/concepts/</loc>
          <lastmod>2026-09-06</lastmod>
     </url>
     <url>
@@ -57,7 +37,27 @@
          <lastmod>2026-09-06</lastmod>
     </url>
     <url>
+         <loc>https://hemlix.me/AgentIR/guides/benchmarking/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://hemlix.me/AgentIR/guides/compile/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
          <loc>https://hemlix.me/AgentIR/guides/control-flow/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://hemlix.me/AgentIR/guides/diagnostics/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://hemlix.me/AgentIR/guides/harbor/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://hemlix.me/AgentIR/guides/models/</loc>
          <lastmod>2026-09-06</lastmod>
     </url>
     <url>
@@ -69,7 +69,31 @@
          <lastmod>2026-09-06</lastmod>
     </url>
     <url>
-         <loc>https://hemlix.me/AgentIR/integrations/harbor-terminal-bench/</loc>
+         <loc>https://hemlix.me/AgentIR/internals/engines/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://hemlix.me/AgentIR/internals/identity/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://hemlix.me/AgentIR/internals/program/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://hemlix.me/AgentIR/internals/scheduler/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://hemlix.me/AgentIR/internals/tools/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://hemlix.me/AgentIR/internals/tracer/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://hemlix.me/AgentIR/internals/verification/</loc>
          <lastmod>2026-09-06</lastmod>
     </url>
     <url>
@@ -90,22 +114,6 @@
     </url>
     <url>
          <loc>https://hemlix.me/AgentIR/reference/troubleshooting/</loc>
-         <lastmod>2026-09-06</lastmod>
-    </url>
-    <url>
-         <loc>https://hemlix.me/AgentIR/verification/benchmarking/</loc>
-         <lastmod>2026-09-06</lastmod>
-    </url>
-    <url>
-         <loc>https://hemlix.me/AgentIR/verification/correctness/</loc>
-         <lastmod>2026-09-06</lastmod>
-    </url>
-    <url>
-         <loc>https://hemlix.me/AgentIR/verification/diagnostics/</loc>
-         <lastmod>2026-09-06</lastmod>
-    </url>
-    <url>
-         <loc>https://hemlix.me/AgentIR/verification/experiments/</loc>
          <lastmod>2026-09-06</lastmod>
     </url>
 </urlset>

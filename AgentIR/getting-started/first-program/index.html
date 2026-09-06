@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Understand, build, and verify speculative agent programs with AgentIR.">
+        <meta name="description" content="Speculative execution for LLM agents and test-time scaling. Architecture, internals, guides, and reference.">
       
       
       
@@ -16,7 +16,7 @@
         <link rel="prev" href="../installation/">
       
       
-        <link rel="next" href="../concepts/">
+        <link rel="next" href="../../guides/control-flow/">
       
       
         
@@ -248,11 +248,27 @@
       
   
   
-    
-  
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -262,11 +278,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -276,7 +292,7 @@
   <span class="md-ellipsis">
     
   
-    Start here
+    How it works
   
 
     
@@ -287,12 +303,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Start here
+    How it works
   
 
           </label>
@@ -325,6 +341,287 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programs and handles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity and guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The scheduler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engine adapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and the tool loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using AgentIR
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using AgentIR
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -421,10 +718,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-complete-program" class="md-nav__link">
+  <a href="#the-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The complete program
+        The code
       
     </span>
   </a>
@@ -432,10 +729,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-generate-candidates-without-reading-them" class="md-nav__link">
+  <a href="#what-happens-line-by-line" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Generate candidates without reading them
+        What happens, line by line
       
     </span>
   </a>
@@ -443,10 +740,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-evaluate-through-asynchronous-values" class="md-nav__link">
+  <a href="#reading-the-ledger-line" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Evaluate through asynchronous values
+        Reading the ledger line
       
     </span>
   </a>
@@ -454,32 +751,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-preserve-the-choice" class="md-nav__link">
+  <a href="#where-to-go-next" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Preserve the choice
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-publish-one-answer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Publish one answer
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inspect-what-happened" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inspect what happened
+        Where to go next
       
     </span>
   </a>
@@ -494,93 +769,6 @@
   
 
               
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Core concepts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Build programs
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Build programs
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -624,7 +812,7 @@
   <span class="md-ellipsis">
     
   
-    Tools and observations
+    Defining tools
   
 
     
@@ -652,7 +840,7 @@
   <span class="md-ellipsis">
     
   
-    Algorithms
+    Built-in algorithms
   
 
     
@@ -673,14 +861,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vllm-backend/" class="md-nav__link">
+      <a href="../../guides/models/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Models and vLLM
+    Models, roles, and wires
   
 
     
@@ -708,7 +896,7 @@
   <span class="md-ellipsis">
     
   
-    Remote execution
+    Remote vLLM
   
 
     
@@ -729,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/harbor-terminal-bench/" class="md-nav__link">
+      <a href="../../guides/harbor/" class="md-nav__link">
         
   
   
@@ -750,65 +938,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Understand the design
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Understand the design
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -816,119 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/identity/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Identity and the IR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/scheduler/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scheduling and commitment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/tool-streaming/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Streaming tool calls
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prediction and optimization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/compilation/" class="md-nav__link">
+      <a href="../../guides/compile/" class="md-nav__link">
         
   
   
@@ -949,65 +966,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Verify and measure
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Verify and measure
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -1015,35 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/correctness/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Correctness checks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../verification/diagnostics/" class="md-nav__link">
+      <a href="../../guides/diagnostics/" class="md-nav__link">
         
   
   
@@ -1071,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/benchmarking/" class="md-nav__link">
+      <a href="../../guides/benchmarking/" class="md-nav__link">
         
   
   
@@ -1092,6 +1022,71 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1099,7 +1094,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/experiments/" class="md-nav__link">
+      <a href="../../advanced/optimizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scheduling optimizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/experiments/" class="md-nav__link">
         
   
   
@@ -1135,6 +1158,18 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1147,10 +1182,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1168,8 +1203,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1334,6 +1369,12 @@
   
     
     
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1346,17 +1387,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Contribute
+    Contributing
   
 
     
@@ -1367,12 +1408,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Contribute
+    Contributing
   
 
           </label>
@@ -1420,7 +1461,7 @@
   <span class="md-ellipsis">
     
   
-    Work on the documentation
+    Documentation
   
 
     
@@ -1468,10 +1509,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-complete-program" class="md-nav__link">
+  <a href="#the-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The complete program
+        The code
       
     </span>
   </a>
@@ -1479,10 +1520,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-generate-candidates-without-reading-them" class="md-nav__link">
+  <a href="#what-happens-line-by-line" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Generate candidates without reading them
+        What happens, line by line
       
     </span>
   </a>
@@ -1490,10 +1531,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-evaluate-through-asynchronous-values" class="md-nav__link">
+  <a href="#reading-the-ledger-line" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Evaluate through asynchronous values
+        Reading the ledger line
       
     </span>
   </a>
@@ -1501,32 +1542,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-preserve-the-choice" class="md-nav__link">
+  <a href="#where-to-go-next" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Preserve the choice
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-publish-one-answer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Publish one answer
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inspect-what-happened" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inspect what happened
+        Where to go next
       
     </span>
   </a>
@@ -1554,10 +1573,8 @@
 
 
 <h1 id="your-first-program">Your first program<a class="headerlink" href="#your-first-program" title="Permanent link">&para;</a></h1>
-<p>This program samples four short answers, selects the most common numeric answer, and asks for a one-sentence conclusion. The last request can begin while the vote is unresolved.</p>
-<p>You need the <a href="../installation/">local installation</a> and a working GPU engine to run it. The complete version lives in <a href="https://github.com/sunyxedu/AgentIR/blob/main/examples/quickstart.py"><code>examples/quickstart.py</code></a>.</p>
-<h2 id="the-complete-program">The complete program<a class="headerlink" href="#the-complete-program" title="Permanent link">&para;</a></h2>
-<p>Save the following as <code>first_program.py</code> in your checkout:</p>
+<p>This program samples four answers, votes on them, and asks the model to explain the winner. The explanation starts before the vote finishes. It is the same program as <a href="https://github.com/sunyxedu/AgentIR/blob/main/examples/quickstart.py"><code>examples/quickstart.py</code></a> and needs a <a href="../installation/">local GPU install</a>.</p>
+<h2 id="the-code">The code<a class="headerlink" href="#the-code" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -1567,71 +1584,56 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">)</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">extract_number</span><span class="p">(</span><span class="n">answer</span><span class="p">):</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">numbers</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">"-?\d+"</span><span class="p">,</span> <span class="n">answer</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">numbers</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">"-?\d+"</span><span class="p">,</span> <span class="n">text</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="k">return</span> <span class="n">numbers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">numbers</span> <span class="k">else</span> <span class="s2">""</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">rank_by_vote</span><span class="p">(</span><span class="n">answers</span><span class="p">):</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="n">counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">answer</span> <span class="k">for</span> <span class="n">answer</span> <span class="ow">in</span> <span class="n">answers</span> <span class="k">if</span> <span class="n">answer</span><span class="p">)</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">)),</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="o">-</span><span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">),</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="p">)</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="k">def</span><span class="w"> </span><span class="nf">program</span><span class="p">():</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    <span class="n">prompt</span> <span class="o">=</span> <span class="n">lit</span><span class="p">(</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        <span class="s2">"Q: A pen costs 3 dollars. How much do 5 pens cost? "</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        <span class="s2">"Reason briefly, then give the number.</span><span class="se">\n</span><span class="s2">A:"</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="p">)</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    <span class="n">candidates</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">96</span><span class="p">)</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span class="n">answers</span> <span class="o">=</span> <span class="n">collect</span><span class="p">([</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>        <span class="n">op</span><span class="p">(</span><span class="n">extract_number</span><span class="p">,</span> <span class="n">out_text</span><span class="p">(</span><span class="n">candidate</span><span class="p">),</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>        <span class="k">for</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">candidates</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>    <span class="p">])</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    <span class="n">ranking</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">rank_by_vote</span><span class="p">,</span> <span class="n">answers</span><span class="p">,</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    <span class="n">selected</span> <span class="o">=</span> <span class="n">choose</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">ranking</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    <span class="n">conclusion</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>        <span class="n">cat</span><span class="p">(</span><span class="n">selected</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">So, in one sentence:"</span><span class="p">)),</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>        <span class="n">max_tokens</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    <span class="p">)</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    <span class="k">return</span> <span class="n">force</span><span class="p">(</span><span class="n">out_text</span><span class="p">(</span><span class="n">conclusion</span><span class="p">))</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    <span class="k">with</span> <span class="n">make_runtime</span><span class="p">(</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>        <span class="n">model</span><span class="o">=</span><span class="s2">"Qwen/Qwen2.5-0.5B-Instruct"</span><span class="p">,</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>        <span class="n">spec</span><span class="o">=</span><span class="n">SpecConfig</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>        <span class="n">engine_args</span><span class="o">=</span><span class="p">{</span><span class="s2">"max_model_len"</span><span class="p">:</span> <span class="mi">2048</span><span class="p">,</span> <span class="s2">"gpu_memory_utilization"</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>    <span class="p">)</span> <span class="k">as</span> <span class="n">runtime</span><span class="p">:</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">problem_key</span><span class="o">=</span><span class="s2">"first-program"</span><span class="p">))</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">majority</span><span class="p">(</span><span class="n">answers</span><span class="p">):</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="n">counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">answers</span> <span class="k">if</span> <span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">)),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="o">-</span><span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">))</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="k">def</span><span class="w"> </span><span class="nf">program</span><span class="p">():</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="n">q</span> <span class="o">=</span> <span class="n">lit</span><span class="p">(</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        <span class="s2">"Q: A pen costs 3 dollars. How much do 5 pens cost? "</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>        <span class="s2">"Reason briefly, then give the number.</span><span class="se">\n</span><span class="s2">A:"</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    <span class="p">)</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    <span class="n">traces</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">96</span><span class="p">)</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    <span class="n">answers</span> <span class="o">=</span> <span class="n">collect</span><span class="p">([</span><span class="n">op</span><span class="p">(</span><span class="n">extract</span><span class="p">,</span> <span class="n">out_text</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">traces</span><span class="p">])</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="n">best</span> <span class="o">=</span> <span class="n">choose</span><span class="p">(</span><span class="n">traces</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">op</span><span class="p">(</span><span class="n">majority</span><span class="p">,</span> <span class="n">answers</span><span class="p">,</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    <span class="n">final</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">best</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">So, in one sentence:"</span><span class="p">)),</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span class="k">return</span> <span class="n">force</span><span class="p">(</span><span class="n">out_text</span><span class="p">(</span><span class="n">final</span><span class="p">))</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    <span class="k">with</span> <span class="n">make_runtime</span><span class="p">(</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>        <span class="n">model</span><span class="o">=</span><span class="s2">"Qwen/Qwen2.5-0.5B-Instruct"</span><span class="p">,</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        <span class="n">spec</span><span class="o">=</span><span class="n">SpecConfig</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>        <span class="n">engine_args</span><span class="o">=</span><span class="p">{</span><span class="s2">"max_model_len"</span><span class="p">:</span> <span class="mi">2048</span><span class="p">,</span> <span class="s2">"gpu_memory_utilization"</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>    <span class="p">)</span> <span class="k">as</span> <span class="n">runtime</span><span class="p">:</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">problem_key</span><span class="o">=</span><span class="s2">"first"</span><span class="p">))</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>        <span class="n">rows</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">ledger_for</span><span class="p">(</span><span class="s2">"first"</span><span class="p">)</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"nodes"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">rows</span><span class="p">),</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>              <span class="s2">"committed"</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">disposition</span> <span class="o">==</span> <span class="s2">"committed"</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">),</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>              <span class="s2">"issued speculatively"</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">speculative</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">))</span>
 </code></pre></div>
-<p>Run it from the activated environment:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>first_program.py
-</code></pre></div>
-<p>It prints the final generated conclusion. The exact wording depends on the model and execution environment; the intended arithmetic answer is 15 dollars.</p>
-<h2 id="1-generate-candidates-without-reading-them">1. Generate candidates without reading them<a class="headerlink" href="#1-generate-candidates-without-reading-them" title="Permanent link">&para;</a></h2>
-<p><code>lit</code> creates a literal prompt handle. <code>expand(prompt, 4)</code> creates four separate sampling draws that share a prompt prefix. Each result is a <code>Seq</code>: the original prompt followed by that draw's generated output.</p>
-<p>Creating these handles does not require the tracer to wait for their strings. The engine can execute ready requests while Python continues building the program.</p>
-<h2 id="2-evaluate-through-asynchronous-values">2. Evaluate through asynchronous values<a class="headerlink" href="#2-evaluate-through-asynchronous-values" title="Permanent link">&para;</a></h2>
-<p><code>out_text(candidate)</code> describes the generated tail of a candidate. Each <code>op</code> waits for its input, extracts a number, and produces a <code>Val</code>. <code>collect</code> gathers those values in candidate order, and another <code>op</code> produces a ranking of <strong>indices</strong>.</p>
-<p>Both functions are marked <code>pure=True</code> because they are deterministic computations with no external effects. That declaration lets eligible speculative work use their results before commitment. It is a contract you provide, not a purity check performed by Python.</p>
-<h2 id="3-preserve-the-choice">3. Preserve the choice<a class="headerlink" href="#3-preserve-the-choice" title="Permanent link">&para;</a></h2>
-<p><code>choose(..., k=1)[0]</code> represents rank zero of an unresolved selection. It preserves all possible candidate identities until the ranking resolves.</p>
-<p>Passing this handle to <code>cat</code> and <code>infer</code> lets the tracer construct one continuation per possible selected candidate. Each continuation needs its candidate's output, but its prompt does not depend on the vote result. The scheduler can therefore run it early if capacity and speculation budgets allow.</p>
-<p>If you instead force the ranking and use ordinary Python indexing, you make selection a tracing barrier and lose this overlap opportunity.</p>
-<h2 id="4-publish-one-answer">4. Publish one answer<a class="headerlink" href="#4-publish-one-answer" title="Permanent link">&para;</a></h2>
-<p><code>force(out_text(conclusion))</code> waits for the selected continuation and the decisions that allow it to be observed. Losing continuations do not become return values.</p>
-<p>This small vote is deliberately cheap, so it may leave little useful overlap. The example teaches the programming model; it is not a performance benchmark. A model-based judge or a slower decision may create a larger opportunity.</p>
-<h2 id="inspect-what-happened">Inspect what happened<a class="headerlink" href="#inspect-what-happened" title="Permanent link">&para;</a></h2>
-<p>Before leaving the runtime's <code>with</code> block, you can inspect the invocation's ledger:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">rows</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">ledger_for</span><span class="p">(</span><span class="s2">"first-program"</span><span class="p">)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"issued speculatively:"</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">speculative</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">))</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"committed:"</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">disposition</span> <span class="o">==</span> <span class="s2">"committed"</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">))</span>
-</code></pre></div>
-<p>A zero speculative count can be legitimate: the vote may resolve before a continuation is ready. Learn to distinguish this from a scheduling problem in <a href="../../verification/diagnostics/">timelines and diagnostics</a>.</p>
-<p>Next, read <a href="../concepts/">core concepts</a> for the handles and boundaries used throughout the API.</p>
+<p>Save it as <code>first.py</code> and run <code>python first.py</code>. It prints one sentence (the intended arithmetic is 15 dollars) and a line of ledger counts.</p>
+<h2 id="what-happens-line-by-line">What happens, line by line<a class="headerlink" href="#what-happens-line-by-line" title="Permanent link">&para;</a></h2>
+<p><strong><code>expand(q, 4)</code></strong> registers four engine nodes with the same prompt and lanes 0 to 3 of one draw. They share a prefill through vLLM's prefix cache. Nothing waits: <code>traces</code> is a list of four <code>Seq</code> handles.</p>
+<p><strong><code>op(extract, out_text(t), pure=True)</code></strong> registers a Python task per trace that will run the moment that trace's text exists. <code>pure=True</code> is your promise that <code>extract</code> is deterministic and has no side effects; in return it may run on speculative data. <code>collect</code> gathers the four Vals in order.</p>
+<p><strong><code>choose(traces, by=op(majority, ...))</code></strong> creates a decision whose ranking is itself a pending <code>Val</code>. It returns a <code>Choice</code>: "the trace the vote ranks first". No waiting.</p>
+<p><strong><code>infer(cat(best, ...))</code></strong> is the hoist. The tracer registers four explanation nodes, one per trace, each guarded by "the vote ranks this trace first". Each needs only its own trace's text, which is a head extension (zero new prefill), so the scheduler issues them speculatively as their parents finish, while the vote is still counting.</p>
+<p><strong><code>force(out_text(final))</code></strong> blocks until the vote resolves, the winning explanation has committed, and its text is on file. The three losers are squashed; if any was still decoding, its request is aborted.</p>
+<h2 id="reading-the-ledger-line">Reading the ledger line<a class="headerlink" href="#reading-the-ledger-line" title="Permanent link">&para;</a></h2>
+<p><code>issued speculatively</code> counts engine nodes that were issued while their guard was pending. Here that is up to four explanations. If it prints 0, the vote resolved before any explanation was data-ready, which is normal for a cheap vote and a small model: there was no wait to hide. <a href="../../guides/diagnostics/">Timelines and diagnostics</a> shows how to see this on a chart.</p>
+<p>This example teaches the shape, not the speedup. Replace the vote with a judge model request and the overlap becomes visible.</p>
+<h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../guides/control-flow/">Branching and loops</a>: <code>choose</code> with <code>k &gt; 1</code>, <code>gate</code>, <code>loop</code>, and what turns into a barrier.</li>
+<li><a href="../../guides/algorithms/">Built-in algorithms</a>: the same pattern in beam search, MCTS, reflexion, and others.</li>
+<li><a href="../../architecture/">Architecture</a> if you skipped it: what the runtime does with these calls.</li>
+</ul>
 
 
 
@@ -1684,13 +1686,13 @@
         
         
           
-          <a href="../concepts/" class="md-footer__link md-footer__link--next" aria-label="Next: Core concepts">
+          <a href="../../guides/control-flow/" class="md-footer__link md-footer__link--next" aria-label="Next: Branching and loops">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Core concepts
+                Branching and loops
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1726,7 +1728,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "navigation.indexes", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

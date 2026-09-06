@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 330" role="img" aria-labelledby="t d">
+  <title id="t">The identity ladder</title>
+  <desc id="d">A DrawId is reserved from the call site and loop path at trace time. Combined with the prompt spine, model role, frozen parameters, and observation mode it hashes to a NodeId. The seed is derived from the run seed and the NodeId. Attempts are physical engine requests and never enter identity.</desc>
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="m1 1 6 3.5-6 3.5" fill="none" stroke="#546b83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#233746;font-size:14px}
+      .h{font-size:15px;font-weight:650}.s{font-size:12.5px;fill:#5c6d7c}
+      .m{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:12.5px}
+      .box{fill:#fff;stroke:#cfd9de;stroke-width:1.3}
+      .core{fill:#eef4f2;stroke:#8fb3a8}
+      .phys{fill:#f4f5f7;stroke:#b9c2c8;stroke-dasharray:4 3}
+      .l{fill:none;stroke:#546b83;stroke-width:1.5;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect x="1" y="1" width="998" height="328" rx="12" fill="#fff" stroke="#e3e9ed"/>
+
+  <rect class="box" x="26" y="30" width="200" height="96" rx="8"/>
+  <text class="h" x="42" y="56">Program position</text>
+  <text class="s" x="42" y="80">lexical call site</text>
+  <text class="s" x="42" y="100">loop-structure path</text>
+  <text class="s" x="42" y="118">occurrence counter · lane</text>
+  <path class="l" d="M226 78h36"/>
+
+  <rect class="box core" x="262" y="30" width="180" height="96" rx="8"/>
+  <text class="h" x="278" y="56">DrawId</text>
+  <text class="m" x="278" y="80">(scope, occ, lane)</text>
+  <text class="s" x="278" y="100">reserved before any</text>
+  <text class="s" x="278" y="118">guard is consulted</text>
+  <path class="l" d="M442 78h36"/>
+
+  <rect class="box core" x="478" y="30" width="230" height="96" rx="8"/>
+  <text class="h" x="494" y="56">NodeId</text>
+  <text class="s" x="494" y="78">blake2b of: spine · model role</text>
+  <text class="s" x="494" y="96">frozen params · DrawId · obs mode</text>
+  <text class="s" x="494" y="116">computable before any token exists</text>
+  <path class="l" d="M708 78h36"/>
+
+  <rect class="box core" x="744" y="30" width="230" height="96" rx="8"/>
+  <text class="h" x="760" y="56">Seed</text>
+  <text class="m" x="760" y="80">H(run_seed/iid, NodeId)</text>
+  <text class="s" x="760" y="100">same tokens whether issued</text>
+  <text class="s" x="760" y="118">early or after the guard resolves</text>
+
+  <!-- spine note -->
+  <rect class="box" x="262" y="160" width="446" height="70" rx="8"/>
+  <text class="h" x="278" y="184">Spine (the prompt, symbolically)</text>
+  <text class="m" x="278" y="206">[Lit("Q: ..."), Out(e17), Lit("\nExplain:")]</text>
+  <text class="s" x="278" y="224">Out contributes the producer's NodeId, not its bytes</text>
+  <path class="l" d="M480 160v-34" />
+
+  <!-- attempts -->
+  <rect class="box phys" x="744" y="160" width="230" height="140" rx="8"/>
+  <text class="h" x="760" y="184">Attempts (physical)</text>
+  <text class="m" x="760" y="208">i0-3f9a1c2e-a0  speculative</text>
+  <text class="m" x="760" y="228">i0-3f9a1c2e-a1  preempted</text>
+  <text class="m" x="760" y="248">i0-3f9a1c2e-a2  committed</text>
+  <text class="s" x="760" y="272">fresh request id per try;</text>
+  <text class="s" x="760" y="290">never part of NodeId or seed</text>
+  <path class="l" d="M859 126v34"/>
+
+  <text class="s" x="42" y="180">Loops push a path token per</text>
+  <text class="s" x="42" y="198">round, so over-unrolled rounds</text>
+  <text class="s" x="42" y="216">number their own scope and</text>
+  <text class="s" x="42" y="234">never shift later draws.</text>
+  <text class="s" x="42" y="266">Sibling worlds of one hoist</text>
+  <text class="s" x="42" y="284">share the DrawId; their spines</text>
+  <text class="s" x="42" y="302">differ, so NodeIds and seeds</text>
+  <text class="s" x="42" y="320">differ too.</text>
+</svg>

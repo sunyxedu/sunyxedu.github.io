@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 330" role="img" aria-labelledby="t d">
+  <title id="t">The two verification gates</title>
+  <desc id="d">Gate A runs the program with speculation off, records every engine output, and replays them through a serial source interpreter that never hoists; the answer and the per-draw trace must match. Gate B captures that speculation-off arm and runs a fresh speculation-on runtime whose tool bodies are replayed from the captured arm; every committed node must have identical bytes and the same final answer.</desc>
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="m1 1 6 3.5-6 3.5" fill="none" stroke="#546b83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#233746;font-size:14px}
+      .h{font-size:15px;font-weight:650}.s{font-size:12.5px;fill:#5c6d7c}
+      .m{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:12.5px}
+      .box{fill:#fff;stroke:#cfd9de;stroke-width:1.3}
+      .keep{fill:#dcefe6;stroke:#4e8a72}.spec{fill:#e6eef8;stroke:#4f79a8}.ref{fill:#fbf3e6;stroke:#d3a55c}
+      .l{fill:none;stroke:#546b83;stroke-width:1.5;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect x="1" y="1" width="1058" height="328" rx="12" fill="#fff" stroke="#e3e9ed"/>
+
+  <text class="h" x="26" y="34">Gate A · is the guarded lowering the source program?</text>
+  <rect class="box keep" x="26" y="50" width="220" height="70" rx="8"/>
+  <text class="h" x="42" y="74">Guarded run, spec off</text>
+  <text class="s" x="42" y="94">record every E-node output</text>
+  <text class="s" x="42" y="110">and every tool image</text>
+  <path class="l" d="M246 85h50"/>
+  <rect class="box ref" x="296" y="50" width="240" height="70" rx="8"/>
+  <text class="h" x="312" y="74">Serial reference interpreter</text>
+  <text class="s" x="312" y="94">executes eagerly, never hoists,</text>
+  <text class="s" x="312" y="110">replays recorded outputs by NodeId</text>
+  <path class="l" d="M536 85h50"/>
+  <rect class="box" x="586" y="44" width="450" height="84" rx="8"/>
+  <text class="h" x="602" y="70">Compare</text>
+  <text class="s" x="602" y="92">final answer or exception</text>
+  <text class="s" x="602" y="107">per-draw trace: (scope, occ, lane) → (NodeId, output digest)</text>
+  <text class="s" x="602" y="122">tool images by (T-node, projection) · no draw on only one side</text>
+
+  <text class="h" x="26" y="170">Gate B · does speculation change the committed computation?</text>
+  <rect class="box keep" x="26" y="186" width="220" height="70" rx="8"/>
+  <text class="h" x="42" y="210">Captured spec-off arm</text>
+  <text class="s" x="42" y="230">committed nodes, bytes,</text>
+  <text class="s" x="42" y="246">tool bodies and images</text>
+  <path class="l" d="M246 221h50"/>
+  <rect class="box spec" x="296" y="186" width="240" height="70" rx="8"/>
+  <text class="h" x="312" y="210">Fresh runtime, spec on</text>
+  <text class="s" x="312" y="230">same seed scope; tool bodies are</text>
+  <text class="s" x="312" y="246">replayed, never executed again</text>
+  <path class="l" d="M536 221h50"/>
+  <rect class="box" x="586" y="186" width="450" height="70" rx="8"/>
+  <text class="h" x="602" y="210">Compare</text>
+  <text class="s" x="602" y="230">same committed NodeIds · identical atoms and exact text</text>
+  <text class="s" x="602" y="246">same status and failure · same tool semantics · same answer</text>
+
+  <text class="s" x="26" y="290">agentir check runs A then B and exits non-zero on any divergence. agentir refdiff runs A alone.</text>
+  <text class="s" x="26" y="310">Both gates replay engine outputs so engine batch nondeterminism cannot masquerade as a lowering bug.</text>
+</svg>

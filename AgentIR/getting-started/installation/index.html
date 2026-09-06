@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Understand, build, and verify speculative agent programs with AgentIR.">
+        <meta name="description" content="Speculative execution for LLM agents and test-time scaling. Architecture, internals, guides, and reference.">
       
       
       
         <link rel="canonical" href="https://hemlix.me/AgentIR/getting-started/installation/">
       
       
-        <link rel="prev" href="../../architecture/">
+        <link rel="prev" href="../../internals/verification/">
       
       
         <link rel="next" href="../first-program/">
@@ -248,11 +248,27 @@
       
   
   
-    
-  
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -262,11 +278,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -276,7 +292,7 @@
   <span class="md-ellipsis">
     
   
-    Start here
+    How it works
   
 
     
@@ -287,12 +303,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Start here
+    How it works
   
 
           </label>
@@ -325,6 +341,287 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programs and handles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity and guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The scheduler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engine adapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and the tool loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using AgentIR
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using AgentIR
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -393,10 +690,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get-the-source" class="md-nav__link">
+  <a href="#install-the-package" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get the source
+        Install the package
       
     </span>
   </a>
@@ -404,10 +701,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#choose-how-to-execute-models" class="md-nav__link">
+  <a href="#choose-how-models-run" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Choose how to execute models
+        Choose how models run
       
     </span>
   </a>
@@ -415,10 +712,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#keep-the-engine-entry-point-guarded" class="md-nav__link">
+  <a href="#other-extras" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Keep the engine entry point guarded
+        Other extras
       
     </span>
   </a>
@@ -426,10 +723,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#other-environments" class="md-nav__link">
+  <a href="#two-rules-for-every-program" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Other environments
+        Two rules for every program
       
     </span>
   </a>
@@ -480,93 +777,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Core concepts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Build programs
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Build programs
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../guides/control-flow/" class="md-nav__link">
         
   
@@ -602,7 +812,7 @@
   <span class="md-ellipsis">
     
   
-    Tools and observations
+    Defining tools
   
 
     
@@ -630,7 +840,7 @@
   <span class="md-ellipsis">
     
   
-    Algorithms
+    Built-in algorithms
   
 
     
@@ -651,14 +861,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vllm-backend/" class="md-nav__link">
+      <a href="../../guides/models/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Models and vLLM
+    Models, roles, and wires
   
 
     
@@ -686,7 +896,7 @@
   <span class="md-ellipsis">
     
   
-    Remote execution
+    Remote vLLM
   
 
     
@@ -707,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/harbor-terminal-bench/" class="md-nav__link">
+      <a href="../../guides/harbor/" class="md-nav__link">
         
   
   
@@ -728,65 +938,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Understand the design
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Understand the design
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -794,119 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/identity/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Identity and the IR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/scheduler/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scheduling and commitment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/tool-streaming/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Streaming tool calls
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prediction and optimization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/compilation/" class="md-nav__link">
+      <a href="../../guides/compile/" class="md-nav__link">
         
   
   
@@ -927,65 +966,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Verify and measure
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Verify and measure
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -993,35 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/correctness/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Correctness checks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../verification/diagnostics/" class="md-nav__link">
+      <a href="../../guides/diagnostics/" class="md-nav__link">
         
   
   
@@ -1049,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/benchmarking/" class="md-nav__link">
+      <a href="../../guides/benchmarking/" class="md-nav__link">
         
   
   
@@ -1070,6 +1022,71 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1077,7 +1094,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/experiments/" class="md-nav__link">
+      <a href="../../advanced/optimizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scheduling optimizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/experiments/" class="md-nav__link">
         
   
   
@@ -1113,6 +1158,18 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1125,10 +1182,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1146,8 +1203,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1312,6 +1369,12 @@
   
     
     
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1324,17 +1387,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Contribute
+    Contributing
   
 
     
@@ -1345,12 +1408,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Contribute
+    Contributing
   
 
           </label>
@@ -1398,7 +1461,7 @@
   <span class="md-ellipsis">
     
   
-    Work on the documentation
+    Documentation
   
 
     
@@ -1446,10 +1509,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get-the-source" class="md-nav__link">
+  <a href="#install-the-package" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get the source
+        Install the package
       
     </span>
   </a>
@@ -1457,10 +1520,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#choose-how-to-execute-models" class="md-nav__link">
+  <a href="#choose-how-models-run" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Choose how to execute models
+        Choose how models run
       
     </span>
   </a>
@@ -1468,10 +1531,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#keep-the-engine-entry-point-guarded" class="md-nav__link">
+  <a href="#other-extras" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Keep the engine entry point guarded
+        Other extras
       
     </span>
   </a>
@@ -1479,10 +1542,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#other-environments" class="md-nav__link">
+  <a href="#two-rules-for-every-program" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Other environments
+        Two rules for every program
       
     </span>
   </a>
@@ -1510,9 +1573,8 @@
 
 
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<p>The AgentIR package requires <strong>Python 3.11 or newer</strong>. Model execution uses the pinned <strong>vLLM 0.24.0</strong> adapter. You can explore the API and compile program shapes without installing vLLM or loading model weights.</p>
-<h2 id="get-the-source">Get the source<a class="headerlink" href="#get-the-source" title="Permanent link">&para;</a></h2>
-<p>Run these commands from a shell with Python available:</p>
+<p>AgentIR needs <strong>Python 3.11 or newer</strong>. The package itself has no dependencies; model execution uses the pinned <strong>vLLM 0.24.0</strong>. You can trace, compile, and test programs without a GPU, and you need one (or a remote server) to run a model.</p>
+<h2 id="install-the-package">Install the package<a class="headerlink" href="#install-the-package" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sunyxedu/AgentIR.git
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>AgentIR
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
@@ -1520,20 +1582,20 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>agentir<span class="w"> </span>list
 </code></pre></div>
-<p><code>agentir list</code> prints the built-in algorithms and datasets. It does not load a model. An editable installation lets the examples and CLI use the code in your checkout.</p>
-<h2 id="choose-how-to-execute-models">Choose how to execute models<a class="headerlink" href="#choose-how-to-execute-models" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Local vLLM</label><label for="__tabbed_1_2">Remote vLLM</label><label for="__tabbed_1_3">Explore without a GPU</label></div>
+<p><code>agentir list</code> prints the built-in tasks and algorithms without loading a model. The editable install lets the CLI and examples pick up your checkout.</p>
+<h2 id="choose-how-models-run">Choose how models run<a class="headerlink" href="#choose-how-models-run" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Local vLLM (GPU host)</label><label for="__tabbed_1_2">Remote vLLM (no local GPU)</label><label for="__tabbed_1_3">No model at all</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>On a supported Linux GPU host, install the engine extra into an environment compatible with vLLM:</p>
+<p>vLLM publishes Linux wheels. Install the extra and run the quickstart:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s1">'.[vllm]'</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python<span class="w"> </span>examples/quickstart.py<span class="w"> </span>Qwen/Qwen2.5-0.5B-Instruct
 </code></pre></div>
-<p>The first model use downloads weights if needed and starts the engine. The example's small context and memory settings are a starting point, not a promise that every GPU can run it. Engine installation, drivers, available memory, and access to the requested model must all be in place.</p>
-<p>See <a href="../../vllm-backend/">models and vLLM</a> for device placement, chat rendering, and token-wire compatibility.</p>
+<p>The first run downloads the weights and starts the engine core in a subprocess, which is why every program that creates a runtime must sit behind <code>if __name__ == "__main__":</code>. The quickstart uses a small context and half the GPU memory; adjust <code>engine_args</code> for your card.</p>
+<p>On Apple Silicon there is no PyPI wheel. Build the <code>vllm-metal</code> plugin in its own virtualenv, then <code>pip install -e /path/to/AgentIR</code> there.</p>
 </div>
 <div class="tabbed-block">
-<p>Keep the base installation on the client. The remote adapter uses the standard library and delegates tokenization, rendering, and parsing to the server:</p>
+<p>Keep the base install on the client and point it at a vLLM 0.24 server that runs AgentIR's certificate middleware:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agentir</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_remote_runtime</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">runtime</span> <span class="o">=</span> <span class="n">make_remote_runtime</span><span class="p">(</span>
@@ -1541,31 +1603,51 @@
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">base_url</span><span class="o">=</span><span class="s2">"http://127.0.0.1:8000"</span><span class="p">,</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">)</span>
 </code></pre></div>
-<p>Constructing the runtime does not establish that the server is usable. First use performs a handshake. The endpoint must provide the <strong>AgentIR certificate middleware and Tier-1 routes</strong> described in <a href="../../guides/remote/">remote execution</a>; a generic chat-completions endpoint is insufficient.</p>
+<p>A generic OpenAI-compatible endpoint is not enough; the client performs a handshake against server-owned render and derender routes. <a href="../../guides/remote/">Remote vLLM</a> shows how to launch such a server.</p>
 </div>
 <div class="tabbed-block">
-<p>Install development dependencies to run the engine-independent tests:</p>
+<p>Install the test dependencies and run the engine-free suite:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s1">'.[dev]'</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/test_ir.py<span class="w"> </span>tests/test_compile_shape.py
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/test_ir.py<span class="w"> </span>tests/test_guards.py<span class="w"> </span>tests/test_trace.py<span class="w"> </span>tests/test_compile_shape.py
 </code></pre></div>
-<p>See <a href="../../design/compilation/">static shape compilation</a> for a complete program you can inspect without a model. This validates graph construction; it does not execute model inference.</p>
+<p><a href="../../guides/compile/">Static shape compilation</a> traces a program into its graph without any engine, which is the quickest way to see what the tracer builds.</p>
 </div>
 </div>
 </div>
-<h2 id="keep-the-engine-entry-point-guarded">Keep the engine entry point guarded<a class="headerlink" href="#keep-the-engine-entry-point-guarded" title="Permanent link">&para;</a></h2>
-<p>vLLM starts subprocesses. Put runtime creation and execution behind the normal Python main guard:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="c1"># Create and use the runtime here.</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">pass</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">main</span><span class="p">()</span>
-</code></pre></div>
-<p>Always close a runtime, preferably with a <code>with</code> statement. A runtime owns event-loop and worker threads as well as engine resources.</p>
-<h2 id="other-environments">Other environments<a class="headerlink" href="#other-environments" title="Permanent link">&para;</a></h2>
-<p>The <a href="../../integrations/harbor-terminal-bench/">Harbor integration</a> requires <strong>Python 3.12+</strong> and the separate <code>harbor</code> extra, pinned to Harbor 0.16.1. Install the adapter in the same environment as the <code>harbor</code> command.</p>
-<p>To build this documentation, use the isolated <a href="../../contributing/documentation/">documentation setup</a>. It has no GPU dependency.</p>
-<p>Continue with <a href="../first-program/">your first program</a>.</p>
+<h2 id="other-extras">Other extras<a class="headerlink" href="#other-extras" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Extra</th>
+<th>Installs</th>
+<th>For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vllm</code></td>
+<td><code>vllm==0.24.0</code> (Linux)</td>
+<td>local engines</td>
+</tr>
+<tr>
+<td><code>harbor</code></td>
+<td><code>harbor==0.16.1</code> (Python 3.12+)</td>
+<td><a href="../../guides/harbor/">Terminal-Bench through Harbor</a></td>
+</tr>
+<tr>
+<td><code>dev</code></td>
+<td><code>pytest</code></td>
+<td>the test suite</td>
+</tr>
+</tbody>
+</table>
+<p>The documentation toolchain is separate (<code>requirements-docs.txt</code>); see <a href="../../contributing/documentation/">Documentation</a>.</p>
+<h2 id="two-rules-for-every-program">Two rules for every program<a class="headerlink" href="#two-rules-for-every-program" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Create runtimes inside a main guard, because vLLM spawns processes.</li>
+<li>Close them. <code>with make_runtime(...) as runtime:</code> releases the event loop, worker pools, and engine (and reaps a judge subprocess) when the block ends.</li>
+</ol>
+<p>Next: <a href="../first-program/">Your first program</a>.</p>
 
 
 
@@ -1601,7 +1683,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Architecture">
+          <a href="../../internals/verification/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Verification">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1611,7 +1693,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Architecture
+                Verification
               </div>
             </div>
           </a>
@@ -1660,7 +1742,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "navigation.indexes", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

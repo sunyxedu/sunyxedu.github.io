@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Understand, build, and verify speculative agent programs with AgentIR.">
+        <meta name="description" content="Speculative execution for LLM agents and test-time scaling. Architecture, internals, guides, and reference.">
       
       
       
@@ -16,7 +16,7 @@
         <link rel="prev" href="../tools/">
       
       
-        <link rel="next" href="../../vllm-backend/">
+        <link rel="next" href="../models/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Algorithms - AgentIR</title>
+        <title>Built-in algorithms - AgentIR</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#algorithms" class="md-skip">
+        <a href="#built-in-algorithms" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Algorithms
+              Built-in algorithms
             
           </span>
         </div>
@@ -252,6 +252,24 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -274,7 +292,7 @@
   <span class="md-ellipsis">
     
   
-    Start here
+    How it works
   
 
     
@@ -290,7 +308,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Start here
+    How it works
   
 
           </label>
@@ -323,6 +341,287 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programs and handles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity and guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The scheduler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engine adapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and the tool loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using AgentIR
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using AgentIR
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -387,95 +686,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Core concepts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Build programs
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Build programs
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../control-flow/" class="md-nav__link">
         
   
@@ -511,7 +721,7 @@
   <span class="md-ellipsis">
     
   
-    Tools and observations
+    Defining tools
   
 
     
@@ -548,7 +758,7 @@
   <span class="md-ellipsis">
     
   
-    Algorithms
+    Built-in algorithms
   
 
     
@@ -566,7 +776,7 @@
   <span class="md-ellipsis">
     
   
-    Algorithms
+    Built-in algorithms
   
 
     
@@ -592,10 +802,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#choose-a-program-structure" class="md-nav__link">
+  <a href="#reading-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Choose a program structure
+        Reading order
       
     </span>
   </a>
@@ -603,10 +813,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#read-a-representative-algorithm" class="md-nav__link">
+  <a href="#beam-search-in-depth" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Read a representative algorithm
+        Beam search in depth
       
     </span>
   </a>
@@ -614,21 +824,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scoring-changes-the-dependency-graph" class="md-nav__link">
+  <a href="#keep-algorithm-knobs-and-scheduler-knobs-apart" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scoring changes the dependency graph
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#keep-algorithm-changes-separate-from-scheduler-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Keep algorithm changes separate from scheduler changes
+        Keep algorithm knobs and scheduler knobs apart
       
     </span>
   </a>
@@ -651,14 +850,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vllm-backend/" class="md-nav__link">
+      <a href="../models/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Models and vLLM
+    Models, roles, and wires
   
 
     
@@ -686,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    Remote execution
+    Remote vLLM
   
 
     
@@ -707,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/harbor-terminal-bench/" class="md-nav__link">
+      <a href="../harbor/" class="md-nav__link">
         
   
   
@@ -728,65 +927,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Understand the design
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Understand the design
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -794,119 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/identity/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Identity and the IR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/scheduler/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scheduling and commitment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/tool-streaming/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Streaming tool calls
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prediction and optimization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/compilation/" class="md-nav__link">
+      <a href="../compile/" class="md-nav__link">
         
   
   
@@ -927,65 +955,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Verify and measure
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Verify and measure
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -993,35 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/correctness/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Correctness checks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../verification/diagnostics/" class="md-nav__link">
+      <a href="../diagnostics/" class="md-nav__link">
         
   
   
@@ -1049,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/benchmarking/" class="md-nav__link">
+      <a href="../benchmarking/" class="md-nav__link">
         
   
   
@@ -1070,6 +1011,71 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1077,7 +1083,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/experiments/" class="md-nav__link">
+      <a href="../../advanced/optimizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scheduling optimizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/experiments/" class="md-nav__link">
         
   
   
@@ -1113,6 +1147,18 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1125,10 +1171,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1146,8 +1192,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1312,6 +1358,12 @@
   
     
     
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1324,17 +1376,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Contribute
+    Contributing
   
 
     
@@ -1345,12 +1397,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Contribute
+    Contributing
   
 
           </label>
@@ -1398,7 +1450,7 @@
   <span class="md-ellipsis">
     
   
-    Work on the documentation
+    Documentation
   
 
     
@@ -1446,10 +1498,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#choose-a-program-structure" class="md-nav__link">
+  <a href="#reading-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Choose a program structure
+        Reading order
       
     </span>
   </a>
@@ -1457,10 +1509,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#read-a-representative-algorithm" class="md-nav__link">
+  <a href="#beam-search-in-depth" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Read a representative algorithm
+        Beam search in depth
       
     </span>
   </a>
@@ -1468,21 +1520,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scoring-changes-the-dependency-graph" class="md-nav__link">
+  <a href="#keep-algorithm-knobs-and-scheduler-knobs-apart" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scoring changes the dependency graph
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#keep-algorithm-changes-separate-from-scheduler-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Keep algorithm changes separate from scheduler changes
+        Keep algorithm knobs and scheduler knobs apart
       
     </span>
   </a>
@@ -1509,77 +1550,77 @@
   
 
 
-<h1 id="algorithms">Algorithms<a class="headerlink" href="#algorithms" title="Permanent link">&para;</a></h1>
-<p>The built-in algorithms are ordinary AgentIR programs. They are useful both as runnable baselines and as examples of where weak control dependencies appear in an agent workflow.</p>
-<p>Run <code>agentir list</code> for the available names. Import implementations from <code>agentir.algos</code>, or select one with <code>agentir bench --algo NAME</code>.</p>
-<h2 id="choose-a-program-structure">Choose a program structure<a class="headerlink" href="#choose-a-program-structure" title="Permanent link">&para;</a></h2>
+<h1 id="built-in-algorithms">Built-in algorithms<a class="headerlink" href="#built-in-algorithms" title="Permanent link">&para;</a></h1>
+<p><code>agentir.algos</code> ships eight test-time-scaling algorithms written purely in the DSL. None of them mentions speculation, guards, or priorities; the runtime reads the opportunities off the graph. They are runnable baselines for <code>agentir bench</code> and worked examples of where weak control dependencies show up.</p>
+<p>Each has the signature <code>fn(question: str, **knobs) -&gt; str</code> and returns an extracted, normalized answer.</p>
 <table>
 <thead>
 <tr>
 <th>Algorithm</th>
-<th>What it does</th>
-<th>Where overlap can appear</th>
+<th>Shape</th>
+<th>Where speculation appears</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>self_consistency</code></td>
-<td>Sample answers, vote on extracted answers, optionally explain the winner</td>
-<td>The explanation can continue from candidates before the vote resolves</td>
+<td><em>n</em> chains, majority vote, explain the winner</td>
+<td>the explanation is hoisted over the vote: one fork per chain, zero new prefill</td>
 </tr>
 <tr>
 <td><code>best_of_n</code></td>
-<td>Sample candidates, score each with a judge, return the selected original answer</td>
-<td>Candidate generation and scoring overlap; this implementation has no final polish request</td>
+<td><em>n</em> candidates, one judge request each, pick the top</td>
+<td>judges overlap candidate generation; selection is index-only</td>
 </tr>
 <tr>
 <td><code>heavy</code></td>
-<td>Generate several answers, use a comparative judge, continue from the selected answer</td>
-<td>The final continuation can overlap the comparative decision</td>
+<td><em>n</em> full traces, one comparative judge reads all of them, finalize the winner</td>
+<td>the finalize is hoisted over the verdict, so every candidate's finalize decodes while the judge reads</td>
 </tr>
 <tr>
 <td><code>cascade</code></td>
-<td>Produce and review a draft, then select escalation or polishing behavior</td>
-<td>Alternative continuations can be constructed before the review selects one</td>
+<td>cheap draft, strong review, accept or escalate</td>
+<td>the escalation is <code>infer(gate(...))</code>: pre-decoded under the reject guard when speculation is on, conditional when off</td>
 </tr>
 <tr>
 <td><code>beam_search</code></td>
-<td>Repeatedly expand a bounded beam and select the next beam</td>
-<td>Next-round continuations can run under unresolved beam selections</td>
+<td>expand, score, keep the top <em>N</em>, repeat</td>
+<td>round <em>t</em>+1's children are hoisted over round <em>t</em>'s selection, forked from every candidate</td>
 </tr>
 <tr>
 <td><code>sal_beam</code></td>
-<td>Search by scored reasoning steps and aggregate completed answers</td>
-<td>Available overlap depends on step boundaries and materialization needed for scoring</td>
+<td>the search-and-learn PRM beam recipe, one lineage per step</td>
+<td>next-step sampling of every candidate is hoisted; a <code>loop</code> with a data-dependent stop</td>
 </tr>
 <tr>
 <td><code>reflexion</code></td>
-<td>Review and revise until accepted or the iteration bound is reached</td>
-<td>Future iterations are traced under continue guards</td>
+<td>draft, critique, revise until PASS</td>
+<td>rounds are traced predict-taken under continue gates; two roles give a duplex pipeline</td>
 </tr>
 <tr>
 <td><code>mcts</code></td>
-<td>Maintain search statistics, select a frontier, roll out, and backpropagate</td>
-<td>Finite frontier choices expose local speculation; iterations settle their state updates</td>
+<td>UCT over a finite frontier, expand, roll out, grade, backprop</td>
+<td>expansion and rollout are hoisted over the undecided UCT pick</td>
 </tr>
 </tbody>
 </table>
-<p>The table describes the checked-in implementations. Sharing an algorithm name with a paper does not establish identical prompts, scoring, or stopping rules.</p>
-<h2 id="read-a-representative-algorithm">Read a representative algorithm<a class="headerlink" href="#read-a-representative-algorithm" title="Permanent link">&para;</a></h2>
-<p>Start with <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/algos/heavy.py"><code>heavy.py</code></a> if you want to see the complete generate–judge–continue pattern. Read <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/algos/self_consistency.py"><code>self_consistency.py</code></a> for Python value operations, and <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/algos/reflexion.py"><code>reflexion.py</code></a> for <code>loop</code>.</p>
-<p><code>common.py</code> supplies prompt construction, answer normalization, score parsing, and ranking helpers. These functions affect measured task accuracy: a successful model request can still yield an unparseable or incorrectly normalized answer.</p>
-<h2 id="scoring-changes-the-dependency-graph">Scoring changes the dependency graph<a class="headerlink" href="#scoring-changes-the-dependency-graph" title="Permanent link">&para;</a></h2>
-<p>Beam search can score using log probabilities, judge generations, or a process reward model (PRM). These choices need different data:</p>
+<h2 id="reading-order">Reading order<a class="headerlink" href="#reading-order" title="Permanent link">&para;</a></h2>
+<p>Start with <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/algos/heavy.py"><code>heavy.py</code></a> for the complete generate, judge, continue pattern in thirty lines. <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/algos/self_consistency.py"><code>self_consistency.py</code></a> shows control-plane ops; <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/algos/cascade.py"><code>cascade.py</code></a> shows <code>gate</code>; <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/algos/reflexion.py"><code>reflexion.py</code></a> shows <code>loop</code>; <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/algos/mcts.py"><code>mcts.py</code></a> shows persistent state in Vals and a deliberate <code>settle</code> barrier per iteration.</p>
+<p><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/algos/common.py"><code>common.py</code></a> holds the prompts, answer extraction, score and winner parsing, and ranking helpers. These affect measured accuracy as much as the model does.</p>
+<h2 id="beam-search-in-depth">Beam search in depth<a class="headerlink" href="#beam-search-in-depth" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/algos/beam_search.py"><code>beam_search.py</code></a> is the most instrumented algorithm and the one the benchmark scripts target. Its knobs map to distinct mechanisms:</p>
 <ul>
-<li><strong>Log probabilities</strong> come from the generation's observation mode. They must be requested as part of that node.</li>
-<li><strong>A judge continuation</strong> can often consume the candidate's symbolic spine directly.</li>
-<li><strong>A transformed PRM prompt</strong> may need concrete candidate text before it can be constructed. That creates a data barrier; cache prefetch can help prefill, but cannot erase the dependency.</li>
+<li><strong><code>scorer</code></strong>: <code>logprob</code> (free, from the stream), <code>judge</code> (an LLM grader per candidate), or <code>prm</code> (a Math-Shepherd process reward model on the judge role, one greedy tagged token per step read through <code>top_logprobs_of</code>). The PRM prompt embeds a <em>transformation</em> of the candidate text, which is a real data dependency: the tracer waits for the text before registering the sweep.</li>
+<li><strong><code>step_stop</code></strong>: a string boundary between reasoning steps (<code>"\n\n"</code>), re-inserted between rounds.</li>
+<li><strong><code>hint=score_vals</code></strong> on every <code>choose</code>: each candidate's score re-prioritizes its whole speculative subtree the moment it resolves.</li>
+<li><strong>Boundary-extension pacing</strong>: when the window admits depth 2, the round paces <em>after</em> the expand, so a candidate finishing early gets its continuation issued at once.</li>
+<li><strong><code>prune_margin</code></strong>: an advisory loser predictor for <code>prm</code> with <code>min</code> aggregation (see <a href="../../advanced/optimizations/#loser-prediction">optimizations</a>).</li>
+<li><strong><code>bound_commit</code></strong>: bound-based early round commit, a committed algorithmic change, valid only with <code>scorer="prm"</code>, <code>prm_agg="min"</code>, and a <code>step_stop</code> (see <a href="../../advanced/optimizations/#bound-commit">bound commit</a>).</li>
+<li><strong><code>phase_serial</code></strong>: a barrier between decode and grading each round, the FastTTS-style two-phase baseline.</li>
 </ul>
-<p>The SAL implementation also materializes step text for parts of its control flow. Do not assume every algorithm is entirely trace-ahead or accepted by the static compiler.</p>
-<h2 id="keep-algorithm-changes-separate-from-scheduler-changes">Keep algorithm changes separate from scheduler changes<a class="headerlink" href="#keep-algorithm-changes-separate-from-scheduler-changes" title="Permanent link">&para;</a></h2>
-<p>Candidate count, beam width, stopping rules, scoring aggregation, token budgets, and <code>bound_commit</code> change the algorithm or its output contract. The speculation window, funding budget, and priority policies control how its graph is scheduled.</p>
-<p>For an A/B comparison of branch speculation, hold the algorithm fixed. In particular, if a valid bound allows early truncation, enable that same algorithmic rule in both arms. See <a href="../../verification/benchmarking/">benchmarking</a>.</p>
-<p>Function defaults and CLI defaults can differ: for example, the shared CLI <code>--k</code> default is 6. Use the <a href="../../reference/cli/">CLI reference</a> and the function signature for the entry point you actually run.</p>
+<h2 id="keep-algorithm-knobs-and-scheduler-knobs-apart">Keep algorithm knobs and scheduler knobs apart<a class="headerlink" href="#keep-algorithm-knobs-and-scheduler-knobs-apart" title="Permanent link">&para;</a></h2>
+<p>Candidate counts, beam width, token budgets, scorer, aggregation, and <code>bound_commit</code> change the algorithm. Window, budget, hints, pruning, prefetch, and preemption change only when its graph runs. An A/B comparison of speculation holds the first group fixed, including <code>bound_commit</code>, which must be identical in both arms because it changes which dead-branch tokens exist.</p>
+<p>CLI defaults differ from function defaults (<code>--k</code> is 6, <code>best_of_n</code>'s <code>n</code> is 6, <code>self_consistency</code>'s <code>n</code> is 8). <code>agentir bench</code> passes its flags through <code>default_algo_kwargs</code>; check that mapping in <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/bench/runner.py"><code>bench/runner.py</code></a> when reproducing a run.</p>
 
 
 
@@ -1615,7 +1656,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../tools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tools and observations">
+          <a href="../tools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Defining tools">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1625,20 +1666,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Tools and observations
+                Defining tools
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../vllm-backend/" class="md-footer__link md-footer__link--next" aria-label="Next: Models and vLLM">
+          <a href="../models/" class="md-footer__link md-footer__link--next" aria-label="Next: Models, roles, and wires">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Models and vLLM
+                Models, roles, and wires
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1674,7 +1715,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "navigation.indexes", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

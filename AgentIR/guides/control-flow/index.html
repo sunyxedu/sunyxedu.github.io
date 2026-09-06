@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Understand, build, and verify speculative agent programs with AgentIR.">
+        <meta name="description" content="Speculative execution for LLM agents and test-time scaling. Architecture, internals, guides, and reference.">
       
       
       
         <link rel="canonical" href="https://hemlix.me/AgentIR/guides/control-flow/">
       
       
-        <link rel="prev" href="../../getting-started/concepts/">
+        <link rel="prev" href="../../getting-started/first-program/">
       
       
         <link rel="next" href="../tools/">
@@ -252,6 +252,24 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -274,7 +292,7 @@
   <span class="md-ellipsis">
     
   
-    Start here
+    How it works
   
 
     
@@ -290,7 +308,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Start here
+    How it works
   
 
           </label>
@@ -323,6 +341,287 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programs and handles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity and guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The scheduler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engine adapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and the tool loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using AgentIR
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using AgentIR
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -379,95 +678,6 @@
   
 
               
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Core concepts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Build programs
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Build programs
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -536,10 +746,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#continue-through-a-selection" class="md-nav__link">
+  <a href="#select-and-continue" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Continue through a selection
+        Select and continue
       
     </span>
   </a>
@@ -547,10 +757,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gate-optional-work" class="md-nav__link">
+  <a href="#keep-or-drop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gate optional work
+        Keep or drop
       
     </span>
   </a>
@@ -558,10 +768,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iterate-while-preserving-the-stop-decision" class="md-nav__link">
+  <a href="#iterate-until-a-condition-says-stop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Iterate while preserving the stop decision
+        Iterate until a condition says stop
       
     </span>
   </a>
@@ -569,10 +779,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understand-the-boundaries" class="md-nav__link">
+  <a href="#hand-written-round-loops" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Understand the boundaries
+        Hand-written round loops
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-becomes-a-barrier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What becomes a barrier
       
     </span>
   </a>
@@ -602,7 +823,7 @@
   <span class="md-ellipsis">
     
   
-    Tools and observations
+    Defining tools
   
 
     
@@ -630,7 +851,7 @@
   <span class="md-ellipsis">
     
   
-    Algorithms
+    Built-in algorithms
   
 
     
@@ -651,14 +872,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vllm-backend/" class="md-nav__link">
+      <a href="../models/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Models and vLLM
+    Models, roles, and wires
   
 
     
@@ -686,7 +907,7 @@
   <span class="md-ellipsis">
     
   
-    Remote execution
+    Remote vLLM
   
 
     
@@ -707,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/harbor-terminal-bench/" class="md-nav__link">
+      <a href="../harbor/" class="md-nav__link">
         
   
   
@@ -728,65 +949,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Understand the design
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Understand the design
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -794,119 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/identity/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Identity and the IR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/scheduler/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scheduling and commitment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/tool-streaming/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Streaming tool calls
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prediction and optimization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/compilation/" class="md-nav__link">
+      <a href="../compile/" class="md-nav__link">
         
   
   
@@ -927,65 +977,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Verify and measure
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Verify and measure
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -993,35 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/correctness/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Correctness checks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../verification/diagnostics/" class="md-nav__link">
+      <a href="../diagnostics/" class="md-nav__link">
         
   
   
@@ -1049,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/benchmarking/" class="md-nav__link">
+      <a href="../benchmarking/" class="md-nav__link">
         
   
   
@@ -1070,6 +1033,71 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1077,7 +1105,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/experiments/" class="md-nav__link">
+      <a href="../../advanced/optimizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scheduling optimizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/experiments/" class="md-nav__link">
         
   
   
@@ -1113,6 +1169,18 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1125,10 +1193,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1146,8 +1214,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1312,6 +1380,12 @@
   
     
     
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1324,17 +1398,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Contribute
+    Contributing
   
 
     
@@ -1345,12 +1419,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Contribute
+    Contributing
   
 
           </label>
@@ -1398,7 +1472,7 @@
   <span class="md-ellipsis">
     
   
-    Work on the documentation
+    Documentation
   
 
     
@@ -1446,10 +1520,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#continue-through-a-selection" class="md-nav__link">
+  <a href="#select-and-continue" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Continue through a selection
+        Select and continue
       
     </span>
   </a>
@@ -1457,10 +1531,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gate-optional-work" class="md-nav__link">
+  <a href="#keep-or-drop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gate optional work
+        Keep or drop
       
     </span>
   </a>
@@ -1468,10 +1542,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iterate-while-preserving-the-stop-decision" class="md-nav__link">
+  <a href="#iterate-until-a-condition-says-stop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Iterate while preserving the stop decision
+        Iterate until a condition says stop
       
     </span>
   </a>
@@ -1479,10 +1553,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understand-the-boundaries" class="md-nav__link">
+  <a href="#hand-written-round-loops" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Understand the boundaries
+        Hand-written round loops
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-becomes-a-barrier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What becomes a barrier
       
     </span>
   </a>
@@ -1510,85 +1595,82 @@
 
 
 <h1 id="branching-and-loops">Branching and loops<a class="headerlink" href="#branching-and-loops" title="Permanent link">&para;</a></h1>
-<p>Use <code>choose</code>, <code>gate</code>, and <code>loop</code> when a decision determines which already-describable work survives. Use ordinary Python control flow when the next request genuinely cannot be constructed without inspecting a concrete result.</p>
-<h2 id="continue-through-a-selection">Continue through a selection<a class="headerlink" href="#continue-through-a-selection" title="Permanent link">&para;</a></h2>
-<p>The common pattern keeps the ranking asynchronous:</p>
+<p>Use <code>choose</code>, <code>gate</code>, and <code>loop</code> whenever a decision determines <em>which already-describable work survives</em>. Use ordinary Python when the next request truly cannot be built without a concrete value; that is a barrier, and it is fine, just visible.</p>
+<h2 id="select-and-continue">Select and continue<a class="headerlink" href="#select-and-continue" title="Permanent link">&para;</a></h2>
+<p>The core pattern keeps the ranking asynchronous:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">candidates</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">scores</span> <span class="o">=</span> <span class="n">collect</span><span class="p">([</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">op</span><span class="p">(</span><span class="n">score_answer</span><span class="p">,</span> <span class="n">out_text</span><span class="p">(</span><span class="n">candidate</span><span class="p">),</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="k">for</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">candidates</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">])</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">ranking</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">rank_scores</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">best</span> <span class="o">=</span> <span class="n">choose</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">ranking</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">answer</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">best</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Give a concise conclusion."</span><span class="p">)),</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">scores</span> <span class="o">=</span> <span class="n">collect</span><span class="p">([</span><span class="n">op</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">out_text</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">])</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">ranking</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">rank_desc</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>        <span class="c1"># Val[list[int]], best first</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">best</span> <span class="o">=</span> <span class="n">choose</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">ranking</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">answer</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">best</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Conclude in one line."</span><span class="p">)),</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
 </code></pre></div>
-<p>Here <code>score_answer</code> and <code>rank_scores</code> are application functions; the latter returns candidate indices in preferred order. The continuation of each candidate waits for that candidate's data, while its selection guard may remain pending.</p>
-<p>Request <code>k &gt; 1</code> to retain several ranks. Each <code>choose</code> result is a rank-specific <code>Choice</code>, so downstream requests preserve which rank and member they depend on.</p>
-<h2 id="gate-optional-work">Gate optional work<a class="headerlink" href="#gate-optional-work" title="Permanent link">&para;</a></h2>
-<p><code>gate(value, condition)</code> keeps the value when the condition is true. It returns a choice with a single surviving alternative; a false condition has no fallback result.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">keep</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">needs_more_detail</span><span class="p">,</span> <span class="n">out_text</span><span class="p">(</span><span class="n">draft</span><span class="p">),</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">optional</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">cat</span><span class="p">(</span><span class="n">gate</span><span class="p">(</span><span class="n">draft</span><span class="p">,</span> <span class="n">keep</span><span class="p">),</span> <span class="n">lit</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Add the missing detail."</span><span class="p">)),</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">)</span>
+<p><code>ranking</code> must resolve to distinct integer positions into the pool, at least <code>k</code> of them, best first. A bare int is the <code>k=1</code> shorthand. Scores, booleans, or repeated positions fail the decision and the failure surfaces at consumers.</p>
+<p>Ask for <code>k &gt; 1</code> to keep several ranks. Each element is a rank-specific <code>Choice</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">top2</span> <span class="o">=</span> <span class="n">choose</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">ranking</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">merged</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">lit</span><span class="p">(</span><span class="s2">"A: "</span><span class="p">),</span> <span class="n">top2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lit</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">B: "</span><span class="p">)))</span>   <span class="c1"># one Choice per cat</span>
 </code></pre></div>
-<p>If <code>keep</code> is false, forcing <code>optional</code> raises <code>Squashed</code>. Use a selection with explicit alternatives when you need a result on both outcomes. A gate is particularly useful inside a larger guarded computation whose rejected result is never published.</p>
-<h2 id="iterate-while-preserving-the-stop-decision">Iterate while preserving the stop decision<a class="headerlink" href="#iterate-while-preserving-the-stop-decision" title="Permanent link">&para;</a></h2>
-<p><code>loop(init, body, max_iters, lookahead=None)</code> expects <code>body(state)</code> to return <code>(next_state, continue_condition)</code>. The condition can be a <code>Val</code>; do not force it inside the body just to decide whether to continue.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">revise</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">review</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Review this answer."</span><span class="p">)),</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">96</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">keep_going</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">needs_revision</span><span class="p">,</span> <span class="n">out_text</span><span class="p">(</span><span class="n">review</span><span class="p">),</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">revised</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">review</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Write a revised answer."</span><span class="p">)),</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">192</span><span class="p">)</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">return</span> <span class="n">revised</span><span class="p">,</span> <span class="n">keep_going</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">result</span> <span class="o">=</span> <span class="n">loop</span><span class="p">(</span><span class="n">draft</span><span class="p">,</span> <span class="n">revise</span><span class="p">,</span> <span class="n">max_iters</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<p><code>cat</code> distributes over one unresolved Choice. It refuses two independent ones; force one first, or restructure around a single decision.</p>
+<p>A <code>hint=</code> list of per-member <code>Val</code>s (the scores, say) tells the scheduler which member's continuations to fund first as evidence arrives. It cannot change the result. See <a href="../../advanced/optimizations/#hints">optimizations</a>.</p>
+<h2 id="keep-or-drop">Keep or drop<a class="headerlink" href="#keep-or-drop" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">keep</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">needs_detail</span><span class="p">,</span> <span class="n">out_text</span><span class="p">(</span><span class="n">draft</span><span class="p">),</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>      <span class="c1"># Val[bool]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">more</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">gate</span><span class="p">(</span><span class="n">draft</span><span class="p">,</span> <span class="n">keep</span><span class="p">),</span> <span class="n">lit</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Add the missing detail."</span><span class="p">)))</span>
 </code></pre></div>
-<p><code>needs_revision</code> is your pure parser of the review. The runtime can construct later rounds under the assumption that the loop continues, bounded by the lookahead.</p>
+<p><code>gate(x, cond)</code> keeps <code>x</code> when <code>cond</code> is true and has no false branch: forcing <code>more</code> when <code>keep</code> is false raises <code>Squashed</code>. Use it for work whose absence is fine, or inside a larger <code>choose</code> where the other branch provides the fallback. The <a href="../algorithms/">cascade</a> algorithm gates an expensive escalation on a rejection verdict so it decodes early only when speculation is on.</p>
+<h2 id="iterate-until-a-condition-says-stop">Iterate until a condition says stop<a class="headerlink" href="#iterate-until-a-condition-says-stop" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">revise</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">review</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Review this answer."</span><span class="p">)),</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">96</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">again</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">needs_revision</span><span class="p">,</span> <span class="n">out_text</span><span class="p">(</span><span class="n">review</span><span class="p">),</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>   <span class="c1"># Val[bool]</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">revised</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">review</span><span class="p">,</span> <span class="n">lit</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Write the revised answer."</span><span class="p">)),</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">192</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">return</span> <span class="n">revised</span><span class="p">,</span> <span class="n">again</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">result</span> <span class="o">=</span> <span class="n">loop</span><span class="p">(</span><span class="n">draft</span><span class="p">,</span> <span class="n">revise</span><span class="p">,</span> <span class="n">max_iters</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<p><code>body(state)</code> returns <code>(next_state, continue)</code>. Return the condition as a <code>Val</code>; do not force it to decide in Python. The tracer traces round <em>t</em>+1 under the assumption that round <em>t</em> continues, up to <code>lookahead</code> unresolved rounds ahead (default: the speculation window). If the condition turns out false, the extra rounds are squashed as a whole.</p>
 <div class="admonition note">
-<p class="admonition-title">The returned state is the entering state</p>
-<p>When a round's condition says stop, <code>loop</code> returns the state that <strong>entered that round</strong>, not the <code>next_state</code> it proposed. If every condition is true through <code>max_iters</code>, it returns the last next state. In the example, a review that accepts the current answer returns that answer.</p>
+<p class="admonition-title">The returned state is the one that entered the stopping round</p>
+<p>When round <em>t</em>'s condition is false, <code>loop</code> returns <code>states[t]</code>, the state that <em>entered</em> round <em>t</em>, not the <code>next_state</code> that round proposed. In the example, a review that accepts the current answer returns that answer, not a revision of it. If every condition is true through <code>max_iters</code>, the last next state is returned.</p>
 </div>
-<p>Round zero uses the loop's entry guard. Round one additionally requires round zero's condition to be true, and so on. A round's condition producer therefore never waits on its own decision. Each iteration also has a separate draw scope, so speculative extra rounds do not renumber later work.</p>
-<p>The default lookahead is the speculation window when enabled and zero when disabled. The tracer eventually waits to determine the loop's return value; <code>loop</code> does not make arbitrary Python execution asynchronous.</p>
-<h2 id="understand-the-boundaries">Understand the boundaries<a class="headerlink" href="#understand-the-boundaries" title="Permanent link">&para;</a></h2>
+<p>The reflexion algorithm is this loop with a judge-role critic; read <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/algos/reflexion.py"><code>reflexion.py</code></a> for the full version.</p>
+<h2 id="hand-written-round-loops">Hand-written round loops<a class="headerlink" href="#hand-written-round-loops" title="Permanent link">&para;</a></h2>
+<p>A <code>for</code> loop that feeds each round's selection into the next round's <code>expand</code> is fine, but the hoist multiplies: with every earlier selection unresolved, round <em>t</em> registers pool^<em>t</em> guarded continuations. Call <code>pace_unrolling</code> (from <code>agentir.api</code>) once per round with the selections so far; it blocks while more than <code>lookahead</code> of them are unresolved. If you skip it, the tracer stops you at 4096 world instances per call with an error naming the fix. Beam search in the algorithm library shows the pattern, including where in the round body to place the pace.</p>
+<h2 id="what-becomes-a-barrier">What becomes a barrier<a class="headerlink" href="#what-becomes-a-barrier" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Situation</th>
-<th>Consequence</th>
-<th>Appropriate response</th>
+<th>You write</th>
+<th>Effect</th>
+<th>Alternative</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>force</code> a ranking before <code>choose</code></td>
-<td>Selection becomes a tracing barrier</td>
-<td>Pass the ranking <code>Val</code> directly when possible</td>
+<td><code>force(ranking)</code> then index the pool in Python</td>
+<td>selection is a full stop</td>
+<td>pass the <code>Val</code> to <code>choose</code></td>
 </tr>
 <tr>
-<td>Convert a generated answer to a new literal</td>
-<td>The tracer waits for text and loses spine provenance</td>
-<td>Continue from its <code>Seq</code>, or use <code>fmt</code> for supported composition</td>
+<td><code>lit(force(out_text(x)) + suffix)</code></td>
+<td>the tracer waits for the text and loses the spine link</td>
+<td><code>cat(x, lit(suffix))</code></td>
 </tr>
 <tr>
-<td>Concatenate two independent unresolved choices</td>
-<td>Current lowering does not form their Cartesian product</td>
-<td>Restructure around one decision or introduce an explicit barrier</td>
+<td><code>infer(some_val)</code> where the Val holds a Seq</td>
+<td>waits for the value first</td>
+<td>expose the pick as a <code>choose</code></td>
 </tr>
 <tr>
-<td>Branch in Python on a handle</td>
-<td>Symbolic truth conversion fails</td>
-<td>Use guarded control flow, or deliberately materialize data</td>
+<td><code>if handle:</code></td>
+<td><code>TypeError</code>: a handle has no truth value</td>
+<td><code>gate</code>, <code>choose</code>, or a deliberate <code>force</code></td>
 </tr>
 <tr>
-<td>Put external effects inside <code>op(..., pure=True)</code></td>
-<td>The purity contract is violated</td>
-<td>Use the default effectful <code>op</code>, or an appropriately declared tool</td>
+<td>side effects inside <code>op(..., pure=True)</code></td>
+<td>the purity promise is broken; the effect may run in a losing world</td>
+<td>default <code>op</code>, or a <code>tool</code></td>
 </tr>
 </tbody>
 </table>
-<p>The tracer also limits hoisting fan-out to prevent accidental graph explosion. If a program exceeds that limit, reduce speculative breadth or introduce a deliberate phase boundary.</p>
-<p>For an implementation of iterative refinement, read <a href="https://github.com/sunyxedu/AgentIR/blob/main/src/agentir/algos/reflexion.py"><code>reflexion.py</code></a>. For how the window is funded, continue with <a href="../../design/scheduler/">scheduling</a>.</p>
+<p>Barriers are correct. They cost the overlap you would otherwise get, and a <a href="../diagnostics/">timeline</a> makes them easy to spot.</p>
 
 
 
@@ -1624,7 +1706,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../getting-started/concepts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Core concepts">
+          <a href="../../getting-started/first-program/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Your first program">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1634,20 +1716,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Core concepts
+                Your first program
               </div>
             </div>
           </a>
         
         
           
-          <a href="../tools/" class="md-footer__link md-footer__link--next" aria-label="Next: Tools and observations">
+          <a href="../tools/" class="md-footer__link md-footer__link--next" aria-label="Next: Defining tools">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Tools and observations
+                Defining tools
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1683,7 +1765,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "navigation.indexes", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

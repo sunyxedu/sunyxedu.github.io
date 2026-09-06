@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Understand, build, and verify speculative agent programs with AgentIR.">
+        <meta name="description" content="Speculative execution for LLM agents and test-time scaling. Architecture, internals, guides, and reference.">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Tools and observations - AgentIR</title>
+        <title>Defining tools - AgentIR</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tools-and-observations" class="md-skip">
+        <a href="#defining-tools" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tools and observations
+              Defining tools
             
           </span>
         </div>
@@ -252,6 +252,24 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -274,7 +292,7 @@
   <span class="md-ellipsis">
     
   
-    Start here
+    How it works
   
 
     
@@ -290,7 +308,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Start here
+    How it works
   
 
           </label>
@@ -323,6 +341,287 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programs and handles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity and guards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tracer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The tracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The scheduler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engine adapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and the tool loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals/verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using AgentIR
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using AgentIR
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -387,95 +686,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Core concepts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Build programs
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Build programs
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../control-flow/" class="md-nav__link">
         
   
@@ -520,7 +730,7 @@
   <span class="md-ellipsis">
     
   
-    Tools and observations
+    Defining tools
   
 
     
@@ -538,7 +748,7 @@
   <span class="md-ellipsis">
     
   
-    Tools and observations
+    Defining tools
   
 
     
@@ -564,10 +774,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#define-a-tool" class="md-nav__link">
+  <a href="#a-tool-the-model-can-call" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Define a tool
+        A tool the model can call
       
     </span>
   </a>
@@ -575,10 +785,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#decide-whether-execution-can-be-speculative" class="md-nav__link">
+  <a href="#choose-the-effect-class" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Decide whether execution can be speculative
+        Choose the effect class
       
     </span>
   </a>
@@ -608,10 +818,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-tools-directly-in-the-graph" class="md-nav__link">
+  <a href="#tools-placed-directly-in-the-graph" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Use tools directly in the graph
+        Tools placed directly in the graph
       
     </span>
   </a>
@@ -619,10 +829,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bound-the-conversation" class="md-nav__link">
+  <a href="#bounds" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bound the conversation
+        Bounds
       
     </span>
   </a>
@@ -652,7 +862,7 @@
   <span class="md-ellipsis">
     
   
-    Algorithms
+    Built-in algorithms
   
 
     
@@ -673,14 +883,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vllm-backend/" class="md-nav__link">
+      <a href="../models/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Models and vLLM
+    Models, roles, and wires
   
 
     
@@ -708,7 +918,7 @@
   <span class="md-ellipsis">
     
   
-    Remote execution
+    Remote vLLM
   
 
     
@@ -729,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/harbor-terminal-bench/" class="md-nav__link">
+      <a href="../harbor/" class="md-nav__link">
         
   
   
@@ -750,65 +960,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Understand the design
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Understand the design
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -816,119 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/identity/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Identity and the IR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/scheduler/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scheduling and commitment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/tool-streaming/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Streaming tool calls
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prediction and optimization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../design/compilation/" class="md-nav__link">
+      <a href="../compile/" class="md-nav__link">
         
   
   
@@ -949,65 +988,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Verify and measure
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Verify and measure
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -1015,35 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/correctness/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Correctness checks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../verification/diagnostics/" class="md-nav__link">
+      <a href="../diagnostics/" class="md-nav__link">
         
   
   
@@ -1071,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/benchmarking/" class="md-nav__link">
+      <a href="../benchmarking/" class="md-nav__link">
         
   
   
@@ -1092,6 +1044,71 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1099,7 +1116,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../verification/experiments/" class="md-nav__link">
+      <a href="../../advanced/optimizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scheduling optimizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/experiments/" class="md-nav__link">
         
   
   
@@ -1135,6 +1180,18 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1147,10 +1204,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1168,8 +1225,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1334,6 +1391,12 @@
   
     
     
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1346,17 +1409,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Contribute
+    Contributing
   
 
     
@@ -1367,12 +1430,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Contribute
+    Contributing
   
 
           </label>
@@ -1420,7 +1483,7 @@
   <span class="md-ellipsis">
     
   
-    Work on the documentation
+    Documentation
   
 
     
@@ -1468,10 +1531,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#define-a-tool" class="md-nav__link">
+  <a href="#a-tool-the-model-can-call" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Define a tool
+        A tool the model can call
       
     </span>
   </a>
@@ -1479,10 +1542,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#decide-whether-execution-can-be-speculative" class="md-nav__link">
+  <a href="#choose-the-effect-class" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Decide whether execution can be speculative
+        Choose the effect class
       
     </span>
   </a>
@@ -1512,10 +1575,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-tools-directly-in-the-graph" class="md-nav__link">
+  <a href="#tools-placed-directly-in-the-graph" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Use tools directly in the graph
+        Tools placed directly in the graph
       
     </span>
   </a>
@@ -1523,10 +1586,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bound-the-conversation" class="md-nav__link">
+  <a href="#bounds" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bound the conversation
+        Bounds
       
     </span>
   </a>
@@ -1553,29 +1616,27 @@
   
 
 
-<h1 id="tools-and-observations">Tools and observations<a class="headerlink" href="#tools-and-observations" title="Permanent link">&para;</a></h1>
-<p>A tool adds two separate contracts to an agent program: <strong>when its body may execute</strong>, and <strong>what information its result contributes to the conversation</strong>. Define them separately. A predictable result does not make a side effect safe to repeat.</p>
-<h2 id="define-a-tool">Define a tool<a class="headerlink" href="#define-a-tool" title="Permanent link">&para;</a></h2>
-<p>The public autonomous loop is <code>infer(task, tools=..., max_turns=...)</code>. It uses the token wire and the engine's own chat template and tool parser.</p>
-<p>This complete example exposes an in-memory lookup. Replace the model with a supported tool-capable model that fits your environment:</p>
+<h1 id="defining-tools">Defining tools<a class="headerlink" href="#defining-tools" title="Permanent link">&para;</a></h1>
+<p>A tool adds two contracts to a program: <strong>when its body may run</strong> and <strong>what the model gets to see</strong> of its result. Declare both. A result that is easy to predict says nothing about whether the side effect is safe to repeat.</p>
+<h2 id="a-tool-the-model-can-call">A tool the model can call<a class="headerlink" href="#a-tool-the-model-can-call" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agentir</span><span class="w"> </span><span class="kn">import</span> <span class="n">Exact</span><span class="p">,</span> <span class="n">ToolDef</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="n">infer</span><span class="p">,</span> <span class="n">make_runtime</span><span class="p">,</span> <span class="n">out_text</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">CAPITALS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"France"</span><span class="p">:</span> <span class="s2">"Paris"</span><span class="p">,</span> <span class="s2">"Japan"</span><span class="p">:</span> <span class="s2">"Tokyo"</span><span class="p">}</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">lookup_capital</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">lookup_capital</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>                 <span class="c1"># one dict argument, not kwargs</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">return</span> <span class="n">CAPITALS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="s2">"country"</span><span class="p">],</span> <span class="s2">"Unknown"</span><span class="p">)</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">program</span><span class="p">():</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">reply</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="s2">"Use the lookup tool to find the capital of France."</span><span class="p">,</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="n">tools</span><span class="o">=</span><span class="p">{</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>            <span class="s2">"lookup_capital"</span><span class="p">:</span> <span class="n">ToolDef</span><span class="p">(</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>                <span class="n">lookup_capital</span><span class="p">,</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                <span class="n">effect</span><span class="o">=</span><span class="s2">"speculable"</span><span class="p">,</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                <span class="n">obs</span><span class="o">=</span><span class="n">Exact</span><span class="p">(),</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                <span class="n">description</span><span class="o">=</span><span class="s2">"Look up a country's capital in a small local table."</span><span class="p">,</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                <span class="n">description</span><span class="o">=</span><span class="s2">"Look up a country's capital."</span><span class="p">,</span>
 <a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                <span class="n">input_schema</span><span class="o">=</span><span class="p">{</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"object"</span><span class="p">,</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>                    <span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"country"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">}},</span>
@@ -1587,110 +1648,101 @@
 <a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>        <span class="n">max_turns</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
 <a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>        <span class="n">max_tokens</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span>
 <a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span class="p">)</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="k">return</span> <span class="n">force</span><span class="p">(</span><span class="n">out_text</span><span class="p">(</span><span class="n">response</span><span class="p">))</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="k">return</span> <span class="n">force</span><span class="p">(</span><span class="n">out_text</span><span class="p">(</span><span class="n">reply</span><span class="p">))</span>
 <a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
 <a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
 <a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    <span class="k">with</span> <span class="n">make_runtime</span><span class="p">(</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        <span class="n">model</span><span class="o">=</span><span class="s2">"Qwen/Qwen3-Coder-30B-A3B-Instruct"</span><span class="p">,</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>        <span class="n">wire</span><span class="o">=</span><span class="s2">"tokens"</span><span class="p">,</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>    <span class="p">)</span> <span class="k">as</span> <span class="n">runtime</span><span class="p">:</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">program</span><span class="p">))</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    <span class="k">with</span> <span class="n">make_runtime</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">"Qwen/Qwen3-Coder-30B-A3B-Instruct"</span><span class="p">,</span> <span class="n">wire</span><span class="o">=</span><span class="s2">"tokens"</span><span class="p">)</span> <span class="k">as</span> <span class="n">runtime</span><span class="p">:</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">program</span><span class="p">))</span>
 </code></pre></div>
-<p>The callable receives <strong>one argument dictionary</strong>, not keyword arguments. <code>input_schema</code> is the JSON Schema for that dictionary; AgentIR adds the provider's function wrapper. The returned <code>Seq</code> is the final assistant turn of the tool loop.</p>
-<h2 id="decide-whether-execution-can-be-speculative">Decide whether execution can be speculative<a class="headerlink" href="#decide-whether-execution-can-be-speculative" title="Permanent link">&para;</a></h2>
+<p><code>infer(task, tools=...)</code> runs the autonomous loop: render the conversation with the model's chat template, stream the assistant turn through vLLM's parser for that model family, execute the calls, feed back observations, repeat for up to <code>max_turns</code>. It returns the final assistant turn as a <code>Seq</code>. The loop requires <code>wire="tokens"</code> and a model from a <a href="../../internals/tools/#why-retries-and-replays-stay-exact">supported family</a>. <code>input_schema</code> is the JSON Schema of the argument object; AgentIR adds the provider's function wrapper.</p>
+<h2 id="choose-the-effect-class">Choose the effect class<a class="headerlink" href="#choose-the-effect-class" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th><code>effect</code></th>
-<th>When the body can run</th>
-<th>Your contract</th>
+<th>Body runs</th>
+<th>Promise you make</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>"unknown"</code> (default)</td>
-<td>After its guard is true and required ordering has settled</td>
-<td>The runtime must fence external effects and avoid speculative execution</td>
+<td>only after the turn that called it has committed; once; no retries</td>
+<td>none</td>
 </tr>
 <tr>
 <td><code>"speculable"</code></td>
-<td>Under a pending guard, within the tool budget</td>
-<td>Extra executions and retries are safe; observations remain suitable for replay</td>
+<td>as soon as the tool scheduler admits it, possibly for a branch that later loses; up to three tries per phase</td>
+<td>re-running and discarding is harmless</td>
 </tr>
 </tbody>
 </table>
-<p>Reading a fixed in-memory table is a straightforward speculable tool. A shell command, payment, file write, or changing database query needs a deliberate effect decision. The Harbor shell tool uses <code>"unknown"</code>.</p>
-<p>A running Python callable cannot be forcibly stopped in the general case. Cancellation can prevent a queued tool from starting, but it cannot undo a body that has already run. Unknown tools are not automatically retried. Speculable tools can be retried, so “read-only” alone may be too weak a contract if results depend on changing external state.</p>
+<p>An in-memory lookup is speculable. A shell command, a payment, a file write, or a query against changing data is unknown unless you have decided otherwise. The <a href="../harbor/">Harbor</a> shell tool is unknown. Remember that a Python body which has started cannot be stopped; cancellation only prevents an unstarted body from being delivered.</p>
 <h2 id="choose-what-the-model-observes">Choose what the model observes<a class="headerlink" href="#choose-what-the-model-observes" title="Permanent link">&para;</a></h2>
-<p>The policy turns the raw tool result into an <strong>observation image</strong> and selects a declared candidate observation. Images are strings or canonically rendered JSON values.</p>
+<p>The policy maps the raw return value to an <strong>image</strong> (a string, or JSON rendered canonically), and declares which candidate images may stand in for it before the tool finishes.</p>
 <table>
 <thead>
 <tr>
 <th>Policy</th>
-<th>Observation contract</th>
-<th>Useful when</th>
+<th>Image</th>
+<th>When</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Exact()</code></td>
-<td>Preserve the actual image; guesses must match exactly</td>
-<td>The full result matters</td>
+<td>the projected result; guesses must match byte for byte</td>
+<td>the full result matters</td>
 </tr>
 <tr>
 <td><code>Ignore(text="done")</code></td>
-<td>Use a constant image without reading the raw result</td>
-<td>Completion matters, but result contents do not</td>
+<td>a constant; never reads the result</td>
+<td>only completion matters</td>
 </tr>
 <tr>
 <td><code>Project(alpha)</code></td>
-<td>Expose a pure projection of the result</td>
-<td>The model needs a stable subset or normalized form</td>
+<td><code>alpha(raw)</code></td>
+<td>the model needs a stable subset (a status code, a summary field)</td>
 </tr>
 <tr>
-<td><code>Enum(cases, by=...)</code></td>
-<td>Select among declared representatives or a real-result hole</td>
-<td>A finite set of outcomes is part of the tool's interface</td>
+<td><code>Enum(cases, by=key_fn)</code></td>
+<td>one of the declared representatives, or the real result through a <code>hole()</code> case</td>
+<td>the outcome space is finite and part of the tool's interface</td>
 </tr>
 </tbody>
 </table>
-<p><code>Ignore</code> and <code>Project</code> deliberately define what information the agent receives. They are semantic choices, not approximate substitutes for an exact observation.</p>
+<p><code>Ignore</code> and <code>Project</code> change what the agent knows. They are semantic choices, not shortcuts.</p>
 <h2 id="add-a-prediction">Add a prediction<a class="headerlink" href="#add-a-prediction" title="Permanent link">&para;</a></h2>
-<p>A guess funds work against a possible observation while the real tool runs:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">tool_definition</span> <span class="o">=</span> <span class="n">ToolDef</span><span class="p">(</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">lookup_capital</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">effect</span><span class="o">=</span><span class="s2">"speculable"</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">obs</span><span class="o">=</span><span class="n">Exact</span><span class="p">(),</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">guess</span><span class="o">=</span><span class="s2">"Paris"</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">ToolDef</span><span class="p">(</span><span class="n">lookup_capital</span><span class="p">,</span> <span class="n">effect</span><span class="o">=</span><span class="s2">"speculable"</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="n">Exact</span><span class="p">(),</span> <span class="n">guess</span><span class="o">=</span><span class="s2">"Paris"</span><span class="p">)</span>
 </code></pre></div>
-<p>The loop verifies the projected real observation against the guess. A hit retains the candidate continuation; a miss uses the real observation. With an unknown-effect tool, the body still waits for commitment, but its predicted next model turn can overlap that body once the relevant conversation is eligible.</p>
+<p>While the tool runs, the next assistant turn is decoded against <code>"Paris"</code>. When the real image arrives the loop compares bytes: a hit keeps that turn, a miss squashes it and decodes the turn against the real image. With an unknown-effect tool the body still waits for commitment, but the predicted next turn can overlap it once the calling turn is committed.</p>
+<p>A <code>guess</code> can also be a callable <code>(state, call) -&gt; str | Val | Seq</code>, including one that traces DSL calls to a draft model. Predictor code runs in an advisory scope: model requests and speculable tools are allowed, unknown effects are not. A predictor that is still running when the real observation lands is abandoned.</p>
 <div class="admonition note">
-<p class="admonition-title">Defaults depend on what you specify</p>
-<p><code>ToolDef(fn)</code> supplies <code>Exact()</code> <strong>and a default model-based draft predictor</strong>. Supplying <code>obs=Exact()</code> explicitly disables that implicit predictor unless you also pass <code>guess</code>. Passing <code>guess=None</code> explicitly also disables it. This distinction matters for request budgets and baseline experiments.</p>
+<p class="admonition-title">The default predictor</p>
+<p><code>ToolDef(fn)</code> with neither <code>obs</code> nor <code>guess</code> gets <code>Exact()</code> <strong>plus</strong> a default draft predictor (a 32-token same-role sample, two candidates at first, calibrated online). Passing <code>obs=Exact()</code> explicitly, or <code>guess=None</code>, turns the predictor off. Keep this in mind when reading request counts in a benchmark.</p>
 </div>
-<p>Advanced guesses can be callables that construct <code>Val</code> or <code>Seq</code> candidates, including ordinary DSL model calls. These are advisory computations: unknown effects are forbidden inside predictor construction. See <a href="../../design/optimization/#tool-observation-prediction">prediction and optimization</a>.</p>
-<h2 id="use-tools-directly-in-the-graph">Use tools directly in the graph<a class="headerlink" href="#use-tools-directly-in-the-graph" title="Permanent link">&para;</a></h2>
-<p>When your program already knows the operation and its arguments, it can register a tool without asking the model to call it:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agentir</span><span class="w"> </span><span class="kn">import</span> <span class="n">cat</span><span class="p">,</span> <span class="n">expect</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="n">infer</span><span class="p">,</span> <span class="n">lit</span><span class="p">,</span> <span class="n">tool</span><span class="p">,</span> <span class="n">out_text</span>
+<h2 id="tools-placed-directly-in-the-graph">Tools placed directly in the graph<a class="headerlink" href="#tools-placed-directly-in-the-graph" title="Permanent link">&para;</a></h2>
+<p>When the program, not the model, decides to call a tool:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agentir</span><span class="w"> </span><span class="kn">import</span> <span class="n">cat</span><span class="p">,</span> <span class="n">expect</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="n">infer</span><span class="p">,</span> <span class="n">lit</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">observe</span><span class="p">,</span> <span class="n">tool</span><span class="p">,</span> <span class="n">out_text</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">program</span><span class="p">():</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">tool</span><span class="p">(</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="n">lookup_capital</span><span class="p">,</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="p">{</span><span class="s2">"country"</span><span class="p">:</span> <span class="s2">"France"</span><span class="p">},</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">"lookup_capital"</span><span class="p">,</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="n">effect</span><span class="o">=</span><span class="s2">"speculable"</span><span class="p">,</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="p">)</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">observation</span> <span class="o">=</span> <span class="n">expect</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">"Paris"</span><span class="p">)</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">answer</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">lit</span><span class="p">(</span><span class="s2">"The lookup returned: "</span><span class="p">),</span> <span class="n">observation</span><span class="p">),</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">48</span><span class="p">)</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="k">return</span> <span class="n">force</span><span class="p">(</span><span class="n">out_text</span><span class="p">(</span><span class="n">answer</span><span class="p">))</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">t</span> <span class="o">=</span> <span class="n">tool</span><span class="p">(</span><span class="n">lookup_capital</span><span class="p">,</span> <span class="p">{</span><span class="s2">"country"</span><span class="p">:</span> <span class="s2">"France"</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s2">"lookup_capital"</span><span class="p">,</span> <span class="n">effect</span><span class="o">=</span><span class="s2">"speculable"</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">guessed</span> <span class="o">=</span> <span class="n">expect</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">"Paris"</span><span class="p">)</span>                        <span class="c1"># Choice: hit branch or real-image branch</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">reply</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">cat</span><span class="p">(</span><span class="n">lit</span><span class="p">(</span><span class="s2">"The lookup returned: "</span><span class="p">),</span> <span class="n">guessed</span><span class="p">),</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">48</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">return</span> <span class="n">force</span><span class="p">(</span><span class="n">out_text</span><span class="p">(</span><span class="n">reply</span><span class="p">))</span>
 </code></pre></div>
-<p><code>obs(handle)</code> inserts a late-bound observation into a prompt spine. <code>observe(handle)</code> returns its structured projected value. <code>ack(handle)</code> waits for completion without reading content. <code>classify</code> routes exact projected images through a closed mapping; an unlisted result is an error, so use <code>expect</code> when misses need a fallback.</p>
-<p>Pass <code>after=</code> to impose execution ordering on a direct tool. Its predecessors must settle, but their values and failures are not injected into the new tool. If failure propagation is required, express that dependency explicitly.</p>
-<h2 id="bound-the-conversation">Bound the conversation<a class="headerlink" href="#bound-the-conversation" title="Permanent link">&para;</a></h2>
-<p><code>max_turns</code> bounds assistant rounds. <code>max_calls</code> bounds the speculative call-slot template for a round; the autonomous loop has an overflow barrier that handles the concrete calls at termination instead of silently dropping them. It is not a universal authorization limit on external actions. Use tool-side policy if your application requires such a limit.</p>
-<p>For custom observation policies and early dispatch mechanics, continue with <a href="../../design/tool-streaming/">streaming tool calls</a>. For a real terminal integration, read <a href="../../integrations/harbor-terminal-bench/">Harbor</a>.</p>
+<ul>
+<li><code>obs(t)</code> splices the image into a prompt as a late-binding segment.</li>
+<li><code>observe(t)</code> returns the structured image as a <code>Val</code> for Python code.</li>
+<li><code>ack(t)</code> resolves when the body finished, without reading anything.</li>
+<li><code>expect(t, guess)</code> is a hit-or-miss decision; <code>classify(t, cases)</code> routes an exact image through a closed mapping and treats anything else as an error.</li>
+<li><code>after=</code> orders one tool behind other tools or ops without consuming their values or failures.</li>
+</ul>
+<p>Arguments may contain <code>Val</code> and <code>Choice</code> handles anywhere in the JSON tree; they resolve before the tool identity is hashed. A <code>Seq</code> is rejected: read it out with an exit first.</p>
+<h2 id="bounds">Bounds<a class="headerlink" href="#bounds" title="Permanent link">&para;</a></h2>
+<p><code>max_turns</code> bounds assistant rounds. <code>max_calls</code> (default 8) bounds the number of call slots the loop pre-reserves per turn for early dispatch; more calls than that are still executed, at a barrier. Neither is a safety limit on external actions; put that in the tool body.</p>
+<p>The mechanics behind all of this, including the streaming parser and the round template, are in <a href="../../internals/tools/">Tools and the tool loop</a>.</p>
 
 
 
@@ -1743,13 +1795,13 @@
         
         
           
-          <a href="../algorithms/" class="md-footer__link md-footer__link--next" aria-label="Next: Algorithms">
+          <a href="../algorithms/" class="md-footer__link md-footer__link--next" aria-label="Next: Built-in algorithms">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Algorithms
+                Built-in algorithms
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1785,7 +1837,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "navigation.indexes", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
